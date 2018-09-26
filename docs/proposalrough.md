@@ -25,6 +25,13 @@ Often times when starting a new semester because of the sprawling nature of Colu
  
  * A user wants to see an overlay of where their classes reside atop a map of the Columbia campus, so they can have a handy visual reference of where all their classes and seminars reside. 
  
- * A user wants to be able to type in their location of their courses and have the program recognize and remember that location, so they don't have to type full addresses every time they need directions.
+ * A user wants to be able to type in the location of their courses and have the program recognize and remember that location, so they don't have to type full addresses every time they need directions.
+ 
+ * A user wants to start typing a location, and the application shows recommendations as they type, so they can save time.
+ 
+ * A user wants to type a building name and be shown a list of administrative offices, department, theater, auditorium, among others, in the building, as well as its room number, so they do not have to navigate to the website of a particular office in order to retrieve such information.
+ 
+ * A user wants to type the name of an administrative office, department, theater, auditorium, lab, among others, and get directions to it, so they do not have to look up that information themselves.
+ 
  
  
