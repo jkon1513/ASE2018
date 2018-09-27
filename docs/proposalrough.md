@@ -6,10 +6,10 @@ We will use the Java programming language on the MacOS operating system to devel
 
 ## Team Members
 
-Jason Konikow ```uni: ```
-Christopher Thomas ```uni: ```
-Billy Armfield ```uni: ```
-Luigi Pastore ```uni: ```
+Jason Konikow ```uni: jk4057 ```
+Christopher Thomas ```uni: cpt2132 ```
+Billy Armfield ```uni: wsa2113```
+Luigi Pastore ```uni: lap2204```
 
 
 ## Summary
@@ -28,8 +28,21 @@ Often times when starting a new semester because of the sprawling nature of Colu
  * A user wants to be able to use in the colloquial name of a Columbia building - or the SSOL building code - when finding directions, to avoid having to use the full address of a location on campus. 
  
  * A user wants to start typing a location, and the application shows recommendations as they type, so they can save time.
-   
+
+ * As a new student, I want an easy way to keep track of my classes. My
+   conditions of satisfaction are that I can create a table of my classes and
+   the buildings they are in. 
+
+ * As a new student, I want to tap on a building on the map to learn more
+   about it. My conditions of satisfaction are that a link will redirect me to
+   wikicu.com.
+
 ## Stretch Goal
 
 * Plug into SSOL to automate the process of transfer course data to our app.
  
+* Authentification through Facebook for faster login.
+
+* As a new student, I want to find new friends who are taking the same classes.
+  My conditions of satisfaction are that there is a "share to Facebook" button
+  which will let other budding young Lions find me. 
