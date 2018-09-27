@@ -6,9 +6,9 @@ We will use the Java programming language on the MacOS operating system to devel
 
 ## Team Members
 
-Jason Konikow ```uni: jk4057 ```
-Christopher Thomas ```uni: cpt2132 ```
-Billy Armfield ```uni: wsa2113```
+Jason Konikow ```uni: jk4057 ```  
+Christopher Thomas ```uni: cpt2132 ```  
+Billy Armfield ```uni: wsa2113```  
 Luigi Pastore ```uni: lap2204```
 
 
