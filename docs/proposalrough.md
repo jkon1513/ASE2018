@@ -19,19 +19,17 @@ Lion GPS will be an android application that provides directions for students to
 Often times when starting a new semester because of the sprawling nature of Columbia's campus it is common to have class in a building you are unfamilair with. The aim of LionGPS is to eliminate the hassle of finding new buildings by providing easy to follow walking instructions from any point on campus, to any building one wants to find. 
 
 ## User Stories
- * A user wants to be able to be given reliable directions, so that they can find their clases, seminars and other events without hassle. 
+ * A user wants to be able to be given reliable directions, so that they can find the quickest route to any stucture on campus.
  
  * A user wants to be able to quickly and easily see a history of where they have been so they can easilly retreive those directions again.
  
  * A user wants to see an overlay of where their classes reside atop a map of the Columbia campus, so they can have a handy visual reference of where all their classes and seminars reside. 
  
- * A user wants to be able to type in the location of their courses and have the program recognize and remember that location, so they don't have to type full addresses every time they need directions.
+ * A user wants to be able to use in the colloquial name of a Columbia building - or the SSOL building code - when finding directions, to avoid having to use the full address of a location on campus. 
  
  * A user wants to start typing a location, and the application shows recommendations as they type, so they can save time.
- 
- * A user wants to type a building name and be shown a list of administrative offices, department, theater, auditorium, among others, in the building, as well as its room number, so they do not have to navigate to the website of a particular office in order to retrieve such information.
- 
- * A user wants to type the name of an administrative office, department, theater, auditorium, lab, among others, and get directions to it, so they do not have to look up that information themselves.
- 
- 
+   
+## Stretch Goal
+
+* Plug into SSOL to automate the process of transfer course data to our app.
  
