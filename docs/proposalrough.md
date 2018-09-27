@@ -37,6 +37,14 @@ Often times when starting a new semester because of the sprawling nature of Colu
    about it. My conditions of satisfaction are that a link will redirect me to
    wikicu.com.
 
+ * As a new or existing student, I want to know where all the libraries are. My
+   conditions of satisfaction are that I can tap a button and a map will appear
+   on the screen with pins dropped on each library. 
+
+ * As a new or existing student, I want to know where all the coffee shops on
+   campus are. My conditions of satisfaction are that I can tap a button and a
+   map will appear on the screen with pins dropped on each coffee shop. 
+
 ## Stretch Goal
 
 * Plug into SSOL to automate the process of transfer course data to our app.
