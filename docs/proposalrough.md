@@ -27,11 +27,11 @@ Often times when starting a new semester because of the sprawling nature of Colu
   search for the same building multiple times. My conditions of satisfaction
   are that there is a section of the app showing my 10 most recent searches.
 
- * A user wants to see an overlay of where their classes reside atop a map of the Columbia campus, so they can have a handy visual reference of where all their classes and seminars reside. 
+ * As a user, I want to see an overlay of where their classes reside atop a map of the Columbia campus, so I can have a handy visual reference of where all my classes and seminars reside. 
  
- * A user wants to be able to use in the colloquial name of a Columbia building - or the SSOL building code - when finding directions, to avoid having to use the full address of a location on campus. 
+ * As a user I want to be able to use  the colloquial name of a Columbia building - or the SSOL building code - when finding directions, to avoid having to type the full address of a location on campus. 
  
- * A user wants to start typing a location, and the application shows recommendations as they type, so they can save time.
+ * As a user, I want to start typing a location, and have the application show recommendations as I type, so I can save time.
 
 * As a new student, I want an easy way to keep track of my classes. My
    conditions of satisfaction are that I can create a table of my classes and
