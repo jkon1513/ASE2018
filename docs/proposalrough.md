@@ -19,10 +19,14 @@ Lion GPS will be an android application that provides directions for students to
 Often times when starting a new semester because of the sprawling nature of Columbia's campus it is common to have class in a building you are unfamilair with. The aim of LionGPS is to eliminate the hassle of finding new buildings by providing easy to follow walking instructions from any point on campus, to any building one wants to find. 
 
 ## User Stories
- * A user wants to be able to be given reliable directions, so that they can find the quickest route to any stucture on campus.
- 
- * A user wants to be able to quickly and easily see a history of where they have been so they can easilly retreive those directions again.
- 
+* As a new student, I want to know where all my class buildings are. My
+  conditions of satisfaction are that LionGPS will give me a route from my
+  current location to the building of my choice.
+
+* As a user, I want to see a "recent search" section so I will not have to
+  search for the same building multiple times. My conditions of satisfaction
+  are that there is a section of the app showing my 10 most recent searches.
+
  * A user wants to see an overlay of where their classes reside atop a map of the Columbia campus, so they can have a handy visual reference of where all their classes and seminars reside. 
  
  * A user wants to be able to use in the colloquial name of a Columbia building - or the SSOL building code - when finding directions, to avoid having to use the full address of a location on campus. 
