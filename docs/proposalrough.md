@@ -29,18 +29,11 @@ Often times when starting a new semester because of the sprawling nature of Colu
  
  * A user wants to start typing a location, and the application shows recommendations as they type, so they can save time.
 
- * As a new student, I want an easy way to keep track of my classes. My
+* As a new student, I want an easy way to keep track of my classes. My
    conditions of satisfaction are that I can create a table of my classes and
    the buildings they are in, and will be able to retrieve this list after
    closing and re-opening the app 
 
- * As a new or existing student, I want to know where all the libraries are. My
-   conditions of satisfaction are that I can tap a "Libraries" button on the home screen and a map will appear
-   on the screen with pins dropped on each building with a library. 
-
- * As a new or existing student, I want to know where all the coffee shops on
-   campus are. My conditions of satisfaction are that I can tap a "Coffee
-   Shops" button and a map will appear on the screen with pins dropped on each building with a coffee shop.
 
 ## Stretch Goal
 
@@ -57,4 +50,13 @@ Often times when starting a new semester because of the sprawling nature of Colu
 * As a new student, I want to tap on a building on the map to learn more
   about it. My conditions of satisfaction are that a link will redirect me to
   wikicu.com.
+
+ * As a new or existing student, I want to know where all the libraries are. My
+   conditions of satisfaction are that I can tap a "Libraries" button on the home screen and a map will appear
+   on the screen with pins dropped on each building with a library. 
+
+ * As a new or existing student, I want to know where all the coffee shops on
+   campus are. My conditions of satisfaction are that I can tap a "Coffee
+   Shops" button and a map will appear on the screen with pins dropped on each building with a coffee shop.
+
 
