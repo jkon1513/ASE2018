@@ -19,47 +19,47 @@ Lion GPS will be an android application that provides directions for students to
 Often times when starting a new semester because of the sprawling nature of Columbia's campus it is common to have class in a building you are unfamiliar with. The aim of LionGPS is to eliminate the hassle of finding new buildings by providing easy to follow walking instructions from any point on campus, to any building one wants to find. 
 
 ## User Stories
-* As a new student, I want to know where all my class buildings are. My
+* As a student, I want to know where all my class buildings are. My
   conditions of satisfaction are that LionGPS will give me a route from my
   current location to the building of my choice.
 
-* As a user, I want to see a "recent search" section so I will not have to
+* As a student, I want to see a "recent search" section so I will not have to
   search for the same building multiple times. My conditions of satisfaction
   are that there is a section of the app showing my 10 most recent searches.
 
-* As a user, I want to see an overlay of where their classes reside atop a map of the Columbia campus, so I can have a handy visual reference of where all my classes and seminars reside. 
+* As a student, I want to see an overlay of where their classes reside atop a map of the Columbia campus, so I can have a handy visual reference of where all my classes and seminars reside. 
  
-* As a user I want to be able to use  the colloquial name of a Columbia building - or the SSOL building code - when finding directions, to avoid having to type the full address of a location on campus. 
+* As a student, I want to be able to use  the colloquial name of a Columbia building - or the SSOL building code - when finding directions, to avoid having to type the full address of a location on campus. 
  
-* As a user, I want to start typing a location, and have the application show recommendations as I type, so I can save time.
+* As a student, I want to start typing a location, and have the application show recommendations as I type, so I can save time.
 
-* As a new student, I want an easy way to keep track of my classes. My
+* As a student, I want an easy way to keep track of my classes. My
    conditions of satisfaction are that I can create a table of my classes and
    the buildings they are in, and will be able to retrieve this list after
    closing and re-opening the app 
 
 
-## Stretch Goal
+## Stretch Stories
 
-* Plug into SSOL to automate the process of transfer course data to our app.
+* As a student, i want to be able to plug into SSOL to automate the process of transfering my class locations into the app.
  
-* As a human being of sound mind and body, I want to log into my apps with as
+* As a student, I want to log into my apps with as
   little friction as possible. My conditions of satisfaction are that I can log
   into LionGPS using authentificaiton with facebook.
 
-* As a new student, I want to find new friends who are taking the same classes.
+* As a student, I want to find new friends who are taking the same classes.
   My conditions of satisfaction are that there is a "share to Facebook" button
   which will let other budding young Lions find me. 
 
-* As a new student, I want to tap on a building on the map to learn more
+* As a student, I want to tap on a building on the map to learn more
   about it. My conditions of satisfaction are that a link will redirect me to
   wikicu.com.
 
-* As a new or existing student, I want to know where all the libraries are. My
+* As a student, I want to know where all the libraries are. My
    conditions of satisfaction are that I can tap a "Libraries" button on the home screen and a map will appear
    on the screen with pins dropped on each building with a library. 
 
-* As a new or existing student, I want to know where all the coffee shops on
+* As a student, I want to know where all the coffee shops on
    campus are. My conditions of satisfaction are that I can tap a "Coffee
    Shops" button and a map will appear on the screen with pins dropped on each building with a coffee shop.
 
