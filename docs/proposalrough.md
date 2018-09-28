@@ -41,7 +41,7 @@ Often times when starting a new semester because of the sprawling nature of Colu
 
 ## Stretch Stories
 
-* As a student, i want to be able to plug into SSOL to automate the process of transfering my class locations into the app.
+* As a student, I want to be able to plug into SSOL to automate the process of transfering my class locations into the app.
  
 * As a student, I want to log into my apps with as
   little friction as possible. My conditions of satisfaction are that I can log
