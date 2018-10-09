@@ -57,6 +57,8 @@ Often times when starting a new semester because of the sprawling nature of Colu
 
 ## Stretch Stories
 
+*Note: Testing plans not included for stretch stories, but if a stretch story becomes realistically acheivable one will be added for it.*
+
 * As a student, I want to be able to plug into SSOL to automate the process of transfering my class locations into the app.
  
 * As a student, I want to log into my apps with as
