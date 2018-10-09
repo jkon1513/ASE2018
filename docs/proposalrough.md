@@ -23,16 +23,16 @@ Often times when starting a new semester because of the sprawling nature of Colu
   conditions of satisfaction are that LionGPS will give me a route from my
   current location to the building of my choice.
 
-* `Recent Search` As a student, I want to see a "recent search" section so I will not have to
+* `Recent Search:` As a student, I want to see a "recent search" section so I will not have to
   search for the same building multiple times. My conditions of satisfaction
   are that there is a section of the app showing my 10 most recent searches.
 
 * `Overlay:` As a student, I want to see an overlay of where their classes reside atop a map of the Columbia campus, so I can have a handy visual reference of where all my classes and seminars reside. 
   
  
-* As a student, I want to be able to use  the colloquial name of a Columbia building - or the SSOL building code - when finding directions, to avoid having to type the full address of a location on campus. 
+* `Building Nicknames:`As a student, I want to be able to use  the colloquial name of a Columbia building - or the SSOL building code - when finding directions, to avoid having to type the full address of a location on campus. 
  
-* As a student, I want to start typing a location, and have the application show recommendations as I type, so I can save time.
+* `Auto-completion:` As a student, I want to start typing a location, and have the application show recommendations as I type, so I can save time.
 
 * As a student, I want an easy way to keep track of my classes. My
    conditions of satisfaction are that I can create a table of my classes and
@@ -71,6 +71,10 @@ Often times when starting a new semester because of the sprawling nature of Colu
 * `Recent Search:` To see the recent search section, the user should just open the app. Expected results for success are that the student sees recent searches upon opening the app. Expected results for failure are if a user does not see recent searches, the searches are for the wrong buildings, or if the app crashes.
 
 * `Overlay:` To see an overlay of a students classes, they will open the app and see a "Class Map" link on the home screen of the app. They will then tap the "Class Map" link which should load a map with pins dropped on all the users buildings. Expected results for success are that a map with the correct buildings pinned appears on the screen. Expected results for failure are when a user taps the "Class Map" link and nothing happens, a map loads of the Columbia campus, but no pins are dropped, or a class map loads and the pins are in the wrong location, or if the app crashes.
+
+* `Building Nicknames:` The user should be able to input a colloquial name of a building on campus e.g. `Hamilton` or a building code like `HAM` into our scheduler, and have the app recognize the location associated with that name. Expected results for failure are if a user inputs a building code and the app returns an error screen indicating that the code or nick name is not a valid Columbia Location.
+
+`Auto-completion:` Expected conditions for failure are if a user inputs the name of a building and not suggestions pop up, or if the wrong recommendations appear.
 
 
 
