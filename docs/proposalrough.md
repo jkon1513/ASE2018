@@ -74,7 +74,7 @@ Often times when starting a new semester because of the sprawling nature of Colu
 
 * `Building Nicknames:` The user should be able to input a colloquial name of a building on campus e.g. `Hamilton` or a building code like `HAM` into our scheduler, and have the app recognize the location associated with that name. Expected results for failure are if a user inputs a building code and the app returns an error screen indicating that the code or nick name is not a valid Columbia Location.
 
-`Auto-completion:` Expected conditions for failure are if a user inputs the name of a building and not suggestions pop up, or if the wrong recommendations appear.
+* `Auto-completion:` Expected conditions for failure are if a user inputs the name of a building and not suggestions pop up, or if the wrong recommendations appear.
 
 
 
