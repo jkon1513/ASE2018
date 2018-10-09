@@ -34,11 +34,23 @@ Often times when starting a new semester because of the sprawling nature of Colu
  
 * `Auto-completion:` As a student, I want to start typing a location, and have the application show recommendations as I type, so I can save time.
 
-* As a student, I want an easy way to keep track of my classes. My
+* ` Class Schedule` As a student, I want an easy way to keep track of my classes. My
    conditions of satisfaction are that I can create a table of my classes and
    the buildings they are in, and will be able to retrieve this list after
    closing and re-opening the app 
 
+   
+## Testing Plan
+
+* `Routing:` A user is routed to the building of thier choice when selecting a destination from either the search function, thier recent history or their student schedule. The expected input is a building choice represented internally as a String / GPS coordinate. Expected results are a path that spans from the users starting point to the building they choose. This can be tested by comparing the final destination of the path provided with the GPS coordinate of the inputted building. Further testing will be accomplished with manual testing (from and to) many different locations on Columbia.  
+
+* `Recent Search:` To see the recent search section, the user will open a pane from the side of the map overlay that displays there recent destinations. The expected input would be a user profile for which the history must be loaded, and the expected output is the list of previously searched destinations. This can be tested by generating user profiles and having a random list of buildings those profiles will request directions to. We then will compare the list of searched destinations with the populated history for each given profile. 
+
+* `Overlay:` To see an overlay of a students classes, they will open the app and see a "Class Map" link on the home screen of the app. They will then tap the "Class Map" link which should load a map with pins dropped on all the users buildings. Expected results for success are that a map with the correct buildings pinned appears on the screen. Expected results for failure are when a user taps the "Class Map" link and nothing happens, a map loads of the Columbia campus, but no pins are dropped, or a class map loads and the pins are in the wrong location, or if the app crashes.
+
+* `Building Nicknames:` The user should be able to input a colloquial name of a building on campus e.g. `Hamilton` or a building code like `HAM` into our scheduler, and have the app recognize the location associated with that name. Expected results for failure are if a user inputs a building code and the app returns an error screen indicating that the code or nick name is not a valid Columbia Location.
+
+* `Auto-completion:` Expected conditions for failure are if a user inputs the name of a building and not suggestions pop up, or if the wrong recommendations appear.
 
 ## Stretch Stories
 
@@ -63,18 +75,5 @@ Often times when starting a new semester because of the sprawling nature of Colu
 * As a student, I want to know where all the coffee shops on
    campus are. My conditions of satisfaction are that I can tap a "Coffee
    Shops" button and a map will appear on the screen with pins dropped on each building with a coffee shop.
-   
-## Testing Plan
-
-* `Routing:` To navigate to a class building, a user will need to select the building. This can be accomplished by typing into a search bar, or tapping a link for the building from recent searches, or tapping a link from the users list of classes. Expected results for success are when a user taps the link a pin is dropped on Google Maps so the user can see its location and ask for directions from current location. Expected results for failure will be when the user clicks the building link, but the maps page does not open, or it opens and a pin is dropped in the wrong location, there is no option to get directions, or if the app crashes.
-
-* `Recent Search:` To see the recent search section, the user should just open the app. Expected results for success are that the student sees recent searches upon opening the app. Expected results for failure are if a user does not see recent searches, the searches are for the wrong buildings, or if the app crashes.
-
-* `Overlay:` To see an overlay of a students classes, they will open the app and see a "Class Map" link on the home screen of the app. They will then tap the "Class Map" link which should load a map with pins dropped on all the users buildings. Expected results for success are that a map with the correct buildings pinned appears on the screen. Expected results for failure are when a user taps the "Class Map" link and nothing happens, a map loads of the Columbia campus, but no pins are dropped, or a class map loads and the pins are in the wrong location, or if the app crashes.
-
-* `Building Nicknames:` The user should be able to input a colloquial name of a building on campus e.g. `Hamilton` or a building code like `HAM` into our scheduler, and have the app recognize the location associated with that name. Expected results for failure are if a user inputs a building code and the app returns an error screen indicating that the code or nick name is not a valid Columbia Location.
-
-* `Auto-completion:` Expected conditions for failure are if a user inputs the name of a building and not suggestions pop up, or if the wrong recommendations appear.
-
 
 
