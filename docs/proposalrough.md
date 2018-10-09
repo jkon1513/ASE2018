@@ -34,8 +34,8 @@ Often times when starting a new semester because of the sprawling nature of Colu
     
 
 * As a student, I want to see an overlay of where their classes reside atop a map of the Columbia campus, so I can have a handy visual reference of where all my classes and seminars reside. 
-
-Testing plan: To see an overlay of a students classes, they will open the app and see a "Class Map" link on the home screen of the app. They will then tap the "Class Map" link which should load a map with pins dropped on all the users buildings. Expected results for success are that a map with the correct buildings pinned appears on the screen. Expected results for failure are when a user taps the "Class Map" link and nothing happens, a map loads of the Columbia campus, but no pins are dropped, or a class map loads and the pins are in the wrong location, or if the app crashes.
+  
+  Testing plan: To see an overlay of a students classes, they will open the app and see a "Class Map" link on the home screen of the app. They will then tap the "Class Map" link which should load a map with pins dropped on all the users buildings. Expected results for success are that a map with the correct buildings pinned appears on the screen. Expected results for failure are when a user taps the "Class Map" link and nothing happens, a map loads of the Columbia campus, but no pins are dropped, or a class map loads and the pins are in the wrong location, or if the app crashes.
 
   
  
