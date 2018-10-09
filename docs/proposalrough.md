@@ -23,11 +23,21 @@ Often times when starting a new semester because of the sprawling nature of Colu
   conditions of satisfaction are that LionGPS will give me a route from my
   current location to the building of my choice.
 
+  Testing plan: To navigate to a class building, a user will need to select the building. This can be accomplished by typing into a search bar, or tapping a link for the building from recent searches, or tapping a link from the users list of classes. Expected results for success are when a user taps the link a pin is dropped on Google Maps so the user can see its location and ask for directions from current location. Expected results for failure will be when the user clicks the building link, but the maps page does not open, or it opens and a pin is dropped in the wrong location, there is no option to get directions, or if the app crashes.
+
+
 * As a student, I want to see a "recent search" section so I will not have to
   search for the same building multiple times. My conditions of satisfaction
   are that there is a section of the app showing my 10 most recent searches.
 
+  Testing plan: To see the recent search section, the user should just open the app. Expected results for success are that the student sees recent searches upon opening the app. Expected results for failure are if a user does not see recent searches, the searches are for the wrong buildings, or if the app crashes.
+    
+
 * As a student, I want to see an overlay of where their classes reside atop a map of the Columbia campus, so I can have a handy visual reference of where all my classes and seminars reside. 
+
+Testing plan: To see an overlay of a students classes, they will open the app and see a "Class Map" link on the home screen of the app. They will then tap the "Class Map" link which should load a map with pins dropped on all the users buildings. Expected results for success are that a map with the correct buildings pinned appears on the screen. Expected results for failure are when a user taps the "Class Map" link and nothing happens, a map loads of the Columbia campus, but no pins are dropped, or a class map loads and the pins are in the wrong location, or if the app crashes.
+
+  
  
 * As a student, I want to be able to use  the colloquial name of a Columbia building - or the SSOL building code - when finding directions, to avoid having to type the full address of a location on campus. 
  
