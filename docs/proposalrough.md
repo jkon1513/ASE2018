@@ -39,7 +39,7 @@ Often times when starting a new semester because of the sprawling nature of Colu
 * ` Class Schedule` As a student, I want an easy way to keep track of my classes. My
    conditions of satisfaction are that I can create a table of my classes and
    the buildings they are in, and will be able to retrieve this list after
-   closing and re-opening the app 
+   closing and re-opening the app. 
 
    
 ## Testing Plan
