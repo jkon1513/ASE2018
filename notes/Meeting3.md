@@ -4,6 +4,7 @@
 
 * Set up android studio directory structure and link to repository
 * Discuss first app assignment from slack
+* Define MVP for sprint 1
 * Discuss feature seperation (i.e dividing work)
 * Create plan and timeline for moving forward
 * Share resources for learning
