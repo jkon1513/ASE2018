@@ -1,0 +1,154 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:2:1-21:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/38ce5279fdc8518688d95319fa921b3a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/jason/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/d4c48853a24d4108fe4f723c1198dbe9/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/e4fd4fb0c8d0dc0cd7424ac0f4e03330/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/633f1217d50de2640ebe30f7a360dc4a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/f8cba90fd1b3bef18e57192422dd05ae/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/790ebf072de92db8ec5d1ec5c1664371/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/6a3a42dd1dcee19b26299a6e03bc81f8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/3a857710c043078aed4b02dd413d47f5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/68c7674fe3c9bb7a3aa74685899b4bfe/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/3d95e4f55b5ed32a2048f8e811140069/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/5505ad4db3ac450a8bee7e0870e950fa/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/8d2fdf442d76087062c494fc7d34be43/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/749aefe6125cc30a331cefe333329557/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/207274f05c3a073a44ec74eaac5a195e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/cb25c5ed73776ba86c397d85fe2074d3/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/53c0e98a8f3c872f747f9d880b00da89/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/2c421147bf8cf8dba82f13ce7efd2e00/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/8268ffe4a1d4ecc21f23dd2681ba7121/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/jason/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/ba54c908baf798defc193cf95cc59cbb/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/cf26cf227fb34cfbf525bf8c9c458fbd/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/7cd4b5d15c590e4ab821286c8f9056ca/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/888b2562a8f8d9fb22c2b4d63f5c8cfa/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/jason/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/cccba6a1e9c982e806f04fa01e7af5cf/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/jason/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/bec733868df9952722408cff91939bb4/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/jason/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/9ec2ec7f5486df7729fa3545d93a372d/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /Users/jason/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/c0e959b1d290dc99fa3eb87ce6e5ec89/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/89b42e440297e703ef47b46eee0bb5bf/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:2:1-21:12
+	package
+		ADDED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:3:5-26
+		INJECTED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml
+		ADDED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:2:1-21:12
+		INJECTED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml
+		ADDED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:2:1-21:12
+		INJECTED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:5:5-19:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/jason/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/d4c48853a24d4108fe4f723c1198dbe9/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/jason/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/d4c48853a24d4108fe4f723c1198dbe9/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-compat:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/53c0e98a8f3c872f747f9d880b00da89/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/53c0e98a8f3c872f747f9d880b00da89/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/2c421147bf8cf8dba82f13ce7efd2e00/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/2c421147bf8cf8dba82f13ce7efd2e00/AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/53c0e98a8f3c872f747f9d880b00da89/AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:11:9-40
+activity#ase.liongps.MainActivity
+ADDED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:12:9-18:20
+	android:name
+		ADDED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:12:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:13:13-17:29
+action#android.intent.action.MAIN
+ADDED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:14:17-69
+	android:name
+		ADDED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:14:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:16:17-77
+	android:name
+		ADDED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml:16:27-74
+uses-sdk
+INJECTED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml
+INJECTED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/38ce5279fdc8518688d95319fa921b3a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/38ce5279fdc8518688d95319fa921b3a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/jason/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/d4c48853a24d4108fe4f723c1198dbe9/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/jason/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/d4c48853a24d4108fe4f723c1198dbe9/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/e4fd4fb0c8d0dc0cd7424ac0f4e03330/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/e4fd4fb0c8d0dc0cd7424ac0f4e03330/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/633f1217d50de2640ebe30f7a360dc4a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/633f1217d50de2640ebe30f7a360dc4a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/f8cba90fd1b3bef18e57192422dd05ae/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/f8cba90fd1b3bef18e57192422dd05ae/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/790ebf072de92db8ec5d1ec5c1664371/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/790ebf072de92db8ec5d1ec5c1664371/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/6a3a42dd1dcee19b26299a6e03bc81f8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/6a3a42dd1dcee19b26299a6e03bc81f8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/3a857710c043078aed4b02dd413d47f5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/3a857710c043078aed4b02dd413d47f5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/68c7674fe3c9bb7a3aa74685899b4bfe/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/68c7674fe3c9bb7a3aa74685899b4bfe/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/3d95e4f55b5ed32a2048f8e811140069/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/3d95e4f55b5ed32a2048f8e811140069/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/5505ad4db3ac450a8bee7e0870e950fa/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/5505ad4db3ac450a8bee7e0870e950fa/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/8d2fdf442d76087062c494fc7d34be43/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/8d2fdf442d76087062c494fc7d34be43/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/749aefe6125cc30a331cefe333329557/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/749aefe6125cc30a331cefe333329557/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/207274f05c3a073a44ec74eaac5a195e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/207274f05c3a073a44ec74eaac5a195e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/cb25c5ed73776ba86c397d85fe2074d3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/cb25c5ed73776ba86c397d85fe2074d3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/53c0e98a8f3c872f747f9d880b00da89/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/53c0e98a8f3c872f747f9d880b00da89/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/2c421147bf8cf8dba82f13ce7efd2e00/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/2c421147bf8cf8dba82f13ce7efd2e00/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/8268ffe4a1d4ecc21f23dd2681ba7121/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/8268ffe4a1d4ecc21f23dd2681ba7121/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/jason/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/ba54c908baf798defc193cf95cc59cbb/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/jason/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/ba54c908baf798defc193cf95cc59cbb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/cf26cf227fb34cfbf525bf8c9c458fbd/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/cf26cf227fb34cfbf525bf8c9c458fbd/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/7cd4b5d15c590e4ab821286c8f9056ca/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/7cd4b5d15c590e4ab821286c8f9056ca/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/888b2562a8f8d9fb22c2b4d63f5c8cfa/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/888b2562a8f8d9fb22c2b4d63f5c8cfa/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/jason/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/cccba6a1e9c982e806f04fa01e7af5cf/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/jason/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/cccba6a1e9c982e806f04fa01e7af5cf/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/jason/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/bec733868df9952722408cff91939bb4/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/jason/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/bec733868df9952722408cff91939bb4/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/jason/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/9ec2ec7f5486df7729fa3545d93a372d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/jason/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/9ec2ec7f5486df7729fa3545d93a372d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/jason/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/c0e959b1d290dc99fa3eb87ce6e5ec89/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/jason/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/c0e959b1d290dc99fa3eb87ce6e5ec89/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/89b42e440297e703ef47b46eee0bb5bf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/jason/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/89b42e440297e703ef47b46eee0bb5bf/AndroidManifest.xml:20:5-44
+INJECTED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml
+INJECTED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml
+		ADDED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml
+		ADDED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/jason/Desktop/ASE/ASE2018/Lion_GPS/app/src/main/AndroidManifest.xml
