@@ -9,7 +9,7 @@ public class MainActivity extends AppCompatActivity {
 
     /* The desgin decision currently will be to get all the required permissions for GPS and
         location services, and check for the required versions of Google Play Services
-        upon launch of the app
+        upon launch of the app, rather than launch of the map
      */
 
     @Override
