@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
     public void grantAccessToMap() {
         Button launch = (Button) findViewById(R.id.launch);
         launch.setClickable(true);
+        Log.d(TAG, "grantAccessToMap: launch button now clickable");
     }
 
 
@@ -112,11 +113,11 @@ public class MainActivity extends AppCompatActivity {
         }
         else if(GoogleApiAvailability.getInstance().isUserResolvableError(available)){
             //an error occured but we can resolve it
-            Log.d(TAG, "hasGoogleServices: an error occured but we can fix it");
+            Log.d(TAG, "hasGoogleServices: services not found but can be retrieved");
             Dialog dialog = GoogleApiAvailability.getInstance().getErrorDialog(MainActivity.this, available, ERROR_DIALOG_REQUEST);
             dialog.show();
         }else{
-            Toast.makeText(this, "You can't make map requests", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Your device is not compatible with LionGPS", Toast.LENGTH_SHORT).show();
         }
         return false;
     }
@@ -124,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
     // if GPS is disabled on users device, this walks them through enabling it.
     private void buildAlertMessageNoGps() {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("This application requires GPS to work properly, do you want to enable it?")
+        builder.setMessage("This application requires GPS to run, do you want to enable it?")
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(@SuppressWarnings("unused") final DialogInterface dialog, @SuppressWarnings("unused") final int id) {
