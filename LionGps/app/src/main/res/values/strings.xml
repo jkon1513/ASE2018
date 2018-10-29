@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">LionGps</string>
     <string name="Google_API_Key">AIzaSyC7REgJiPAQ6apYBUF_inLSFJJ_poMi7aE</string>
+    <string name="login_placeholder">
+        Authentication / login will go on this page for sprint 2 when user profiles are implemented.
+        For the time being, you may press the button below to continue to the app
+    </string>
 </resources>

@@ -3,16 +3,15 @@
     package="ase.liongps">
 
     <!-- for older versions -->
-    <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <!-- location data permissions -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <!-- Open GL -->
     <uses-feature
         android:glEsVersion="0x00020000"
-        android:required="true"/>
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -21,6 +20,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- login page set to entry point -->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,7 +33,7 @@
         <!-- Google Maps -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/Google_API_Key"/>
+            android:value="@string/Google_API_Key" />
 
         <!-- Google Play Services -->
         <meta-data
@@ -43,6 +44,8 @@
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
+
+        <activity android:name=".mapOverlay"></activity>
     </application>
 
 </manifest>
