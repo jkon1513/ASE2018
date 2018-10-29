@@ -1,7 +1,9 @@
-package ase.liongps;
+package ase.liongps.UI;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import ase.liongps.R;
 
 public class mapOverlay extends AppCompatActivity {
 
