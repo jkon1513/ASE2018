@@ -1,7 +1,8 @@
 language: android
+sudo:false
 android:
   components:
-    #Use the latest revision of Android SDk tools
+    #Use the latest revision of Android SDK tools
     - tools
     - platform-tools
     #This is intentional. NOT redundant
@@ -26,6 +27,13 @@ android:
 #Guides Travis towards existing gradlew
 before_install:
   - cd ./LionGps
+
+#Emulator Management: Create, Start and Wait
+#before_script:
+  - echo no | android create avd --force -n test -t android-28 --abi armeabi-v7a
+  - emulator -avd test -no-audio -no-window &
+  - android-wait-for-emulator
+  - adb shell input keyevent 82 &
 
 #based on Travis-CI tutorial on https://docs.travis-ci.com/user/languages/android/
 #10/28/18
