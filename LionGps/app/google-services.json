@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "781548029917",
+    "firebase_url": "https://firestore-liongps-test.firebaseio.com",
+    "project_id": "firestore-liongps-test",
+    "storage_bucket": "firestore-liongps-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781548029917:android:062354553c94a32f",
+        "android_client_info": {
+          "package_name": "ase.liongps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781548029917-9t74a2lhocp0fr81ptkvqml53dfl0qmr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ase.liongps",
+            "certificate_hash": "b74272d0e759105746e7d39ebd38539642723d12"
+          }
+        },
+        {
+          "client_id": "781548029917-k1kh6n6gj102jv6ovhfj6h7qe72kmi05.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1y4Yy2xx6lX8QDj-y4IMK1TBa9OpWYxo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781548029917-k1kh6n6gj102jv6ovhfj6h7qe72kmi05.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
