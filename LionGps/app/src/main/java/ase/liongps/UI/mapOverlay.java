@@ -10,6 +10,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -32,10 +33,21 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
         populateBuildings();
     }
 
-    // markers go in this section
     @Override
-    public void onMapReady(GoogleMap googleMap) {
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(0,0)));
+    public void onMapReady(GoogleMap map) {
+        //place all the markers
+        ArrayList<String> bldNames = new ArrayList<>(buildings.keySet());
+        for(String name : bldNames){
+            map.addMarker(new MarkerOptions()
+            .position(buildings.get(name))
+            .title(name));
+        }
+
+        //center camera
+        //TODO
+
+        //limit zoom
+        //TODO
     }
 
     /*
