@@ -1,5 +1,4 @@
 language: android
-sudo:false
 android:
   components:
     #Use the latest revision of Android SDK tools
