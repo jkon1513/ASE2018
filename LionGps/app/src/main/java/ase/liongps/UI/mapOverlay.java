@@ -1,5 +1,6 @@
 package ase.liongps.UI;
 
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,9 +11,14 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 import ase.liongps.R;
@@ -21,6 +27,9 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
 
     private HashMap<String, LatLng> buildings = new HashMap<>();
     private final String TAG = mapOverlay.class.getName();
+
+    /* Firestore connection established here */
+    public static FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +80,36 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
             Log.d(TAG,"populateBuildings >> buidling lng: " + lng);
             Log.d(TAG,"populateBuildings >> result of map.get: " + buildings.get(name));
         }
+
+    }
+
+    /*
+    Takes a string input and stores it in the cloud as a Map<String, String> entry.
+    This uses the .add() method, which auto-generates a key for the document we are
+    adding to our "Search History" Collection. This is opposed to .set(), which re-
+    quires we specify a key
+     */
+
+    public void addSearchString(String input) {
+
+        Map<String, String> searchValue = new HashMap<>();
+        searchValue.put("entry", input);
+
+
+        db.collection("Search History")
+                .add(searchValue)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                        }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.w(TAG, "Error adding document", e);
+                        }
+                });
 
     }
 

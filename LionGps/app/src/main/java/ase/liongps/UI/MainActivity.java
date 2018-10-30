@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import ase.liongps.R;
 
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     private final static String TAG = "loginActivity"; //will replace to loginActivity.class.getName();
     private static boolean locationPermissionGranted = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
