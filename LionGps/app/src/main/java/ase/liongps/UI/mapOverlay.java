@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -44,15 +45,12 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
         }
 
         //center camera
-        //TODO
-
-        //limit zoom
-        //TODO
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(buildings.get("Lowe Library"), 18.0f));
     }
 
     /*
     reads from a text file that stores the buildings and their coordinates. each line
-    contains a building name, latitude, and longitude seperated by tabs. this method
+    contains a building name, latitude, and longitude separated by tabs. this method
     adds each entry to the buildings hashmap using names as keys and geo-location points
     as values. the code below is written verbosely to make this process clear.
      */
