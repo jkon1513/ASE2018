@@ -23,9 +23,9 @@ android:
     - sys-img-armeabi-v7a-android-28
     - sys-img-armeabi-v7a-android-15
 
-    #Guides Travis towards existing gradlew
-    before_install:
-      - cd ./LionGps
+#Guides Travis towards existing gradlew
+before_install:
+  - cd ./LionGps
 
 #based on Travis-CI tutorial on https://docs.travis-ci.com/user/languages/android/
 #10/28/18
