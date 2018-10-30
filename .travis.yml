@@ -14,23 +14,26 @@ android:
     - tools
 
     #The BuildTools version used by the project
-    - build-tools-$ANDROID_BUILD_TOOLS_VERSION
+    - build-tools-$28.0.3
 
     #Android SDK version used to compile project
-    - android-$ANDROID_API_LEVEL
+    #- android-$ANDROID_API_LEVEL
+    - android-28
     
-    - android-$EMULATOR_API_LEVEL
+    #- android-$EMULATOR_API_LEVEL
 
     #additional components
     - extra-google-google_play_services
     - extra-google-m2repository
     - extra-android-m2repository
-    - addon-google_apis-google-$ANDROID_API_LEVEL
-    - addon-google_apis-google-$EMULATOR_API_LEVEL
+    #- addon-google_apis-google-$ANDROID_API_LEVEL
+    - addon-google_apis-google-28
+    #- addon-google_apis-google-$EMULATOR_API_LEVEL
 
     #Emulator system images(s)
-    - sys-img-armeabi-v7a-android-$ANDROID_API_LEVEL
-    - sys-img-armeabi-v7a-android-$EMULATOR_API_LEVEL
+    #- sys-img-armeabi-v7a-android-$ANDROID_API_LEVEL
+    - sys-img-armeabi-v7a-android-28
+    #- sys-img-armeabi-v7a-android-$EMULATOR_API_LEVEL
 
 #Guides Travis towards existing gradlew
 before_install:
@@ -39,7 +42,7 @@ before_install:
 
 #Emulator Management: Create, Start and Wait
 #before_script:
-  - echo no | android create avd --force -n test -t android-$EMULATOR_API_LEVEL --abi armeabi-v7a
+  - echo no | android create avd --force -n test -t android-28 --abi armeabi-v7a
   - emulator -avd test -no-skin -no-audio -no-window &
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
