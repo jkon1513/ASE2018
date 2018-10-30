@@ -58,10 +58,8 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
         Scanner scan = new Scanner(getResources().openRawResource(R.raw.buildings));
 
         while (scan.hasNextLine()) {
-            String string = scan.nextLine();
-            String[] entry = string.split("\t");
+            String[] entry = scan.nextLine().split("\t");
             String name = entry[0];
-
             double lat = Double.parseDouble(entry[1]);
             double lng = Double.parseDouble(entry[2]);
 
