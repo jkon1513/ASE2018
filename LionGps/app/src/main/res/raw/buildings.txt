@@ -1,0 +1,8 @@
+Hamilton Hall	40.806757	-73.961656
+Butler Library	40.806598	-73.963231
+Mathematics Building	40.809150	-73.962675
+Mudd	40.809374	-73.959911
+Lewishon Hall	40.808356	-73.963264
+Lowe Library	40.808167	-73.961839
+Uris Hall	40.808970	-73.961356
+Science and Engineering Library	40.810026	-73.961993
