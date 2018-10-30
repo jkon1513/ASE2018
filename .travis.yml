@@ -26,6 +26,7 @@ android:
 #Guides Travis towards existing gradlew
 before_install:
   - cd ./LionGps
+  - yes | sdkmanager "platforms;android-28"
 
 #Emulator Management: Create, Start and Wait
 #before_script:
@@ -33,6 +34,7 @@ before_install:
   - emulator -avd test -no-audio -no-window &
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
+sudo: false
 
 #based on Travis-CI tutorial on https://docs.travis-ci.com/user/languages/android/
 #10/28/18
