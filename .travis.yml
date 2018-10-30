@@ -17,7 +17,7 @@ android:
     - extra-google-google_play_services
     - extra-google-m2repository
     - extra-android-m2repository
-    - addon-google_apis-google-26
+    - addon-google_apis-google-28
 
     #Emulator system images(s)
     - sys-img-armeabi-v7a-android-28
