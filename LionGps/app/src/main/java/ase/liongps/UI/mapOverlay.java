@@ -1,5 +1,6 @@
 package ase.liongps.UI;
 
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -90,7 +91,7 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
 
     public void addSearchString(String input) {
 
-        Map<String, String> searchValue = new HashMap<>();
+        HashMap<String, String> searchValue = new HashMap<>();
         searchValue.put("entry", input);
 
 
