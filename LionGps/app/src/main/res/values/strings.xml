@@ -5,4 +5,5 @@
         Authentication / login will go on this page for sprint 2 when user profiles are implemented.
         For the time being, you may press the button below to continue to the app
     </string>
+    <string name="search_prompt">Search for Buildings on Campus</string>
 </resources>
