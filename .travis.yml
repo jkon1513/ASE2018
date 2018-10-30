@@ -39,6 +39,9 @@ android:
     
 #Guides Travis towards existing gradlew
 before_install:
+  #from https://askubuntu.com/questions/885658/android-sdk-repositories-cfg-could-not-be-loaded
+  - touch /home/travis/.android/repositories.cfg
+  - ./Android/Sdk/tools/bin/sdkmanager --update ./Android/Sdk/tools/bin/sdkmanager --licenses
   - cd ./LionGps
   - yes | sdkmanager "platforms;android-28" #change hardcoded api level
 
