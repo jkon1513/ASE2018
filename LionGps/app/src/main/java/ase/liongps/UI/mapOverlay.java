@@ -4,6 +4,11 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -30,6 +35,8 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
     /* Firestore connection established here */
     public static FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+    public GoogleMap map;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,12 +47,17 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
         mapFragment.getMapAsync(this);
 
         populateBuildings();
+        initSearchBar();
     }
 
+    // Map Logic -------------------------------------------------------------------
+
     @Override
-    public void onMapReady(GoogleMap map) {
-        //place all the markers
+    public void onMapReady(GoogleMap theMap) {
+        map = theMap;
         ArrayList<String> bldNames = new ArrayList<>(buildings.keySet());
+
+        // place all markers
         for(String name : bldNames){
             map.addMarker(new MarkerOptions()
             .position(buildings.get(name))
@@ -53,7 +65,7 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
         }
 
         //center camera
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(buildings.get("Lowe Library"), 18.0f));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(buildings.get("lowe library"), 18.0f));
     }
 
     /*
@@ -83,6 +95,55 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
     }
 
     /*
+    Routing is not implemented yet. for now this will take a building name and center the camera
+    ontop of it
+     */
+    public void getRoute(String bldngName) {
+        Log.d(TAG, "getRoute: " + bldngName);
+        map.moveCamera(CameraUpdateFactory.newLatLng(buildings.get(bldngName)));
+    }
+
+    // Search logic --------------------------------------------------------------------
+
+    public void initSearchBar() {
+        Log.d(TAG, "initSearchBar: initializing");
+
+        EditText searchBar = (EditText) findViewById(R.id.searchText);
+
+        //overides the enter button of keyboard to search and not create new lines
+        searchBar.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH
+                        || actionId == EditorInfo.IME_ACTION_DONE
+                        || event.getAction() == event.ACTION_DOWN
+                        || event.getAction() == event.KEYCODE_ENTER){
+
+                    handleSearch();
+                }
+
+                return false;
+            }
+        });
+    }
+
+    //returns boolean for unit tests
+    public boolean handleSearch() {
+        EditText searchBar = (EditText) findViewById(R.id.searchText);
+        String query = searchBar.getText().toString().toLowerCase().trim();
+
+        if(!buildings.containsKey(query)){
+            Toast.makeText(this, "that building is not in our records just yet", Toast.LENGTH_LONG).show();
+            return false;
+        }
+
+        //addSearchString(query); will test with Chris
+        getRoute(query);
+        return true;
+    }
+
+
+        /*
     Takes a string input and stores it in the cloud as a Map<String, String> entry.
     This uses the .add() method, which auto-generates a key for the document we are
     adding to our "Search History" Collection. This is opposed to .set(), which re-

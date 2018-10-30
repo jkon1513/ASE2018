@@ -36,7 +36,10 @@
             android:layout_centerVertical="true"
             android:textSize="15sp"
             android:textColor="#000"
-            android:id="@+id/searchText"/>
+            android:hint="@string/search_prompt"
+            android:id="@+id/searchText"
+            android:imeOptions="actionSearch"
+            android:singleLine="true"/>
  
     </RelativeLayout>
 
