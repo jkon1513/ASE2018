@@ -41,9 +41,10 @@ android:
 before_install:
   #from https://askubuntu.com/questions/885658/android-sdk-repositories-cfg-could-not-be-loaded
   - touch /home/travis/.android/repositories.cfg
-  - /home/Library/Android/Sdk/tools/bin/sdkmanager --update /home/Library/Android/Sdk/tools/bin/sdkmanager --licenses
+  #- /home/Library/Android/Sdk/tools/bin/sdkmanager --update /home/Library/Android/Sdk/tools/bin/sdkmanager --licenses
   - cd ./LionGps
   - yes | sdkmanager "platforms;android-28" #change hardcoded api level
+  - yes | sdkmanager --update
 
 #Emulator Management: Create, Start and Wait
 #before_script:
