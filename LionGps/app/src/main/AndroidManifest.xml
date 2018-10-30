@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ase.liongps">
+    <uses-permission android:name="android.permission.Internet" />
 
     <application
         android:allowBackup="true"
@@ -16,6 +17,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <!--Not all libraries might be needed. Our tests will determine that-->
+        <uses-library   android:name="android.test.runner"
+                        android:required="false" />
+        <uses-library   android:name="android.test.base"
+                        android:required="false" />
+        <uses-library   android:name="android.test.mock"
+                        android:required="false" />
+
+
+    </application>
 </manifest>
