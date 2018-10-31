@@ -1,0 +1,62 @@
+Could not find google-services.json while looking in [src/nullnull/debug, src/debug/nullnull, src/nullnull, src/debug, src/nullnullDebug]
+registerResGeneratingTask is deprecated, use registerGeneratedResFolders(FileCollection)
+Could not find google-services.json while looking in [src/nullnull/release, src/release/nullnull, src/nullnull, src/release, src/nullnullRelease]
+registerResGeneratingTask is deprecated, use registerGeneratedResFolders(FileCollection)
+:app:checkDebugClasspath UP-TO-DATE
+:app:preBuild UP-TO-DATE
+:app:preDebugBuild UP-TO-DATE
+:app:compileDebugAidl NO-SOURCE
+:app:compileDebugRenderscript UP-TO-DATE
+:app:checkDebugManifest UP-TO-DATE
+:app:generateDebugBuildConfig UP-TO-DATE
+:app:prepareLintJar UP-TO-DATE
+:app:mainApkListPersistenceDebug UP-TO-DATE
+:app:generateDebugResValues UP-TO-DATE
+:app:generateDebugResources UP-TO-DATE
+:app:processDebugGoogleServices
+Parsing json file: /Users/jason/Desktop/ASE/ASE2018/LionGps/app/google-services.json
+:app:mergeDebugResources UP-TO-DATE
+:app:createDebugCompatibleScreenManifests UP-TO-DATE
+:app:processDebugManifest UP-TO-DATE
+:app:splitsDiscoveryTaskDebug UP-TO-DATE
+:app:processDebugResources UP-TO-DATE
+:app:generateDebugSources UP-TO-DATE
+:app:javaPreCompileDebug UP-TO-DATE
+:app:compileDebugJavaWithJavac UP-TO-DATE
+:app:generateDebugUnitTestSources UP-TO-DATE
+:app:preDebugUnitTestBuild UP-TO-DATE
+:app:javaPreCompileDebugUnitTest UP-TO-DATE
+:app:compileDebugUnitTestJavaWithJavac UP-TO-DATE
+:app:processDebugJavaRes NO-SOURCE
+:app:processDebugUnitTestJavaRes NO-SOURCE
+:app:testDebugUnitTest UP-TO-DATE
+:app:checkReleaseClasspath UP-TO-DATE
+:app:preReleaseBuild UP-TO-DATE
+:app:compileReleaseAidl NO-SOURCE
+:app:compileReleaseRenderscript UP-TO-DATE
+:app:checkReleaseManifest UP-TO-DATE
+:app:generateReleaseBuildConfig UP-TO-DATE
+:app:mainApkListPersistenceRelease UP-TO-DATE
+:app:generateReleaseResValues UP-TO-DATE
+:app:generateReleaseResources UP-TO-DATE
+:app:processReleaseGoogleServices
+Parsing json file: /Users/jason/Desktop/ASE/ASE2018/LionGps/app/google-services.json
+:app:mergeReleaseResources UP-TO-DATE
+:app:createReleaseCompatibleScreenManifests UP-TO-DATE
+:app:processReleaseManifest UP-TO-DATE
+:app:splitsDiscoveryTaskRelease UP-TO-DATE
+:app:processReleaseResources UP-TO-DATE
+:app:generateReleaseSources UP-TO-DATE
+:app:javaPreCompileRelease UP-TO-DATE
+:app:compileReleaseJavaWithJavac UP-TO-DATE
+:app:generateReleaseUnitTestSources UP-TO-DATE
+:app:preReleaseUnitTestBuild UP-TO-DATE
+:app:javaPreCompileReleaseUnitTest UP-TO-DATE
+:app:compileReleaseUnitTestJavaWithJavac UP-TO-DATE
+:app:processReleaseJavaRes NO-SOURCE
+:app:processReleaseUnitTestJavaRes NO-SOURCE
+:app:testReleaseUnitTest UP-TO-DATE
+:app:test UP-TO-DATE
+
+BUILD SUCCESSFUL in 1s
+37 actionable tasks: 2 executed, 35 up-to-date

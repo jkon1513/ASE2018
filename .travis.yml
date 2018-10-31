@@ -9,5 +9,5 @@ android:
 before_install:
   - yes | sdkmanager "platforms;android-27"
 script:
-  - cd LionGps 
-  - ./gradlew test
+  - chmod +x tests.sh
+  - ./tests.sh
