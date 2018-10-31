@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,7 +39,10 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
 
     private HashMap<String, LatLng> buildings = new HashMap<>();
     private final String TAG = mapOverlay.class.getName();
-    public static ArrayList<String> stringList = new ArrayList<>();
+
+    // Search History
+    public static List<String> searchHistory;
+    public static ArrayAdapter adapter;
 
     /* Firestore connection established here */
     public static FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -49,6 +54,7 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_overlay);
 
+        // map
         SupportMapFragment mapFragment = (SupportMapFragment)
                 getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -56,8 +62,22 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
         populateBuildings();
         initSearchBar();
 
-        // test pullData method here
-        pullData();
+        //load from persistent storage
+
+        /* this will need to be refined further to limit the number of items we will display
+        as previous searches to a max of five. as of now it it has no limits
+        and their is no immediately clear way to use the searchesToDisplay variable.
+        The call order of this is also strange. at the end it seems searchHistory is flushed
+         */
+        searchHistory = new ArrayList<>();
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, searchHistory);
+
+        int searchesToDisplay = searchHistory.size() > 5 ? 5 : searchHistory.size();
+
+        ListView drawer = (ListView) findViewById(R.id.left_drawer);
+        drawer.setAdapter(adapter);
+        loadFromSearchHistory();
+
     }
 
     // Map Logic -------------------------------------------------------------------
@@ -147,7 +167,7 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
             return false;
         }
 
-        addSearchString(query); // will test with Chris
+        saveToSearchHistory(query); // will test with Chris
         getRoute(query);
         return true;
     }
@@ -160,8 +180,7 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
     quires we specify a key
      */
 
-    public void addSearchString(String input) {
-
+    public void saveToSearchHistory(String input) {
         HashMap<String, String> searchValue = new HashMap<>();
         searchValue.put("entry", input);
 
@@ -183,38 +202,26 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
 
     }
 
-    public void pullData() {
-
+    public void loadFromSearchHistory() {
         db.collection("Search History")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            ArrayList<String> list = new ArrayList<>();
+
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Map<String, Object> tmp = document.getData();
-                                String msg = (String)tmp.get("entry");
-                                list.add(msg);
-                                Log.d(TAG, "Pull Data Method => String retrieved is: " + msg);
-                            } listGenerator(list);
-                        } else {
+                                String searchField = (String) tmp.get("entry");
+                                adapter.add(searchField);
+                                Log.d(TAG, "Pull Data Method => String retrieved is: " + searchField);
+                            }
+                        }
+                        else {
                             Log.d(TAG, "Pull Data Method => Error getting documents: ", task.getException());
                         }
 
                     }
                 });
     }
-
-    public void listGenerator(List<String> input) {
-        stringList.clear();
-        stringList.addAll(input);
-
-        // Test output for array
-        for(int i = 0; i < stringList.size(); i++) {
-            Log.d(TAG, "List Generator Method => Array element is the following String: " + stringList.get(i));
-        }
-    }
-
-
 }
