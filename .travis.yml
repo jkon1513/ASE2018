@@ -14,7 +14,7 @@ android:
     - tools
 
     #The BuildTools version used by the project
-    - build-tools-$28.0.3
+    - build-tools-28.0.3
 
     #Android SDK version used to compile project
     #- android-$ANDROID_API_LEVEL
@@ -44,7 +44,7 @@ before_install:
   #- /home/Library/Android/Sdk/tools/bin/sdkmanager --update /home/Library/Android/Sdk/tools/bin/sdkmanager --licenses
   - cd ./LionGps
   - yes | sdkmanager "platforms;android-28" #change hardcoded api level
-  - yes | sdkmanager --update
+  #- yes | sdkmanager --update
 
 #Emulator Management: Create, Start and Wait
 #before_script:
