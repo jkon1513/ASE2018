@@ -1,9 +1,9 @@
 language: android
 global:
-  - ANDROID_API_LEVEL=28
-  - EMULATOR_API_LEVEL=22
-  - ANDROID_BUILD_TOOLS_VERSION=28.0.3
-  - ANDROID_ABI=google_apis/armeabi-v7a
+  #- ANDROID_API_LEVEL=28
+  #- EMULATOR_API_LEVEL=22
+  #- ANDROID_BUILD_TOOLS_VERSION=28.0.3
+  #- ANDROID_ABI=google_apis/armeabi-v7a
   - ADB_INSTALL_TIMEOUT=20 #minutes
 android:
   components:
@@ -41,13 +41,11 @@ android:
 before_install:
   #from https://askubuntu.com/questions/885658/android-sdk-repositories-cfg-could-not-be-loaded
   - touch /home/travis/.android/repositories.cfg
-  #- /home/Library/Android/Sdk/tools/bin/sdkmanager --update /home/Library/Android/Sdk/tools/bin/sdkmanager --licenses
   - cd ./LionGps
   - yes | sdkmanager "platforms;android-28" #change hardcoded api level
-  #- yes | sdkmanager --update
 
 #Emulator Management: Create, Start and Wait
-#before_script:
+before_script:
   - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
   - emulator -avd test -no-skin -no-audio -no-window &
   - android-wait-for-emulator
