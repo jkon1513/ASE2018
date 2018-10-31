@@ -58,6 +58,4 @@
         <uses-library   android:name="android.test.mock"
                         android:required="false" />
 
-
-    </application>
 </manifest>
