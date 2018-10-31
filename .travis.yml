@@ -1,58 +1,14 @@
 language: android
-global:
-  #- ANDROID_API_LEVEL=28
-  #- EMULATOR_API_LEVEL=22
-  #- ANDROID_BUILD_TOOLS_VERSION=28.0.3
-  #- ANDROID_ABI=google_apis/armeabi-v7a
-  - ADB_INSTALL_TIMEOUT=20 #minutes
+jkd: oraclejdk8
+sudo: false
 android:
   components:
-    #Use the latest revision of Android SDK tools
-    - tools
+    - tools # to get the new `repository-11.xml`
+    - tools # see https://github.com/travis-ci/travis-ci/issues/6040#issuecomment-219367943)
     - platform-tools
-    #This is intentional. NOT redundant
-    - tools
-
-    #The BuildTools version used by the project
-    - build-tools-28.0.3
-
-    #Android SDK version used to compile project
-    #- android-$ANDROID_API_LEVEL
-    - android-28
-    
-    #- android-$EMULATOR_API_LEVEL
-    - android-22
-
-    #additional components
-    - extra-google-google_play_services
-    - extra-google-m2repository
-    - extra-android-m2repository
-    #- addon-google_apis-google-$ANDROID_API_LEVEL
-    - addon-google_apis-google-28
-    #- addon-google_apis-google-$EMULATOR_API_LEVEL
-
-    #Emulator system images(s)
-    #- sys-img-armeabi-v7a-android-$ANDROID_API_LEVEL
-    #- sys-img-armeabi-v7a-android-28
-    #- sys-img-armeabi-v7a-android-$EMULATOR_API_LEVEL
-    - sys-img-armeabi-v7a-android-22
-    
-#Guides Travis towards existing gradlew
+    - build-tools-27.0.3
+    - android-27
 before_install:
-  #from https://askubuntu.com/questions/885658/android-sdk-repositories-cfg-could-not-be-loaded
-  - touch /home/travis/.android/repositories.cfg
-  - cd ./LionGps
-  - yes | sdkmanager "platforms;android-28" #change hardcoded api level
-
-#Emulator Management: Create, Start and Wait
-before_script:
-  - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
-  - emulator -avd test -no-skin -no-audio -no-window &
-  - android-wait-for-emulator
-  - adb shell input keyevent 82 &
-sudo: false
-
-#based on Travis-CI tutorial on https://docs.travis-ci.com/user/languages/android/
-#10/28/18
-
-
+  - yes | sdkmanager "platforms;android-27"
+script:
+   - ./gradlew build connectedCheck
