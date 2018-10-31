@@ -48,7 +48,6 @@
             android:required="false" />
 
         <activity android:name=".UI.mapOverlay"></activity>
-    </application>
 
         <!--Not all libraries might be needed. Our tests will determine that-->
         <uses-library   android:name="android.test.runner"
@@ -57,5 +56,6 @@
                         android:required="false" />
         <uses-library   android:name="android.test.mock"
                         android:required="false" />
+    </application>
 
 </manifest>
