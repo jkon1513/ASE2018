@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,13 +18,19 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import ase.liongps.R;
@@ -31,6 +39,10 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
 
     private HashMap<String, LatLng> buildings = new HashMap<>();
     private final String TAG = mapOverlay.class.getName();
+
+    // Search History
+    public static List<String> searchHistory;
+    public static ArrayAdapter adapter;
 
     /* Firestore connection established here */
     public static FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -42,12 +54,30 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_overlay);
 
+        // map
         SupportMapFragment mapFragment = (SupportMapFragment)
                 getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
         populateBuildings();
         initSearchBar();
+
+        //load from persistent storage
+
+        /* this will need to be refined further to limit the number of items we will display
+        as previous searches to a max of five. as of now it it has no limits
+        and their is no immediately clear way to use the searchesToDisplay variable.
+        The call order of this is also strange. at the end it seems searchHistory is flushed
+         */
+        searchHistory = new ArrayList<>();
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, searchHistory);
+
+        int searchesToDisplay = searchHistory.size() > 5 ? 5 : searchHistory.size();
+
+        ListView drawer = (ListView) findViewById(R.id.left_drawer);
+        drawer.setAdapter(adapter);
+        loadFromSearchHistory();
+
     }
 
     // Map Logic -------------------------------------------------------------------
@@ -137,7 +167,7 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
             return false;
         }
 
-        //addSearchString(query); will test with Chris
+        saveToSearchHistory(query); // will test with Chris
         getRoute(query);
         return true;
     }
@@ -150,8 +180,7 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
     quires we specify a key
      */
 
-    public void addSearchString(String input) {
-
+    public void saveToSearchHistory(String input) {
         HashMap<String, String> searchValue = new HashMap<>();
         searchValue.put("entry", input);
 
@@ -161,17 +190,38 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
-                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                        Log.d(TAG, "Search String Log => DocumentSnapshot added with ID: " + documentReference.getId());
                         }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Log.w(TAG, "Error adding document", e);
+                            Log.w(TAG, "Search String Log => Error adding document", e);
                         }
                 });
 
     }
 
+    public void loadFromSearchHistory() {
+        db.collection("Search History")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
 
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Map<String, Object> tmp = document.getData();
+                                String searchField = (String) tmp.get("entry");
+                                adapter.add(searchField);
+                                Log.d(TAG, "Pull Data Method => String retrieved is: " + searchField);
+                            }
+                        }
+                        else {
+                            Log.d(TAG, "Pull Data Method => Error getting documents: ", task.getException());
+                        }
+
+                    }
+                });
+    }
 }
