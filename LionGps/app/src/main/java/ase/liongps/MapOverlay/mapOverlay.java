@@ -1,4 +1,4 @@
-package ase.liongps.UI;
+package ase.liongps.MapOverlay;
 
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
