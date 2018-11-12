@@ -31,36 +31,47 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
+
 
 import ase.liongps.R;
 
-public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback {
+public class MapOverlayActivity extends AppCompatActivity
+        implements OnMapReadyCallback, MapOverlayContract.View {
 
-    private HashMap<String, LatLng> buildings = new HashMap<>();
-    private final String TAG = mapOverlay.class.getName();
+    //widgets
+    EditText searchBar;
+    public GoogleMap map;
 
-    // Search History
+
+    private HashMap<String, LatLng> buildings = new HashMap<>(); // remove once extracted to model
+    private final String TAG = MapOverlayActivity.class.getName();
+    private MapOverlayContract.Presenter presenter;
+
+    // temp fields for Search History until user class implemented
     public static List<String> searchHistory;
     public static ArrayAdapter adapter;
 
     /* Firestore connection established here */
-    public static FirebaseFirestore db = FirebaseFirestore.getInstance();
+    public static FirebaseFirestore db = FirebaseFirestore.getInstance(); // move to model
 
-    public GoogleMap map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_overlay);
 
+        presenter = new MapOverlayPresenter(this);
+
+        //widgets
+        searchBar = (EditText) findViewById(R.id.searchText);
+
         // map
         SupportMapFragment mapFragment = (SupportMapFragment)
                 getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        populateBuildings();
-        initSearchBar();
+        presenter.getMapData(); // move to model presenter.getMapData
+        initSearchBar();    // move to model
 
         //load from persistent storage
 
@@ -98,37 +109,13 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(buildings.get("lowe library"), 18.0f));
     }
 
-    /*
-    reads from a text file that stores the buildings and their coordinates. each line
-    contains a building name, latitude, and longitude separated by tabs. this method
-    adds each entry to the buildings hashmap using names as keys and geo-location points
-    as values. the code below is written verbosely to make this process clear.
-     */
-    public void populateBuildings() {
-        Scanner scan = new Scanner(getResources().openRawResource(R.raw.buildings));
 
-        while (scan.hasNextLine()) {
-            String[] entry = scan.nextLine().split("\t");
-            String name = entry[0];
-            double lat = Double.parseDouble(entry[1]);
-            double lng = Double.parseDouble(entry[2]);
-
-            buildings.put(name, new LatLng(lat,lng));
-
-            // convert to unit test
-            Log.d(TAG,"populateBuildings >> buidling name: " + name);
-            Log.d(TAG,"populateBuildings >> buidling lat: " + lat);
-            Log.d(TAG,"populateBuildings >> buidling lng: " + lng);
-            Log.d(TAG,"populateBuildings >> result of map.get: " + buildings.get(name));
-        }
-
-    }
 
     /*
     Routing is not implemented yet. for now this will take a building name and center the camera
     ontop of it
      */
-    public void getRoute(String bldngName) {
+    public void getRoute(String bldngName) { //break into pieces
         Log.d(TAG, "getRoute: " + bldngName);
         map.moveCamera(CameraUpdateFactory.newLatLng(buildings.get(bldngName)));
     }
@@ -138,7 +125,6 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
     public void initSearchBar() {
         Log.d(TAG, "initSearchBar: initializing");
 
-        EditText searchBar = (EditText) findViewById(R.id.searchText);
 
         //overides the enter button of keyboard to search and not create new lines
         searchBar.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -149,12 +135,42 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
                         || event.getAction() == event.ACTION_DOWN
                         || event.getAction() == event.KEYCODE_ENTER){
 
-                    handleSearch();
+                    presenter.handleSearch(searchBar.getText().toString().toLowerCase().trim());
                 }
 
                 return false;
             }
         });
+    }
+
+    @Override
+    public void initMap() {
+
+    }
+
+    @Override
+    public void onsearchsuccess() {
+
+    }
+
+    @Override
+    public void onSearchError() {
+
+    }
+
+    @Override
+    public void showroute() {
+
+    }
+
+    @Override
+    public void launchProfilePage() {
+
+    }
+
+    @Override
+    public void showRecentSearches() {
+
     }
 
     //returns boolean for unit tests
@@ -172,6 +188,9 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
         return true;
     }
 
+
+
+    // -------MOVE TO MODEL ---------------------------------------------------------------
 
         /*
     Takes a string input and stores it in the cloud as a Map<String, String> entry.
@@ -224,4 +243,6 @@ public class mapOverlay extends AppCompatActivity implements OnMapReadyCallback 
                     }
                 });
     }
+
+
 }

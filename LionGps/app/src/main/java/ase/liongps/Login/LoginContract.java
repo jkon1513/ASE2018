@@ -17,8 +17,4 @@ public interface LoginContract {
          void onDestroy();
     }
 
-    interface Model {
-        //TODO add methods for login authentication
-
-    }
 }

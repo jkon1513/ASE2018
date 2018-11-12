@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
+import ase.liongps.MapOverlay.MapOverlayActivity;
 import ase.liongps.R;
 
 import static ase.liongps.utils.Constants.ERROR_DIALOG_REQUEST;
@@ -76,7 +77,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
             map activity once the launch button is clicked. */
     @Override
     public void loadMap(View widget) {
-        Intent map = new Intent(this, ase.liongps.MapOverlay.mapOverlay.class);
+        Intent map = new Intent(this, MapOverlayActivity.class);
         startActivity(map);
     }
 

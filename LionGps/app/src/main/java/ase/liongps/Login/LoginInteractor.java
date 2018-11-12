@@ -1,6 +1,6 @@
 package ase.liongps.Login;
 
-public class LoginInteractor implements LoginContract.Model{
+public class LoginInteractor {
 
     //TODO will put authentication checks in here
 
