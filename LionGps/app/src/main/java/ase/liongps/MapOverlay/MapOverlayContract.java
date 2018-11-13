@@ -1,9 +1,10 @@
 package ase.liongps.MapOverlay;
 
+import com.google.android.gms.maps.GoogleMap;
+
 public interface MapOverlayContract {
     interface View {
         void initSearchBar();
-        void initMap();
         void onsearchsuccess();
         void onSearchError();
         void showroute();
@@ -15,7 +16,7 @@ public interface MapOverlayContract {
         void handleSearch(String query);
         void getRecentSearches();
         void getRouteData();
-        void getMapData();
+        void getMapData(GoogleMap map);
     }
 
 }

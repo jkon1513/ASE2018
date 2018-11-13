@@ -2,6 +2,7 @@ package ase.liongps.MapOverlay;
 
 import com.google.android.gms.maps.model.LatLng;
 
+
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,6 +50,8 @@ public class SearchInteractor {
     public ArrayList<String> getBuildingNames() {
         return new ArrayList<String> (buildings.keySet());
     }
+
+
 
 
 }

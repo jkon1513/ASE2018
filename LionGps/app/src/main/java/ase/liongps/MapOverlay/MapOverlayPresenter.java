@@ -1,5 +1,7 @@
 package ase.liongps.MapOverlay;
 
+import com.google.android.gms.maps.GoogleMap;
+
 public class MapOverlayPresenter implements MapOverlayContract.Presenter{
     SearchInteractor searchModel;
     MapOverlayContract.View view;
@@ -35,7 +37,7 @@ public class MapOverlayPresenter implements MapOverlayContract.Presenter{
     }
 
     @Override
-    public void getMapData() {
-        searchModel.populateBuildings();
+    public void getMapData(GoogleMap Map) {
+
     }
 }

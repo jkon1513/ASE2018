@@ -40,7 +40,7 @@ public class MapOverlayActivity extends AppCompatActivity
 
     //widgets
     EditText searchBar;
-    public GoogleMap map;
+
 
 
     private HashMap<String, LatLng> buildings = new HashMap<>(); // remove once extracted to model
@@ -95,7 +95,7 @@ public class MapOverlayActivity extends AppCompatActivity
 
     @Override
     public void onMapReady(GoogleMap theMap) {
-        map = theMap;
+
         ArrayList<String> bldNames = new ArrayList<>(buildings.keySet());
 
         // place all markers
