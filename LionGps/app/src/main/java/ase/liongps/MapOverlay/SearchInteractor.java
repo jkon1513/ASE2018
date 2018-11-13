@@ -1,15 +1,11 @@
 package ase.liongps.MapOverlay;
 
-import com.google.android.gms.maps.model.LatLng;
-
-
-import java.io.InputStream;
-import java.util.ArrayList;
+import ase.liongps.utils.Building;
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class SearchInteractor {
-    private HashMap<String, LatLng> buildings;
+    private HashMap <String , Building> buildings;
 
     public SearchInteractor() {
         buildings = new HashMap<>();
@@ -20,16 +16,13 @@ public class SearchInteractor {
     /*
    reads from a text file that stores the buildings and their coordinates. each line
    contains a building name, latitude, and longitude separated by tabs. this method
-   adds each entry to the buildings hashmap using names as keys and geo-location points
-   as values.
+   adds each entry to the buildings hashmap using names as keys and Building objects as vals.
     */
     public void populateBuildings(){
         System.out.println("SearchInteractor: popBuildings called");
 
         String file = "res/raw/buildings.txt";
-        InputStream test = this.getClass().getClassLoader().getResourceAsStream(file);
-        Scanner scan = new Scanner(test);
-        System.out.println(); //testpoint
+        Scanner scan = new Scanner(this.getClass().getClassLoader().getResourceAsStream(file);
 
         while (scan.hasNextLine()) {
             String[] entry = scan.nextLine().split("\t");
@@ -37,9 +30,7 @@ public class SearchInteractor {
             double lat = Double.parseDouble(entry[1]);
             double lng = Double.parseDouble(entry[2]);
 
-            System.out.println("name: " + name + " lat: " + lat + " lng: " + lng); //test
-
-            buildings.put(name, new LatLng(lat, lng));
+            buildings.put(name, new Building(name, lat, lng));
         }
     }
 
@@ -47,11 +38,9 @@ public class SearchInteractor {
         return buildings.containsKey(query);
     }
 
-    public ArrayList<String> getBuildingNames() {
-        return new ArrayList<String> (buildings.keySet());
+    //returns the requested building or null if it is not valid
+    public Building getBuilding(String name) {
+        return buildings.get(name);
     }
-
-
-
 
 }
