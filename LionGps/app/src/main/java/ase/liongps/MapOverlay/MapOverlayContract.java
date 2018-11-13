@@ -1,22 +1,25 @@
 package ase.liongps.MapOverlay;
 
-import com.google.android.gms.maps.GoogleMap;
+
+import com.google.android.gms.maps.model.LatLng;
+import java.util.List;
+
+import ase.liongps.utils.Building;
 
 public interface MapOverlayContract {
     interface View {
-        void initSearchBar();
-        void onsearchsuccess();
+        void showSearchBar();
         void onSearchError();
-        void showroute();
+        void showRoute(LatLng geoLocation);
         void launchProfilePage();
         void showRecentSearches();
     }
 
     interface Presenter {
         void handleSearch(String query);
-        void getRecentSearches();
-        void getRouteData();
-        void getMapData(GoogleMap map);
+        List getRecentSearches();
+        void getRouteData(Building dest);
+        LatLng getLocationData(String name);
     }
 
 }
