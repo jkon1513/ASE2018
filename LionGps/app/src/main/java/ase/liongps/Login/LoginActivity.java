@@ -20,7 +20,6 @@ import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
-import ase.liongps.MapOverlay.MapOverlayActivity;
 import ase.liongps.R;
 
 import static ase.liongps.utils.Constants.ERROR_DIALOG_REQUEST;
@@ -33,7 +32,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
         location services, and check for the required versions of Google Play Services
         upon launch of the app, rather than launch of the map
 
-        in order to run our we need to verify the users device has:
+        in order to run our app we need to verify the users device has:
 
         1. google play services
         2. granted us permission to access location data
@@ -77,7 +76,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
             map activity once the launch button is clicked. */
     @Override
     public void loadMap(View widget) {
-        Intent map = new Intent(this, MapOverlayActivity.class);
+        Intent map = new Intent(this, ase.liongps.MapOverlay.MapOverlayActivity.class);
         startActivity(map);
     }
 

@@ -13,9 +13,12 @@ public interface MapOverlayContract {
         void showRoute(LatLng geoLocation);
         void launchProfilePage();
         void showRecentSearches();
+        void centerCamera(LatLng geoLocation, float zoom);
+        void placeMarker(LatLng geoLocation, String markerName);
     }
 
     interface Presenter {
+        void initMap();
         void handleSearch(String query);
         List getRecentSearches();
         void getRouteData(Building dest);

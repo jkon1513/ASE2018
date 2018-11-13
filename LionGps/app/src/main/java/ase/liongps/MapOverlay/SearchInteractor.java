@@ -1,7 +1,10 @@
 package ase.liongps.MapOverlay;
 
 import ase.liongps.utils.Building;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 
 public class SearchInteractor {
@@ -22,7 +25,7 @@ public class SearchInteractor {
         System.out.println("SearchInteractor: popBuildings called");
 
         String file = "res/raw/buildings.txt";
-        Scanner scan = new Scanner(this.getClass().getClassLoader().getResourceAsStream(file);
+        Scanner scan = new Scanner(this.getClass().getClassLoader().getResourceAsStream(file));
 
         while (scan.hasNextLine()) {
             String[] entry = scan.nextLine().split("\t");
@@ -41,6 +44,10 @@ public class SearchInteractor {
     //returns the requested building or null if it is not valid
     public Building getBuilding(String name) {
         return buildings.get(name);
+    }
+
+    public ArrayList<String> getValidBuildings(){
+        return new ArrayList<>(buildings.keySet());
     }
 
 }

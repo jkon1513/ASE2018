@@ -17,6 +17,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -77,20 +78,23 @@ public class MapOverlayActivity extends AppCompatActivity
     @Override
     public void onMapReady(GoogleMap theMap) {
         map = theMap;
-        map.moveCamera(CameraUpdateFactory
-                .newLatLngZoom(presenter.getLocationData("butler library") , 18.0f));
+        presenter.initMap();
     }
 
+    public void centerCamera(LatLng geoLocation, float zoom){
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(geoLocation , zoom));
+    }
 
+    public void placeMarker(LatLng geoLocation, String markerName){
+        map.addMarker(new MarkerOptions().position(geoLocation).title(markerName));
+    }
 
     /*
     Routing is not implemented yet. for now this will take a geo-location and center the camera
     ontop of it
-     */
-
+    */
     @Override
-    public void showRoute(LatLng geoLocation) { //break into pieces
-        Log.d(TAG, "getRoute: " + geoLocation);
+    public void showRoute(LatLng geoLocation) {
         map.moveCamera(CameraUpdateFactory.newLatLng(geoLocation));
     }
 

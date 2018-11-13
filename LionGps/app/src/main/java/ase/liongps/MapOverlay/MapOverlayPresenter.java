@@ -19,6 +19,18 @@ public class MapOverlayPresenter implements MapOverlayContract.Presenter{
     }
 
     @Override
+    public void initMap() {
+        //place map markers
+        //TODO: make unique markers for building locations
+        for(String bldngName: searchModel.getValidBuildings()){
+            view.placeMarker(getLocationData(bldngName), bldngName);
+        }
+
+        //center the camera on start
+        view.centerCamera(getLocationData("butler library"), 18.0f);
+    }
+
+    @Override
     public void handleSearch(String query) {
         //TODO: 1.save search once db implemented properly
 
