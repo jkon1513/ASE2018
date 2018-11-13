@@ -17,7 +17,6 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -27,7 +26,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,15 +33,15 @@ import java.util.Map;
 
 import ase.liongps.R;
 
+
 public class MapOverlayActivity extends AppCompatActivity
         implements OnMapReadyCallback, MapOverlayContract.View {
 
     //widgets
     EditText searchBar;
+    ListView leftPanel;
+    GoogleMap map;
 
-
-
-    private HashMap<String, LatLng> buildings = new HashMap<>(); // remove once extracted to model
     private final String TAG = MapOverlayActivity.class.getName();
     private MapOverlayContract.Presenter presenter;
 
@@ -59,71 +57,47 @@ public class MapOverlayActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_overlay);
-
         presenter = new MapOverlayPresenter(this);
 
-        //widgets
+        //searchBar
         searchBar = (EditText) findViewById(R.id.searchText);
+        showSearchBar();
 
-        // map
+        //Map
         SupportMapFragment mapFragment = (SupportMapFragment)
                 getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        presenter.getMapData(); // move to model presenter.getMapData
-        initSearchBar();    // move to model
-
-        //load from persistent storage
-
-        /* this will need to be refined further to limit the number of items we will display
-        as previous searches to a max of five. as of now it it has no limits
-        and their is no immediately clear way to use the searchesToDisplay variable.
-        The call order of this is also strange. at the end it seems searchHistory is flushed
-         */
-        searchHistory = new ArrayList<>();
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, searchHistory);
-
-        int searchesToDisplay = searchHistory.size() > 5 ? 5 : searchHistory.size();
-
-        ListView drawer = (ListView) findViewById(R.id.left_drawer);
-        drawer.setAdapter(adapter);
-        loadFromSearchHistory();
-
+        //user panel
+        leftPanel = (ListView) findViewById(R.id.left_drawer);
     }
 
     // Map Logic -------------------------------------------------------------------
 
     @Override
     public void onMapReady(GoogleMap theMap) {
-
-        ArrayList<String> bldNames = new ArrayList<>(buildings.keySet());
-
-        // place all markers
-        for(String name : bldNames){
-            map.addMarker(new MarkerOptions()
-            .position(buildings.get(name))
-            .title(name));
-        }
-
-        //center camera
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(buildings.get("lowe library"), 18.0f));
+        map = theMap;
+        map.moveCamera(CameraUpdateFactory
+                .newLatLngZoom(presenter.getLocationData("butler library") , 18.0f));
     }
 
 
 
     /*
-    Routing is not implemented yet. for now this will take a building name and center the camera
+    Routing is not implemented yet. for now this will take a geo-location and center the camera
     ontop of it
      */
-    public void getRoute(String bldngName) { //break into pieces
-        Log.d(TAG, "getRoute: " + bldngName);
-        map.moveCamera(CameraUpdateFactory.newLatLng(buildings.get(bldngName)));
+
+    @Override
+    public void showRoute(LatLng geoLocation) { //break into pieces
+        Log.d(TAG, "getRoute: " + geoLocation);
+        map.moveCamera(CameraUpdateFactory.newLatLng(geoLocation));
     }
 
     // Search logic --------------------------------------------------------------------
 
-    public void initSearchBar() {
-        Log.d(TAG, "initSearchBar: initializing");
+    public void showSearchBar() {
+        Log.d(TAG, "showSearchBar: initializing");
 
 
         //overides the enter button of keyboard to search and not create new lines
@@ -144,49 +118,21 @@ public class MapOverlayActivity extends AppCompatActivity
     }
 
     @Override
-    public void initMap() {
-
-    }
-
-    @Override
-    public void onsearchsuccess() {
-
-    }
-
-    @Override
     public void onSearchError() {
-
+        Toast.makeText(this, "that building is not in our records just yet", Toast.LENGTH_LONG).show();
     }
 
-    @Override
-    public void showroute() {
-
-    }
 
     @Override
     public void launchProfilePage() {
-
+        //TODO: implement
     }
 
     @Override
     public void showRecentSearches() {
-
+        //TODO: implement
     }
 
-    //returns boolean for unit tests
-    public boolean handleSearch() {
-        EditText searchBar = (EditText) findViewById(R.id.searchText);
-        String query = searchBar.getText().toString().toLowerCase().trim();
-
-        if(!buildings.containsKey(query)){
-            Toast.makeText(this, "that building is not in our records just yet", Toast.LENGTH_LONG).show();
-            return false;
-        }
-
-        saveToSearchHistory(query); // will test with Chris
-        getRoute(query);
-        return true;
-    }
 
 
 

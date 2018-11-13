@@ -1,43 +1,49 @@
 package ase.liongps.MapOverlay;
 
-import com.google.android.gms.maps.GoogleMap;
+
+import com.google.android.gms.maps.model.LatLng;
+import java.util.List;
+import ase.liongps.utils.Building;
 
 public class MapOverlayPresenter implements MapOverlayContract.Presenter{
     SearchInteractor searchModel;
+    GeoLocationInteractor geoModel;
+    DatabaseInteractor dbModel;
     MapOverlayContract.View view;
 
     MapOverlayPresenter(MapOverlayContract.View viewLayer){
         view = viewLayer;
         searchModel = new SearchInteractor();
+        geoModel = new GeoLocationInteractor();
+        //TODO : data base interactor
     }
 
     @Override
     public void handleSearch(String query) {
+        //TODO: 1.save search once db implemented properly
+
+        //2. if valid return result otherwise handle error
         if (searchModel.isValidSearch(query)) {
-            //mapModel(??)
-            //dbModel.save(query);
-            System.out.println("Presenter: handle search routed correctly");
-
-
-        }
-
-        else {
+            Building result = searchModel.getBuilding(query);
+            view.showRoute(geoModel.getLocation(result));
+        } else {
             view.onSearchError();
         }
     }
 
     @Override
-    public void getRecentSearches() {
-
+    public List getRecentSearches() {
+        return null;
     }
 
     @Override
-    public void getRouteData() {
-
+    public void getRouteData(Building dest) {
+        //TODO once routes api in place
     }
 
     @Override
-    public void getMapData(GoogleMap Map) {
-
+    public LatLng getLocationData(String name) {
+        Building dest = searchModel.getBuilding(name);
+        return geoModel.getLocation(dest);
     }
 }
