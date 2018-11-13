@@ -24,11 +24,12 @@ public class Building {
         if(ammenitites == null) {
             ammenitites = new ArrayList<>();
             ammenitites.add(ammenity);
+        } else {
+            ammenitites.add(ammenity);
         }
     }
 
     public double getLat() {
-
         return lat;
     }
 
