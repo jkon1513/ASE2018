@@ -1,4 +1,4 @@
-package ase.liongps.UI;
+package ase.liongps.Login;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -26,34 +26,39 @@ import static ase.liongps.utils.Constants.ERROR_DIALOG_REQUEST;
 import static ase.liongps.utils.Constants.PERMISSIONS_REQUEST_ENABLE_GPS;
 import static ase.liongps.utils.Constants.PERMISSIONS_REQUEST_FINE_LOCATION;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements LoginContract.View{
 
     /* The design decision currently will be to get all the required permissions for GPS and
         location services, and check for the required versions of Google Play Services
         upon launch of the app, rather than launch of the map
 
-        in order to run we need to verify the users device has:
+        in order to run our app we need to verify the users device has:
 
         1. google play services
         2. granted us permission to access location data
         3. has gps location enabled
+
+        We will include this in the view since we rely on the activity and visual popups
      */
 
     private final static String TAG = "loginActivity"; //will replace to loginActivity.class.getName();
     private static boolean locationPermissionGranted = false;
+    private LoginContract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
+        presenter = new LoginPresenter(this);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        if(checkMapServices()){
+        if(hasPrerequisites()){
+
             if(locationPermissionGranted){
-                grantAccessToMap();
+                allowAccessToMap();
             }
             else{
                 getLocationPermission();
@@ -61,50 +66,49 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        presenter.onDestroy();
+    }
+
     /* this might need to be replaced once login is implemented. for now it loads the
-        map activity once the launch button is clicked. */
-    public void loadMap(View view) {
-        Intent map = new Intent(this, mapOverlay.class);
+            map activity once the launch button is clicked. */
+    @Override
+    public void loadMap(View widget) {
+        Intent map = new Intent(this, ase.liongps.MapOverlay.MapOverlayActivity.class);
         startActivity(map);
     }
 
     // once permissions all pass this makes the launch button clickable
-    public void grantAccessToMap() {
+    public void allowAccessToMap() {
         Button launch = (Button) findViewById(R.id.launch);
         launch.setClickable(true);
-        Log.d(TAG, "grantAccessToMap: launch button now clickable");
+        Log.d(TAG, "allowAccessToMap: launch button now clickable");
     }
+
+
+
+
+
+
+
+
 
 
     // PERMISSIONS ------------------------------------------------------------------
 
     // verifies gps is enabled and google play services installed
-    private boolean checkMapServices(){
-        if(hasGoogleServices()){
-            if(hasMapsEnabled()){
-                return true;
-            }
-        }
-        return false;
+    public boolean hasPrerequisites(){
+        return (hasGoogleServices() && hasLocationEnabled());
     }
 
-
-    //checks if the user has gps enabled on their device, if not it calls a method to help them enable
-    public boolean hasMapsEnabled(){
-        final LocationManager manager = (LocationManager) getSystemService( Context.LOCATION_SERVICE );
-
-        if ( !manager.isProviderEnabled( LocationManager.GPS_PROVIDER ) ) {
-            buildAlertMessageNoGps();
-            return false;
-        }
-        return true;
-    }
 
     // devices must have google services enabled. this verifies that fact.
     public boolean hasGoogleServices(){
         Log.d(TAG, "hasGoogleServices: checking google services version");
 
-        int available = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(MainActivity.this);
+        int available = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(LoginActivity.this);
 
         if(available == ConnectionResult.SUCCESS){
             //everything is fine and the user can make map requests
@@ -114,13 +118,26 @@ public class MainActivity extends AppCompatActivity {
         else if(GoogleApiAvailability.getInstance().isUserResolvableError(available)){
             //an error occured but we can resolve it
             Log.d(TAG, "hasGoogleServices: services not found but can be retrieved");
-            Dialog dialog = GoogleApiAvailability.getInstance().getErrorDialog(MainActivity.this, available, ERROR_DIALOG_REQUEST);
+            Dialog dialog = GoogleApiAvailability.getInstance().getErrorDialog(LoginActivity.this, available, ERROR_DIALOG_REQUEST);
             dialog.show();
         }else{
             Toast.makeText(this, "Your device is not compatible with LionGPS", Toast.LENGTH_SHORT).show();
         }
         return false;
     }
+
+
+    //checks if the user has gps enabled on their device, if not it calls a method to help them enable
+    public boolean hasLocationEnabled(){
+        final LocationManager manager = (LocationManager) getSystemService( Context.LOCATION_SERVICE );
+
+        if ( !manager.isProviderEnabled( LocationManager.GPS_PROVIDER ) ) {
+            buildAlertMessageNoGps();
+            return false;
+        }
+        return true;
+    }
+
 
     // if GPS is disabled on users device, this walks them through enabling it.
     private void buildAlertMessageNoGps() {
@@ -145,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
     private void getLocationPermission() {
         if (ContextCompat.checkSelfPermission(this.getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             locationPermissionGranted = true;
-            grantAccessToMap();
+            allowAccessToMap();
         } else {
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSIONS_REQUEST_FINE_LOCATION);
         }
@@ -178,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
         switch (requestCode) {
             case PERMISSIONS_REQUEST_ENABLE_GPS: {
                 if(locationPermissionGranted){
-                    grantAccessToMap();
+                    allowAccessToMap();
                 }
                 else{
                     getLocationPermission();

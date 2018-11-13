@@ -22,7 +22,7 @@
         android:theme="@style/AppTheme">
 
         <!-- login page set to entry point -->
-        <activity android:name=".UI.MainActivity">
+        <activity android:name=".Login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,7 +45,7 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-        <activity android:name=".UI.mapOverlay"></activity>
+        <activity android:name=".MapOverlay.MapOverlayActivity"></activity>
     </application>
 
 </manifest>
