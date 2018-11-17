@@ -21,8 +21,7 @@ public class SearchInteractor {
    contains a building name, latitude, and longitude separated by tabs. this method
    adds each entry to the buildings hashmap using names as keys and Building objects as vals.
     */
-    public void populateBuildings(){
-        System.out.println("SearchInteractor: popBuildings called");
+    private void populateBuildings(){
 
         String file = "res/raw/buildings.txt";
         Scanner scan = new Scanner(this.getClass().getClassLoader().getResourceAsStream(file));
@@ -41,7 +40,7 @@ public class SearchInteractor {
         return buildings.containsKey(query);
     }
 
-    //returns the requested building or null if it is not valid
+    //returns the requested building object, error handling in presenter
     public Building getBuilding(String name) {
         return buildings.get(name);
     }

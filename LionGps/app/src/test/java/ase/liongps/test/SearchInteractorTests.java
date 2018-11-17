@@ -2,6 +2,7 @@ package ase.liongps.test;
 
 import com.google.android.gms.maps.model.LatLng;
 
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -22,7 +23,7 @@ public class SearchInteractorTests {
              "butler library",
              "hamilton hall",
              "lewishon hall",
-             "lowe library"
+             "lowe library",
              "mathematics building",
              "mudd",
              "science and engineering library",
@@ -41,13 +42,33 @@ public class SearchInteractorTests {
     }
 
     @Test
-    public static void populateBuildingsTest(){
+    public void populateBuildingsTest() {
         ;
     }
 
     @Test
-    public static void getBuildingTest(){
+    public void getBuildingTest() {
 
+    }
+
+    @Test
+    public void getValidBuildingsTest() {
+
+    }
+
+    @Test
+    public void isValidSearchTest() {
+        for(String name : validNames) {
+            Assert.assertTrue("all valid building names should return true", model.isValidSearch(name));
+        }
+
+        Assert.assertFalse("invalid search returned true", model.isValidSearch("1232"));
+        Assert.assertFalse("invalid search returned true", model.isValidSearch("mcdonals"));
+        Assert.assertFalse("invalid search returned true", model.isValidSearch("@#$%ddcin9"));
+        Assert.assertFalse("invalid search returned true", model.isValidSearch(""));
+        Assert.assertFalse("invalid search returned true", model.isValidSearch("\t\n"));
+        Assert.assertTrue("ignore case not working", model.isValidSearch("BuTlEr LibRaRy"));
+        Assert.assertTrue("ignore case not working", model.isValidSearch("URIS HALL"));
     }
 
 
