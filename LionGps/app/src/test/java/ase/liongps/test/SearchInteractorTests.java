@@ -24,7 +24,7 @@ public class SearchInteractorTests {
     private static ArrayList<String> validNames;
     private static ArrayList<LatLng> validGeoData;
     private static ArrayList<String> fakeFile;
-    private int count = 0;
+
 
     @Spy
     private SearchInteractor model = new SearchInteractor();
@@ -113,9 +113,17 @@ public class SearchInteractorTests {
         Assert.assertFalse("invalid search returned true", model.isValidSearch("mcdonals"));
         Assert.assertFalse("invalid search returned true", model.isValidSearch("@#$%ddcin9"));
         Assert.assertFalse("invalid search returned true", model.isValidSearch(""));
+        Assert.assertFalse("invalid search returned true", model.isValidSearch(" "));
         Assert.assertFalse("invalid search returned true", model.isValidSearch("\t\n"));
         Assert.assertTrue("ignore case not working", model.isValidSearch("BuTlEr LibRaRy"));
         Assert.assertTrue("ignore case not working", model.isValidSearch("URIS HALL"));
+        Assert.assertTrue("trim leading white space not working",
+                model.isValidSearch(" \t\nuris hall"));
+        Assert.assertTrue("trim trailing white space not working",
+                model.isValidSearch("butler library \t\n"));
     }
-}
 
+
+
+
+}
