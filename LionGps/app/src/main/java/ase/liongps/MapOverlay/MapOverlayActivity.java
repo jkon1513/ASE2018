@@ -102,7 +102,7 @@ public class MapOverlayActivity extends AppCompatActivity
 
     public void showSearchBar() {
         Log.d(TAG, "showSearchBar: initializing");
-
+        presenter.initSearch();
 
         //overides the enter button of keyboard to search and not create new lines
         searchBar.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -113,7 +113,7 @@ public class MapOverlayActivity extends AppCompatActivity
                         || event.getAction() == event.ACTION_DOWN
                         || event.getAction() == event.KEYCODE_ENTER){
 
-                    presenter.handleSearch(searchBar.getText().toString().toLowerCase().trim());
+                    presenter.handleSearch(searchBar.getText().toString());
                 }
 
                 return false;
