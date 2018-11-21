@@ -117,10 +117,8 @@ public class SearchInteractorTests {
         Assert.assertFalse("invalid search returned true", model.isValidSearch("\t\n"));
         Assert.assertTrue("ignore case not working", model.isValidSearch("BuTlEr LibRaRy"));
         Assert.assertTrue("ignore case not working", model.isValidSearch("URIS HALL"));
-        Assert.assertTrue("trim leading white space not working",
-                model.isValidSearch(" \t\nuris hall"));
-        Assert.assertTrue("trim trailing white space not working",
-                model.isValidSearch("butler library \t\n"));
+        Assert.assertTrue("trim leading white space not working", model.isValidSearch(" \t\nuris hall"));
+        Assert.assertTrue("trim trailing white space not working", model.isValidSearch("butler library \t\n"));
     }
 
 
