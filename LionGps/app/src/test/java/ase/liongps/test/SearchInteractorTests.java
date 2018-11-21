@@ -3,57 +3,104 @@ package ase.liongps.test;
 import com.google.android.gms.maps.model.LatLng;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Spy;
+import org.mockito.junit.MockitoJUnitRunner;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import ase.liongps.MapOverlay.SearchInteractor;
 
+import ase.liongps.MapOverlay.SearchInteractor;
+import ase.liongps.utils.Building;
+
+@RunWith(MockitoJUnitRunner.class)
 public class SearchInteractorTests {
 
     private static ArrayList<String> validNames;
-    private static SearchInteractor model = new SearchInteractor();
+    private static ArrayList<LatLng> validGeoData;
+    private static ArrayList<String> fakeFile;
+    private int count = 0;
 
+    @Spy
+    private SearchInteractor model = new SearchInteractor();
 
     @BeforeClass
-    public static void setup(){
-     String[] blds = {
-             "butler library",
-             "hamilton hall",
-             "lewishon hall",
-             "lowe library",
-             "mathematics building",
-             "mudd",
-             "science and engineering library",
-             "uris hall"};
+    public static void setup() {
 
-     validNames = new ArrayList<>(Arrays.asList(blds));
+        //sample data to test the business logic
+        String[] sampleBlds = {
+                "butler library",
+                "hamilton hall",
+                "lewishon hall",
+                "lowe library",
+                "mathematics building",
+                "mudd",
+                "science and engineering library",
+                "uris hall"};
 
-     LatLng butler = new LatLng(40.806598,-73.963231);
-     LatLng hamilton =   new LatLng(40.806757,-73.961656);
-     LatLng lewishon = new LatLng(40.808356,	-73.963264);
-     LatLng lowe = new LatLng (40.808167,	-73.961839);
-     LatLng math = new LatLng(40.809150,	-73.962675);
-     LatLng mudd = new LatLng(40.809374,	-73.959911);
-     LatLng noco = new LatLng(	40.810026,-73.961993);
-     LatLng uris = new LatLng(40.808970	,-73.961356);
+        LatLng[] sampleGeoData = {
+                new LatLng(40.806598, -73.963231),
+                new LatLng(40.806757, -73.961656),
+                new LatLng(40.808356, -73.963264),
+                new LatLng(40.808167, -73.961839),
+                new LatLng(40.809150, -73.962675),
+                new LatLng(40.809374, -73.959911),
+                new LatLng(40.810026, -73.961993),
+                new LatLng(40.808970, -73.961356)
+        };
+
+        validNames = new ArrayList<>(Arrays.asList(sampleBlds));
+        validGeoData = new ArrayList<>(Arrays.asList(sampleGeoData));
+        fakeFile = new ArrayList<>();
+
+        for (int i = 0; i < sampleBlds.length; i++) {
+            String name = sampleBlds[i];
+            String lat = Double.toString(sampleGeoData[i].latitude);
+            String lng = Double.toString(sampleGeoData[i].longitude);
+
+            fakeFile.add(name + "\t" + lat + "\t" + lng);
+        }
     }
 
-    @Test
-    public void populateBuildingsTest() {
-        ;
+
+    @Before
+    public void populateBuildingsMock() {
+        for(String entry: fakeFile){
+            model.populateBuildings(entry);
+        }
     }
 
     @Test
     public void getBuildingTest() {
+        double expected, actual;
 
+        for(int i = 0; i < validNames.size(); i++) {
+            String name = validNames.get(i);
+            Building b = model.getBuilding(name);
+
+            expected = validGeoData.get(i).latitude;
+            actual = b.getLat();
+            Assert.assertEquals("latitude of buildings dont match",expected, actual,0);
+
+            expected = validGeoData.get(i).longitude;
+            actual = b.getLng();
+            Assert.assertEquals("longitude of buildngs dont match", expected,actual,0);
+        }
     }
 
     @Test
     public void getValidBuildingsTest() {
-
+        Assert.assertEquals("validBuildings does not have expected number of entries"
+                ,validNames.size(), model.getValidBuildings().size());
+        for(String name : validNames){
+            Assert.assertTrue("model data is missing a valid name",
+                    model.getValidBuildings().contains(name));
+        }
     }
 
     @Test
@@ -70,8 +117,5 @@ public class SearchInteractorTests {
         Assert.assertTrue("ignore case not working", model.isValidSearch("BuTlEr LibRaRy"));
         Assert.assertTrue("ignore case not working", model.isValidSearch("URIS HALL"));
     }
-
-
-
-
 }
+
