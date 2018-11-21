@@ -19,6 +19,7 @@ public interface MapOverlayContract {
 
     interface Presenter {
         void initMap();
+        void initSearch();
         void handleSearch(String query);
         List getRecentSearches();
         void getRouteData(Building dest);
