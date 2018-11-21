@@ -1,12 +1,10 @@
 80 claremont	40.811110	-73.962727
 alfred lerner hall	40.806972	-73.963919
 altschul hall	40.810063	-73.963340
-armstrong hall	40.805398	-73.965326
 arthur w. diamond law library	40.806989	-73.960364
 avery hall	40.808293	-73.960972
 barnard hall	40.809214	-73.963948
 broadway hall	40.806395	-73.964328
-buell hall	40.807734	-73.961431
 butler library	40.806598	-73.963231
 carman hall	40.806657	-73.964172
 casa hispanica	40.808259	-73.965033
@@ -22,8 +20,6 @@ engineering terrace	40.809391	-73.960025
 faculty house	40.806770	-73.959132
 fairchild life sciences building	40.809215	-73.960312
 fayerweather	40.808176	-73.960458
-furnald hall	40.807461	-73.963997
-grace dodge hall	40.810252	-73.959722
 hamilton hall	40.806766	-73.961652
 hartley	40.806434	-73.961617
 havemeyer hall	40.809456	-73.962185
@@ -62,6 +58,5 @@ union theological seminary	40.811356	-73.961751
 uris hall	40.808970	-73.961356
 wallach	40.806033	-73.961892
 watson hall	40.807611	-73.965569
-wien hall	40.807089	-73.960288
 william and june warren hall	40.806282	-73.961059
 william c. warren hall	40.806291	-73.960074
