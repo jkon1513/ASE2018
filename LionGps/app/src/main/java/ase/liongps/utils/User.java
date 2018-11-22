@@ -8,6 +8,10 @@ public class User {
     String pw;
     LinkedList<String> searches;
 
+    public User() {
+        //required empty constructor for google firebase
+    }
+
     public User(String userName, String passWord){
         this.name = userName;
         this.pw = passWord;
