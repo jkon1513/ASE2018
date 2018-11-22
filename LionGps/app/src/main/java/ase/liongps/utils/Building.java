@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 public class Building {
     private String name;
+    private String bldngCode;
+    private String shortHand;
     private double lat;
     private double lng;
     private String description;
@@ -41,7 +43,28 @@ public class Building {
         return description;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getBldngCode() {
+        return bldngCode;
+    }
+
+    public String getShortHand() {
+        return shortHand;
+    }
+
     public ArrayList<String> getAmmenitites() {
         return ammenitites;
+    }
+
+
+    public void setBldngCode(String bldngCode) {
+        this.bldngCode = bldngCode;
+    }
+
+    public void setShortHand(String shortHand) {
+        this.shortHand = shortHand;
     }
 }
