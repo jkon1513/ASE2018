@@ -90,6 +90,10 @@ dod
 
 dodge physical fitness center
 
+
+faculty house
+
+
 fitness center
 gym (not a code)
 
@@ -110,12 +114,6 @@ engineering terrace
 
 engineering
 eng
-
-
-faculty house
-
-faculty
-fac (not a code)
 
 
 fairchild life sciences building
@@ -346,6 +344,9 @@ uris hall
 
 uris
 uri
+
+
+wallach
 
 
 watson hall
