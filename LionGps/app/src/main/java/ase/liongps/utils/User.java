@@ -4,9 +4,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class User {
-    String name;
-    String pw;
-    LinkedList<String> searches;
+    private String name;
+    private String pw;
+    private LinkedList<String> searches;
 
     public User() {
         //required empty constructor for google firebase
@@ -33,4 +33,15 @@ public class User {
         return searches;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getPw() {
+        return pw;
+    }
+
+    public void setPw(String pw) {
+        this.pw = pw;
+    }
 }
