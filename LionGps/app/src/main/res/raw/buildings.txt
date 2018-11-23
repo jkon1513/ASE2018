@@ -1,62 +1,59 @@
-80 claremont	40.811110	-73.962727
-alfred lerner hall	40.806972	-73.963919
-altschul hall	40.810063	-73.963340
-arthur w. diamond law library	40.806989	-73.960364
-avery hall	40.808293	-73.960972
-barnard hall	40.809214	-73.963948
-broadway hall	40.806395	-73.964328
-butler library	40.806598	-73.963231
-carman hall	40.806657	-73.964172
-casa hispanica	40.808259	-73.965033
-chandler laboratories	40.809345	-73.961884
-computer science building	40.809065	-73.959818
-deutsches haus	40.806165	-73.960225
-diana center	40.809971	-73.962909
-dodge hall	40.807957	-73.963193
-dodge physical fitness center	40.809538	-73.961673
-earl hall	40.809538	-73.961673
-east campus	40.807336	-73.958831
-engineering terrace	40.809391	-73.960025
-faculty house	40.806770	-73.959132
-fairchild life sciences building	40.809215	-73.960312
-fayerweather	40.808176	-73.960458
-hamilton hall	40.806766	-73.961652
-hartley	40.806434	-73.961617
-havemeyer hall	40.809456	-73.962185
-heyman center for humanities	40.807336	-73.958830
-horace mann hall	40.810834	-73.961629
-international affairs building	40.807750	-73.959721
-international house	40.813842	-73.961519
-jerome greene hall	40.806892	-73.960630
-john jay hall	40.805909	-73.962376
-journalism building	40.807636	-73.963631
-kent hall	40.807217	-73.961358
-knox hall	40.811996	-73.961778
-kraft center	40.807482	-73.965254
-lewisohn hall	40.808356	-73.963264
-lowe library	40.808167	-73.961839
-macy hall	40.810561	-73.960405
-mathematics building	40.809150	-73.962675
-milbank hall	40.810583	-73.962689
-milstein center	40.809691	-73.963627
-morris a. schapiro hall	40.807844	-73.965103
-mudd	40.809374	-73.959911
-northwest corner building	40.810114	-73.961963
-philosophy hall	40.807508	-73.961080
-prentis hall	40.816740	-73.959197
-pulitzer hall	40.807575	-73.963425
-pupin physics laboratories	40.810069	-73.961420
-riverside church	40.811881	-73.963115
-schapiro center for engineering and physical science research	40.809640	-73.960817
-schermerhorn hall	40.808629	-73.960435
-science and engineering library	40.810026	-73.961993
-school of social work	40.810262	-73.958363
-seeley w. mudd building	40.809553	-73.960247
-st. paul's chapel	40.807846	-73.960976
-thompson hall	40.810326	-73.961506
-union theological seminary	40.811356	-73.961751
-uris hall	40.808970	-73.961356
-wallach	40.806033	-73.961892
-watson hall	40.807611	-73.965569
-william and june warren hall	40.806282	-73.961059
-william c. warren hall	40.806291	-73.960074
+80 claremont	claremont	40.811110	-73.962727	cla
+alfred lerner hall	lerner	40.806972	-73.963919	ler
+altschul hall	alrschul	40.810063	-73.963340	alt
+avery hall	avery	40.808293	-73.960972	avh
+barnard hall	barnard	40.809214	-73.963948	bar
+broadway hall	broadway	40.806395	-73.964328	bwy
+butler library	butler	40.806598	-73.963231	but
+carman hall	carman	40.806657	-73.964172	car
+casa hispanica	hispanica	40.808259	-73.965033	hisp
+chandler laboratories	chandler	40.809345	-73.961884	cha
+computer science building	cs building	40.809065	-73.959818	csc
+deutsches haus	deutsches	40.806165	-73.960225	deu
+diana center	vag	40.809971	-73.962909	dia
+dodge hall	dodge hall	40.807957	-73.963193	dod
+dodge physical fitness center	dodge	40.809538	-73.961673
+earl hall	earl	40.809538	-73.961673
+east campus	east campus	40.807336	-73.958831
+engineering terrace	engineering	40.809391	-73.960025	eng
+faculty house	faculty house	40.806770	-73.959132
+fairchild life sciences building	fairchild	40.809215	-73.960312	fls
+fayerweather	fayerweather	40.808176	-73.960458	fay
+hamilton hall	hamilton	40.806766	-73.961652	ham
+hartley	hall	hartley	40.806434	-73.961617	hartley
+havemeyer hall	havemeyer	40.809456	-73.962185	hav
+heyman center for humanities	heyman	40.807336	-73.958830	hey
+horace mann hall	horace mann	40.810834	-73.961629	hm
+international affairs building	international affairs	40.807750	-73.959721	iab
+international house	international house	40.813842	-73.961519	inth
+jerome greene hall	law library	40.806892	-73.960630	gre
+john jay hall	john jay	40.805909	-73.962376
+journalism building	journalism	40.807636	-73.963631	jrn
+kent hall	kent	40.807217	-73.961358	knt
+knox hall	knox	40.811996	-73.961778	knx
+kraft center	kraft	40.807482	-73.965254	kraf
+lewisohn hall	lewisohn	40.808356	-73.963264	lew
+low memorial library	low library	40.808167	-73.961839
+macy hall	macy	40.810561	-73.960405	mcy
+mathematics building	mathematics	40.809150	-73.962675	mat
+milbank hall	milbank	40.810583	-73.962689	mil
+morris a. schapiro hall	schapiro hall	40.807844	-73.965103	schp
+northwest corner building	noco	40.810114	-73.961963	nwc
+philosophy hall	philosophy	40.807508	-73.961080	phi
+prentis hall	prentis	40.816740	-73.959197	prn
+pulitzer hall	pulitzer	40.807575	-73.963425
+pupin physics laboratories	pupin	40.810069	-73.961420	pup
+riverside church	riverside church	40.811881	-73.963115	rsc
+schapiro center for engineering and physical science research	cepsr	40.809640	-73.960817	scep
+schermerhorn hall	schermerhorn	40.808629	-73.960435	sch
+school of social work	social work	40.810262	-73.958363	ssw
+seeley w. mudd building	mudd	40.809553	-73.960247	mud
+st. paul's chapel	st. paul's	40.807846	-73.960976
+the cheryl and philip milstein center for teaching and learning	milstein	40.809691	-73.963627	mlc
+thompson hall	thompson	40.810326	-73.961506	th
+union theological seminary	union	40.811356	-73.961751	uts
+uris hall	uris	40.808970	-73.961356	uri
+wallach	wallach	40.806033	-73.961892
+watson hall	watson	40.807611	-73.965569	wat
+william and june warren hall	william and june	40.806282	-73.961059	wjw
+william c. warren hall	warren	40.806291	-73.960074
