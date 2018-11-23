@@ -20,10 +20,12 @@ public class SearchInteractor {
         2. latitude
         3. longitude
         4: building code (SSOL Code) (if exists!!)
+        TODO: think about allowing something like HAM3301 and auto remove digits to get HAM
      */
     public void populateBuildings(String fileEntry) {
         String[] bldngData = fileEntry.split("\t");
 
+        //lets consider making use of constants here
         boolean codeExists = bldngData.length == 5;
 
         String name = bldngData[0];
@@ -37,13 +39,12 @@ public class SearchInteractor {
         buildings.put(name, theBuilding);
         buildings.put(alias, theBuilding);
 
+        //not every building on campus has a building code since not all host classes
         if(codeExists) {
             String code = bldngData[4];
             theBuilding.setBldngCode(code);
             buildings.put(code, theBuilding);
         }
-
-
     }
 
     public boolean isValidSearch(String query) {

@@ -20,7 +20,7 @@ faculty house	faculty house	40.806770	-73.959132
 fairchild life sciences building	fairchild	40.809215	-73.960312	fls
 fayerweather	fayerweather	40.808176	-73.960458	fay
 hamilton hall	hamilton	40.806766	-73.961652	ham
-hartley	hall	hartley	40.806434	-73.961617	hartley
+hartley hall	hartley	40.806434	-73.961617	hartley
 havemeyer hall	havemeyer	40.809456	-73.962185	hav
 heyman center for humanities	heyman	40.807336	-73.958830	hey
 horace mann hall	horace mann	40.810834	-73.961629	hm
