@@ -15,7 +15,7 @@ public class MapOverlayPresenter implements MapOverlayContract.Presenter{
         view = viewLayer;
         searchModel = new SearchInteractor();
         geoModel = new GeoLocationInteractor();
-        //TODO : data base interactor
+        dbModel = new DatabaseInteractor();
     }
 
     @Override
@@ -31,16 +31,20 @@ public class MapOverlayPresenter implements MapOverlayContract.Presenter{
         view.centerCamera(getLocationData("butler library"), 18.0f);
     }
 
+    @Override
+    public void initUser(String username) {
+        dbModel.loadUserData(username);
+    }
+
+    @Override
     public void initSearch(){
         searchModel.readBuildingData();
     }
 
     @Override
     public void handleSearch(String query) {
-        //TODO: 1.save search once db implemented properly
-
-        //2. if valid return result otherwise handle error
         if (searchModel.isValidSearch(query)) {
+            dbModel.updateHistory(query);
             Building result = searchModel.getBuilding(query);
             view.showRoute(geoModel.getLocation(result));
         } else {

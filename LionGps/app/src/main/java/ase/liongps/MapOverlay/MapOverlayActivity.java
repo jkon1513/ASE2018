@@ -1,9 +1,7 @@
 package ase.liongps.MapOverlay;
 
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
@@ -18,21 +16,9 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 
 import ase.liongps.R;
+
 
 
 public class MapOverlayActivity extends AppCompatActivity
@@ -43,16 +29,9 @@ public class MapOverlayActivity extends AppCompatActivity
     ListView leftPanel;
     GoogleMap map;
 
-    private final String TAG = MapOverlayActivity.class.getName();
+
     private MapOverlayContract.Presenter presenter;
-
-    // temp fields for Search History until user class implemented
-    public static List<String> searchHistory;
-    public static ArrayAdapter adapter;
-
-    /* Firestore connection established here */
-    public static FirebaseFirestore db = FirebaseFirestore.getInstance(); // move to model
-
+    private ArrayAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +50,20 @@ public class MapOverlayActivity extends AppCompatActivity
 
         //user panel
         leftPanel = (ListView) findViewById(R.id.left_drawer);
+
+        /*
+            when authentication is added to login activity we will instantiate an intent
+            with the username of the authenticated user as a param and pass that username to the
+            presenter. for now we will use a test constant to assure data flow is being handled
+            correctly: it will eventually look as follows:
+
+            String theUser = getIntent().getStringExtra("username");
+            presenter.initUser(theUser);
+         */
+        presenter.initUser("Hill-Billy-Bob");
+
+
+
     }
 
     // Map Logic -------------------------------------------------------------------
@@ -81,11 +74,11 @@ public class MapOverlayActivity extends AppCompatActivity
         presenter.initMap();
     }
 
-    public void centerCamera(LatLng geoLocation, float zoom){
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(geoLocation , zoom));
+    public void centerCamera(LatLng geoLocation, float zoom) {
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(geoLocation, zoom));
     }
 
-    public void placeMarker(LatLng geoLocation, String markerName){
+    public void placeMarker(LatLng geoLocation, String markerName) {
         map.addMarker(new MarkerOptions().position(geoLocation).title(markerName));
     }
 
@@ -101,7 +94,6 @@ public class MapOverlayActivity extends AppCompatActivity
     // Search logic --------------------------------------------------------------------
 
     public void showSearchBar() {
-        Log.d(TAG, "showSearchBar: initializing");
         presenter.initSearch();
 
         //overides the enter button of keyboard to search and not create new lines
@@ -111,7 +103,7 @@ public class MapOverlayActivity extends AppCompatActivity
                 if (actionId == EditorInfo.IME_ACTION_SEARCH
                         || actionId == EditorInfo.IME_ACTION_DONE
                         || event.getAction() == event.ACTION_DOWN
-                        || event.getAction() == event.KEYCODE_ENTER){
+                        || event.getAction() == event.KEYCODE_ENTER) {
 
                     presenter.handleSearch(searchBar.getText().toString());
                 }
@@ -136,63 +128,5 @@ public class MapOverlayActivity extends AppCompatActivity
     public void showRecentSearches() {
         //TODO: implement
     }
-
-
-
-
-    // -------MOVE TO MODEL ---------------------------------------------------------------
-
-        /*
-    Takes a string input and stores it in the cloud as a Map<String, String> entry.
-    This uses the .add() method, which auto-generates a key for the document we are
-    adding to our "Search History" Collection. This is opposed to .set(), which re-
-    quires we specify a key
-     */
-
-    public void saveToSearchHistory(String input) {
-        HashMap<String, String> searchValue = new HashMap<>();
-        searchValue.put("entry", input);
-
-
-        db.collection("Search History")
-                .add(searchValue)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d(TAG, "Search String Log => DocumentSnapshot added with ID: " + documentReference.getId());
-                        }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.w(TAG, "Search String Log => Error adding document", e);
-                        }
-                });
-
-    }
-
-    public void loadFromSearchHistory() {
-        db.collection("Search History")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Map<String, Object> tmp = document.getData();
-                                String searchField = (String) tmp.get("entry");
-                                adapter.add(searchField);
-                                Log.d(TAG, "Pull Data Method => String retrieved is: " + searchField);
-                            }
-                        }
-                        else {
-                            Log.d(TAG, "Pull Data Method => Error getting documents: ", task.getException());
-                        }
-
-                    }
-                });
-    }
-
 
 }
