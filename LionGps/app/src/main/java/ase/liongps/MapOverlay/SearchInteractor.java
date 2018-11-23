@@ -13,15 +13,38 @@ public class SearchInteractor {
         buildings = new HashMap<>();
     }
 
-
+    /* building.txt entry format:
+        tab delimited per line
+        0: formal name
+        1: short hand alias
+        2. latitude
+        3. longitude
+        4: building code (SSOL Code) (if exists!!)
+        TODO: think about allowing something like HAM3301 and auto remove digits to get HAM
+     */
     public void populateBuildings(String fileEntry) {
         String[] bldngData = fileEntry.split("\t");
 
-        String name = bldngData[0];
-        double lat = Double.parseDouble(bldngData[1]);
-        double lng = Double.parseDouble(bldngData[2]);
+        //lets consider making use of constants here
+        boolean codeExists = bldngData.length == 5;
 
-        buildings.put(name, new Building(name, lat, lng));
+        String name = bldngData[0];
+        String alias = bldngData[1];
+        double lat = Double.parseDouble(bldngData[2]);
+        double lng = Double.parseDouble(bldngData[3]);
+
+        Building theBuilding = new Building(name, lat, lng);
+        theBuilding.setShortHand(alias);
+
+        buildings.put(name, theBuilding);
+        buildings.put(alias, theBuilding);
+
+        //not every building on campus has a building code since not all host classes
+        if(codeExists) {
+            String code = bldngData[4];
+            theBuilding.setBldngCode(code);
+            buildings.put(code, theBuilding);
+        }
     }
 
     public boolean isValidSearch(String query) {
