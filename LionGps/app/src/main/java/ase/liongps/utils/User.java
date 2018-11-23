@@ -29,7 +29,7 @@ public class User {
         }
     }
 
-    public List getSearches(){
+    public LinkedList<String> getSearches(){
         return searches;
     }
 
@@ -43,5 +43,13 @@ public class User {
 
     public void setPw(String pw) {
         this.pw = pw;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSearches(List<String> searches) {
+        this.searches = new LinkedList<>(searches);
     }
 }
