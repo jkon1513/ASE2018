@@ -20,6 +20,7 @@ public interface MapOverlayContract {
     interface Presenter {
         void initMap();
         void initSearch();
+        void initUser(String username); //will look into moving this into login contract instead
         void handleSearch(String query);
         List getRecentSearches();
         void getRouteData(Building dest);
