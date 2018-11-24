@@ -13,14 +13,46 @@ Alfred Lerner Hall is the student center. It was built from 1996-1999, replacing
 Lerner is notorious for its infuriating system of space-wasting and inefficient upward-spiralling ramps. The stairs in the 'exit' stairwells are actually the quickest way to navigate Lerner.
 
 
-ammenities: ferris booth dining, blue java cafe, (add more)
+ammenities: ferris booth dining, blue java cafe, Office of Student Life, Piano Lounge (3rd floor)
 ********
 	
-altschul hall	
-avery hall	
-barnard hall	
-broadway hall	
-butler library	
+altschul hall:
+
+Altschul Hall is on the Barnard campus and is the home of many large lecture courses. 
+
+amenities: Java City on 2nd floor.
+********
+
+avery hall:
+
+Avery Hall is home of the Graduate School of Architecture. 
+
+amenities: Avery Library, the Fine Arts & Architecture library of Columbia. 
+********
+	
+barnard hall: 
+
+
+Barnard Hall is one of the oldest buildings on the Barnard Campus, named after the namesake of the College and Columbia President Frederick Barnard. 
+
+   	
+amenities: Fitness Center, Streng Dance Studio
+********
+
+broadway hall:
+
+Broadway Hall is a dorm built in 2000 and Designed by Robert A. M. Stern, CC '60. 
+
+amenities: Sky-lounge on top-floor.
+********
+	
+butler library:
+
+Butler Library is the main undergraduate & graduate research library. It ranks  	
+
+amenities:
+********
+
 carman hall	
 casa hispanica	
 chandler laboratories	
