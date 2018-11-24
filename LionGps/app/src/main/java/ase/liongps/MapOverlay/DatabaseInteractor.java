@@ -27,6 +27,12 @@ public class DatabaseInteractor {
 		theUser = new User();
 	}
 
+	// constructor for testing with junit & mockito
+	public DatabaseInteractor(FirebaseFirestore d, User u) {
+		db = d;
+		theUser = u;
+	}
+
 	public void saveUser(User u){
 		db.collection("TestData")
 		.document(u.getName()).set(u)
