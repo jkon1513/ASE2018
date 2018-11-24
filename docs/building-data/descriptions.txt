@@ -4,7 +4,7 @@
 80 Claremont is home to the Religion Department and Science and Technology Ventures. Religion gained 70 percent more space than it had in Kent Hall, while EALAC and MEALAC expanded into the vacated space in Kent.
 
 
-ammenities: dept of religion
+amenities: dept of religion
 *******	
 
 alfred lerner hall:
@@ -13,29 +13,151 @@ Alfred Lerner Hall is the student center. It was built from 1996-1999, replacing
 Lerner is notorious for its infuriating system of space-wasting and inefficient upward-spiralling ramps. The stairs in the 'exit' stairwells are actually the quickest way to navigate Lerner.
 
 
-ammenities: ferris booth dining, blue java cafe, (add more)
+amenities: ferris booth dining, blue java cafe, Office of Student Life, Piano Lounge (3rd floor)
 ********
 	
-altschul hall	
-avery hall	
-barnard hall	
-broadway hall	
-butler library	
-carman hall	
-casa hispanica	
-chandler laboratories	
-computer science building
-deutsches haus	
-diana center
-dodge hall	
-dodge physical fitness center
-earl hall	
-east campus	
-engineering terrace	
-faculty house	
+altschul hall:
+
+Altschul Hall is on the Barnard campus and is the home of many large lecture courses. 
+
+amenities: Java City on 2nd floor.
+********
+
+avery hall:
+
+Avery Hall is home of the Graduate School of Architecture. 
+
+amenities: Avery Library, the Fine Arts & Architecture library of Columbia. 
+********
+	
+barnard hall: 
+
+
+Barnard Hall is one of the oldest buildings on the Barnard Campus, named after the namesake of the College and Columbia President Frederick Barnard. 
+
+   	
+amenities: Fitness Center, Streng Dance Studio
+********
+
+broadway hall:
+
+Broadway Hall is a dorm built in 2000 and Designed by Robert A. M. Stern, CC '60. 
+
+amenities: Sky-lounge on top-floor.
+********
+	
+butler library:
+
+Butler Library is the main undergraduate & graduate research library. It ranks as among the most notable and iconic structures at Columbia. Competition for open study spaces can be fierce at Butler during midterms & finals. 	
+
+amenities: Blue Java on the 3rd floor, 213 CUIT Computer Lab
+********
+
+carman hall: 
+
+Carman Hall was built in 1959 and is a dorm for Columbia Students. Has a reputation as a “party dorm” of sorts. 
+
+amenities: parties, regret
+********
+	
+casa hispanica: 
+
+Casa Hispanica is beaux-arts townhouse that houses the the Spanish, Portuguese, and Catalan language center
+
+amenities: 
+********
+	
+chandler laboratories:
+
+Chandler Laboratories, otherwise known as Chandler Hall, houses research labs and a handful of classrooms.
+amenities: 
+********
+
+computer science building: 
+
+The CS Building houses the CS Department of Columbia University and is itself located inside Mudd Engineering building. 
+
+amenities: CS Lounge, CLIC Lab
+********
+
+deutsches haus:
+
+Deutsches Haus is a building devoted to the german language and the first foreign language hall established at an american university. Affiliated with the department of Germanic languages
+
+amenities: 
+********
+	
+diana center:
+
+The Diana Center is a building on Barnard College’s campus and the student center of the college. It was completed in 2010 and has some of the most striking & futuristic architecture at Columbia. 
+
+amenities: Event Oval
+********
+
+dodge hall:
+
+Dodge Hall is the home of the School of the Arts, the Department of Music, and the Kathyrn Bache Miller Theatre. Has a Blue Java Cafe in the lobby. 
+
+amenities: Music Library, Blue Java Cafe
+********
+	
+dodge physical fitness center:
+
+Columbia’s gym. Also known as the Marcellus Hartley Dodge Physical Fitness Center, Dodge shares its name with Dodge Hall, which has inspired decades of confusion among undergraduates. Has extensive amenities but has a reputation for being crowded during peak hours.
+
+amenities: 
+********
+
+
+earl hall:
+
+Earl Hall is home for the religious services & organizations of Columbia (Office of the University Chaplain). 
+
+amenities: 
+********
+	
+east campus: 
+
+East Campus is a dorm, reputed for its parties. If your club has a holiday gathering it will likely happen here. 
+
+amenities: 
+********	
+engineering terrace:
+
+Engineering Terrace is an extension to Mudd that was built behind Fairchild since there was all that extra space, anyway. The "building" houses faculty offices and little more. It is also used as a passageway to the Computer Science Building.[1]
+
+[1] http://www.wikicu.com/Engineering_Terrace
+
+
+amenities: 
+********
+	
+faculty house:
+
+Faculty House is a 38,000-square-foot facility that hosts a wide variety of functions, including receptions, social events, meetings, conferences, and seminars. [1]
+
+[1] http://www.wikicu.com/Faculty_House
+
+amenities: Ivy Lounge & Coffee Bar is a full service bar on the 1st floor. Market Cafe on the 2nd floor.
+********
+
 fairchild life sciences building	
-fayerweather	
-hamilton hall	
+Fairchild Center is a building that house’s biology labs and offices on Columbia’s campus.
+
+amenities: 
+********
+
+fayerweather:
+
+Fayerweather is a building that houses the History & Sociology departments. Fayerweather was notably occupied by students during the protests of 1968.
+
+amenities: 
+********
+
+hamilton hall:	One of the most iconic structures of Columbia’s Morningside Heights campus, Hamilton Hall houses the Office of the Core and many iconic and require Core classes, including lit hum and UW. Also houses the classics department.	 
+
+amenities: The cheapest coffee on campus, 25 cent coffee on the 4th floor, at the German Department.
+********
 hartley hall	
 havemeyer hall	
 heyman center for humanities
@@ -73,4 +195,5 @@ wallach
 watson hall	watson	
 william and june warren hall
 william c. warren hall
+
 
