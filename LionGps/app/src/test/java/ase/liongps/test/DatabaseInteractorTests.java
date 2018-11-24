@@ -42,10 +42,12 @@ public class DatabaseInteractorTests {
         Assert.assertNotNull(dbInteractTest.getUser("Gandalf"));
         // test that testUser is the same user provided to Database Interactor via constructor
         Assert.assertEquals(testUser, dbInteractTest.getUser("Gandalf"));
-        // test that contents of retrieved search string equal 
+
+        // used mocked FirebaseFirestore to return user object
+
+        
 
 
 
     }
-
 }
