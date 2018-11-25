@@ -75,7 +75,7 @@ amenities:
 
 computer science building: 
 
-The CS Building houses the CS Department of Columbia University and is itself located inside Mudd Engineering building. Parts of the CS department are not accessible to non-CS students beyond normal working hours. 
+The CS Building houses the CS Department of Columbia University and is itself located inside Mudd Engineering building. 
 
 amenities: CS Lounge, CLIC Lab
 ********
@@ -153,261 +153,47 @@ Fayerweather is a building that houses the History & Sociology departments. Faye
 
 amenities: 
 ********
-Hamilton Hall:
 
-Hamilton Hall:	One of the most iconic structures of Columbia’s Morningside Heights campus, Hamilton Hall houses the Office of the Core and many iconic and require Core classes, including lit hum and UW. Also houses the classics department.
+hamilton hall:	One of the most iconic structures of Columbia’s Morningside Heights campus, Hamilton Hall houses the Office of the Core and many iconic and require Core classes, including lit hum and UW. Also houses the classics department.	 
 
-amenities: The cheapest coffee on campus, 25 cent coffee on the 4th floor, at the German Department. Also stairs that will break your resolve and shatter your dignity into tiny pieces.
+amenities: The cheapest coffee on campus, 25 cent coffee on the 4th floor, at the German Department.
 ********
-
-hartley hall:
-
-Hartley Hall was the first dorm built on Columbia’s Morningside Heights Campus. It remains a dorm, having been renovated during the 1980s.
-
-amenities: 
-********	
-
-havemeyer hall:
-
-Havemeyer Hall is a building on the Morningside Heights Campus. It is one of the 6 original buildings of this campus and a National Historic Chemical Landmark. Many important experiments in the history of Chemistry have been conducted in Havemeyer.
-
-amenities: 
-********	
-heyman center for humanities:
-
-The Heyman Center for the Humanities is located in East Campus (EC) and presents itself as a forum for discourse between different disciplines in the Humanities. 
-Amenities:  Institute for Comparative Literature and Society, the Center for the Study of Human Rights, Society of Fellows in the Humanities, and the Society of Senior Scholars.
-********	
-
-horace mann hall:
-
-Horace Mann Hall share its namesake with Horace Mann School, an elite private school in the bronx. Horace Mann School was founded by President Butler, as an experimental teaching lab of Teacher’s College. Today the hall is a part of Teacher’s College, and is no longer associated with Horace Mann School.
-
-
-international affairs building:
-
-International Affairs Building (also known colloquially as SIPA) is the home of the School of International and Public Affairs. 
-
-Amenities: Altschul Auditorium
-********
-	
-international house:
-
-International House (aka I-House) is a private residence  for graduate students & scholars. It has over 700 residents and is a prominent fixture of NYC’s academic and intellectual landscape. Scholars come from schools all over NYC, including Columbia. 
-
-Amenities: 
-********
-	
-jerome greene
-
-Jerome Green is the primary building of Columbia Law School. Opinion is divided on whether it is plain ugly, or ugly in a way defended vociferously by architecture students. 
-
-Amenities: 
-******** 
-
-john jay hall:
-
-John Jay Hall is a first year residence hall. It is named after founding father and alumnus John Jay.
-
-Amenities: John Jay Dining Hall, JJ’s, cool statute of John Jay
-******** 
-
-journalism building:
-
-The Journalism Building...houses the school of Journalism. I mean what were you expecting? It is now referred to as Pulitzer Hall, named after the founder of the Journalism school and the namesake of the prestigious Pulitzer Prize.
-
-Amenities: Up Coffee 
-******** 
-	
-kent hall:
-
-Kent Hall is named after James Kent, Columbia’s first law professor, and is the current home of the Middle East, South Asian, and African Studies Department (MESAAS) andthe  East Asian Languages and Cultures Department (EALAC).
-
-Amenities: East Asian Library
-******** 
-
-knox hall:
-
-Knox Hall is a building on the quad of Union Theological Seminary. Columbia is currently leasing the hall from UTS. 
-
-Amenities:
-******** 
-
-kraft center:
-
-Kraft Center, or the Kraft Center for Jewish Life, houses classrooms and club rooms. 
-
-
-Amenities: Hillel
-******** 
-
-lewisohn hall:
-
-Lewisohn Hall is home to the School of General Studies and the School of Professional Studies.
-
-Amenities: GS Lounge, the writers of the app you’re reading this on
-******** 
-
+hartley hall	
+havemeyer hall	
+heyman center for humanities
+horace mann hall
+international affairs building	
+international house	
+jerome greene 
+john jay hall
+journalism building	
+kent hall
+knox hall
+kraft center
+lewisohn hall
 low memorial library
-
-Low Memorial Library is the former main library of Columbia University, a position that Butler now holds. Low is now the symbolic center of campus, the home of the University’s most senior academic buildings, including the President’s Office.
-
-Amenities: It’s really baller
-******** 
-
-macy hall:
-
-Macy Hall is a building on the Teacher’s College Campus.
-
-Amenities:
-******** 
-
-mathematics building:
-
-Mathematics predictably houses the Mathematics department. 
-
-Amenities: The Math Library, maybe the ugliest library at Columbia. Great collection though.
-******** 
-
-milbank hall:
-
-The oldest structure on Barnard’s Campus. Looks a bit like a haunted home in Dicken’s novel. Covered in Ivy.
-
-Amenities: French, Italian, Slavic languages, German, Sociology, and Psychology departments. Also the Toddler Center.
-******** 
-
-morris a. schapiro hall	:
-
-Morris A. Schapiro Hall, also known as Schapiro Hall, is a dormitory on 115th. It rather confusingly shares its name with other buildings on campus also named Schapiro.
-
-
-northwest corner building:
-
-Also known as NoCo, this building serves as an interdisciplinary center for Columbia Science departments.  	
-
-Amenities: Levien Gym, Joe Coffee, and the Science & Engineering Library. 
-******** 
-
+macy hall
+mathematics building
+milbank hall
+morris a. schapiro hall	
+northwest corner building	
 philosophy hall	
-
-Home of the Philosophy department, English Department, the French Department, Student Services, and Work Study.
-
-Amenities: a cast of Rodin’s Thinker lies outside.
-******** 
-
-prentis hall:
-
-On 125th, Prentis Hall houses the Computer Music Center and other arts facilities.
-
-Amenities:
-******** 
-
-pulitzer hall:
-
-See: Journalism Hall
-
-Amenities:
-******** 
-	
-pupin physics laboratories:
-
-Named after Columbia alum and acclaimed scientist Mihajlo Idvorski Pupin, Pupin Labs was the site of some of the most salient advances in science (including the first splitting of a uranium atom by Enrico Fermi). 
-	
-Amenities: IT’S A PART OF HISTORY, WHAT MORE DO YOU WANT?
-******** 
-
-schapiro center for engineering and physical science research:
-
-Also known as CEPSR, this building features a huge auditorium (Davis) and offices affiliated with various engineering departments. 
-
-Amenities: Davis Auditorium
-******** 
-
-schermerhorn hall:
-Schermerhorn Hall is home to many departments, and the Geology Library
-Amenities: Geology Library
-******** 
-
-school of social work:
-
-Home to the School of Social Work (duh), the Social Work Library and the Department of Statistics. 
-
-Amenities:
-******** 
-
-seeley w. mudd building
-
-Mudd is the home of SEAS, and also the CS department (a subset of SEAS that resides in an adjoining structure).
-
-Amenities: Carleton Commons, Blue Java Cafe
-******** 
-	
-st. paul's chapel
-
-Interfaith Chapel on Columbia’s Campus with services for numerous denominations and faiths.
-
-Amenities: 
-******** 
-
-the cheryl and philip milstein center for teaching and learning:
-
-A new academic hub on the Barnard Campus.
-
-Amenities: 
-******** 
-	
-thompson hall:
-
-A Teacher’s College academic building.
-
-Amenities: 
-******** 
-
-	
-union theological seminary:
-
-A graduate school of theology affiliated with Columbia. 
-
-Amenities: 
-********
-	
-uris hall:
-
-Home of the Business School of Columbia University (CBS). Depressingly ugly, but at least it has an awesome library straight out of the 1970s (Watson) and a solid Deli.
-
-Amenities: Watson Library & Uris Deli 
-******** 	
-
-Wallach:
-
-An undergraduate dorm, once known as Livingston Hall. 
-
-Amenities: 
-********	
-
-
-watson hall:
-
-Home of Information Technology & School of the Arts.
-
-Amenities: 
-********	
-
-william and june warren hall:
-
-Part of the Law School.
-
-Amenities: 
-********
-
+prentis hall
+pulitzer hall	
+pupin physics laboratories	
+riverside church
+schapiro center for engineering and physical science research
+schermerhorn hall
+school of social work
+seeley w. mudd building	
+st. paul's chapel	
+the cheryl and philip milstein center for teaching and learning	
+thompson hall	
+union theological seminary	
+uris hall	
+wallach	
+watson hall	watson	
+william and june warren hall
 william c. warren hall
-
-Part of the Law School.
-
-Amenities: 
-********
-
-
-
 
 
