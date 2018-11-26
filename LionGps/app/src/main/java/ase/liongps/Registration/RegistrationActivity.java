@@ -2,8 +2,10 @@ package ase.liongps.Registration;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import ase.liongps.R;
 
@@ -17,7 +19,7 @@ public class RegistrationActivity extends AppCompatActivity implements Registrat
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_registration);
-		presenter = new RegistrationPresenter();
+		presenter = new RegistrationPresenter(this);
 
 		email = findViewById(R.id.reg_email);
 		password = findViewById(R.id.reg_pw);
@@ -25,7 +27,25 @@ public class RegistrationActivity extends AppCompatActivity implements Registrat
 
 	@Override
 	public void signUp(View view){
-		presenter.createNewUser(email.getText().toString().trim()
-				, password.getText().toString().trim());
+		Log.w("signUP:","made it to signUp");
+		presenter.createNewUser(email.getText().toString(), password.getText().toString());
 	}
+
+	@Override
+	public void onSuccessSignUp() {
+		Toast.makeText(this,"Sign up was a Success!!", Toast.LENGTH_SHORT).show();
+	}
+
+	@Override
+	public void onFailSignUp() {
+		Toast.makeText(this, "That email already has an account associated with it",
+				Toast.LENGTH_SHORT).show();
+	}
+
+	@Override
+	public void onPasswordFail() {
+		Toast.makeText(this, R.string.password_failure, Toast.LENGTH_SHORT).show();
+	}
+
+
 }

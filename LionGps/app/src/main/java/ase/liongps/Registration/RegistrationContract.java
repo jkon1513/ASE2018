@@ -4,9 +4,12 @@ public interface RegistrationContract {
 
 	interface View {
 		void signUp(android.view.View view);
+		void onSuccessSignUp();
+		void onFailSignUp();
+		void onPasswordFail();
 	}
 
 	interface Presenter {
-		boolean createNewUser(String email, String pw);
+		void createNewUser(String email, String pw);
 	}
 }
