@@ -15,16 +15,19 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
 import ase.liongps.R;
+import ase.liongps.Registration.RegistrationActivity;
 
 import static ase.liongps.utils.Constants.ERROR_DIALOG_REQUEST;
 import static ase.liongps.utils.Constants.PERMISSIONS_REQUEST_ENABLE_GPS;
 import static ase.liongps.utils.Constants.PERMISSIONS_REQUEST_FINE_LOCATION;
+import static ase.liongps.utils.Constants.REGISTRATION_REQUEST;
 
 public class LoginActivity extends AppCompatActivity implements LoginContract.View{
 
@@ -45,11 +48,20 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
     private static boolean locationPermissionGranted = false;
     private LoginContract.Presenter presenter;
 
+    Button login;
+    EditText email;
+    EditText password;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         presenter = new LoginPresenter(this);
+
+        email = (EditText) findViewById(R.id.li_email);
+        password = (EditText) findViewById(R.id.li_password);
+        login = (Button) findViewById(R.id.loginButton);
     }
 
     @Override
@@ -82,13 +94,30 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 
     // once permissions all pass this makes the launch button clickable
     public void allowAccessToMap() {
-        Button launch = (Button) findViewById(R.id.launch);
-        launch.setClickable(true);
+        login.setClickable(true);
         Log.d(TAG, "allowAccessToMap: launch button now clickable");
     }
 
 
+    @Override
+    public void showProgressBar() {
 
+    }
+
+    @Override
+    public void hideProgressBsr() {
+
+    }
+
+    @Override
+    public void showSignin() {
+
+    }
+
+    public void launchRegistration(View view){
+        Intent registration = new Intent(this, ase.liongps.Registration.RegistrationActivity.class);
+        startActivityForResult(registration,REGISTRATION_REQUEST);
+    }
 
 
 
@@ -182,7 +211,15 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     locationPermissionGranted = true;
                 }
+                break;
             }
+
+            case REGISTRATION_REQUEST: {
+                //get the username;
+                break;
+            }
+
+
         }
     }
 

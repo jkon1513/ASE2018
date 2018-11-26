@@ -9,12 +9,15 @@ public interface LoginContract {
         void loadMap(android.view.View widget);
         void allowAccessToMap(); //temp for v1 implementation, to be replace by login
         boolean hasPrerequisites();
-
+        void showProgressBar();
+        void hideProgressBsr();
+        void showSignin();
     }
 
     interface Presenter {
 
          void onDestroy();
+        // void Authenticate();
     }
 
 }
