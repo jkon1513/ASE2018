@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -27,11 +28,6 @@ public class DatabaseInteractor {
 		theUser = new User();
 	}
 
-	// constructor for testing with junit & mockito
-	public DatabaseInteractor(FirebaseFirestore d, User u) {
-		db = d;
-		theUser = u;
-	}
 
 	public void saveUser(User u){
 		db.collection("TestData")
