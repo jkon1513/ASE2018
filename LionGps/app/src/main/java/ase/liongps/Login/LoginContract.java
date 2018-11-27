@@ -6,15 +6,18 @@ public interface LoginContract {
    // we will update this contract when we add authentication
 
     interface View {
-        void loadMap(android.view.View widget);
-        void allowAccessToMap(); //temp for v1 implementation, to be replace by login
+        void loadMap();
+        void allowAccessToMap();
         boolean hasPrerequisites();
+        void showPasswordFailure();
+        void showEmailFailure();
 
     }
 
     interface Presenter {
 
          void onDestroy();
+         void authenticate(String username, String password);
     }
 
 }

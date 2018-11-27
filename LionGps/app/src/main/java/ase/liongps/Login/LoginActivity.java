@@ -15,6 +15,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -25,6 +27,7 @@ import ase.liongps.R;
 import static ase.liongps.utils.Constants.ERROR_DIALOG_REQUEST;
 import static ase.liongps.utils.Constants.PERMISSIONS_REQUEST_ENABLE_GPS;
 import static ase.liongps.utils.Constants.PERMISSIONS_REQUEST_FINE_LOCATION;
+import static ase.liongps.utils.Constants.REGISTRATION_REQUEST;
 
 public class LoginActivity extends AppCompatActivity implements LoginContract.View{
 
@@ -45,11 +48,22 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
     private static boolean locationPermissionGranted = false;
     private LoginContract.Presenter presenter;
 
+    Button login;
+    EditText email;
+    EditText password;
+    TextView register;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         presenter = new LoginPresenter(this);
+
+        email = (EditText) findViewById(R.id.li_email);
+        password = (EditText) findViewById(R.id.li_password);
+        login = (Button) findViewById(R.id.loginButton);
+        register = (TextView) findViewById(R.id.registerLink);
     }
 
     @Override
@@ -72,27 +86,43 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
         presenter.onDestroy();
     }
 
-    /* this might need to be replaced once login is implemented. for now it loads the
-            map activity once the launch button is clicked. */
+    public void signIn(View view){
+        String user = email.getText().toString();
+        String pw = password.getText().toString();
+        presenter.authenticate(user,pw);
+    }
+
+
     @Override
-    public void loadMap(View widget) {
+    public void loadMap() {
         Intent map = new Intent(this, ase.liongps.MapOverlay.MapOverlayActivity.class);
+        map.putExtra("username", email.getText().toString());
         startActivity(map);
     }
 
-    // once permissions all pass this makes the launch button clickable
+
     public void allowAccessToMap() {
-        Button launch = (Button) findViewById(R.id.launch);
-        launch.setClickable(true);
+        register.setClickable(true);
+        login.setClickable(true);
         Log.d(TAG, "allowAccessToMap: launch button now clickable");
     }
 
+    @Override
+    public void showPasswordFailure() {
+        Toast.makeText(this, "The password you entered is incorrect",
+                Toast.LENGTH_SHORT).show();
+    }
 
+    @Override
+    public void showEmailFailure() {
+        Toast.makeText(this, "The email you entered is incorrect",
+                Toast.LENGTH_SHORT).show();
+    }
 
-
-
-
-
+    public void launchRegistration(View view){
+        Intent registration = new Intent(this, ase.liongps.Registration.RegistrationActivity.class);
+        startActivityForResult(registration,REGISTRATION_REQUEST);
+    }
 
 
 
@@ -182,6 +212,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     locationPermissionGranted = true;
                 }
+                break;
             }
         }
     }
@@ -200,6 +231,15 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
                 else{
                     getLocationPermission();
                 }
+                break;
+            }
+
+            case REGISTRATION_REQUEST: {
+                String un = data.getStringExtra("username");
+                String pw = data.getStringExtra("password");
+                email.setText(un);
+                password.setText(pw);
+                loadMap();
             }
         }
 

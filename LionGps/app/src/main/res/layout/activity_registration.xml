@@ -6,7 +6,7 @@
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login.LoginActivity">
+    tools:context=".Registration.RegistrationActivity">
 
     <Button
         android:layout_width="wrap_content"
@@ -16,7 +16,7 @@
 
 
     <EditText
-        android:id="@+id/li-email"
+        android:id="@+id/reg-email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
@@ -25,7 +25,7 @@
         android:paddingBottom="15dp" />
 
     <EditText
-        android:id="@+id/li-password"
+        android:id="@+id/reg-pw"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
@@ -34,25 +34,24 @@
         android:paddingBottom="15dp" />
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/signupButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="7dp"
-        android:text="Login"
-        android:textAllCaps="false"
-        android:onClick="signIn"
-        android:clickable="false"/>
+        android:text="Sign Up"
+        android:onClick="signUp"
+        android:textAllCaps="false" />
+
 
     <TextView
-        android:id="@+id/registerLink"
+        android:id="@+id/loginLink"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="15dp"
-        android:text="Don't have account? Sign Up"
+        android:text="Already have an account? Log In"
         android:textAlignment="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        android:onClick="launchRegistration"
-        android:clickable="false"/>
+        />
 
 </LinearLayout>
