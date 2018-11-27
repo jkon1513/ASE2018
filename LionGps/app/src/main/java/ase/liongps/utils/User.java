@@ -52,4 +52,8 @@ public class User {
     public void setSearches(List<String> searches) {
         this.searches = new LinkedList<>(searches);
     }
+
+    public void initSearches(){
+        this.searches = new LinkedList<>();
+    }
 }

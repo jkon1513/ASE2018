@@ -5,6 +5,17 @@ public class Constants {
     public static final int ERROR_DIALOG_REQUEST = 7021;
     public static final int PERMISSIONS_REQUEST_FINE_LOCATION = 7022;
     public static final int PERMISSIONS_REQUEST_ENABLE_GPS = 7023;
+    public static final int REGISTRATION_REQUEST = 7024;
+
+
+    //Regular Expressions
+    public static final String VALID_EMAIL =
+            "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
+
+    //error codes
+    public static final int EMAIL_NOT_FOUND = 404;
+    public static final int INVALID_PASSWORD = 405;
+
 }
 
 

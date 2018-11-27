@@ -62,7 +62,6 @@ public class DatabaseInteractor {
 				public void onSuccess(DocumentSnapshot documentSnapshot) {
 					User loaded = documentSnapshot.toObject(User.class);
 					theUser = loaded;
-
 				}
 			}).addOnFailureListener(new OnFailureListener() {
 				@Override
