@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -26,6 +27,7 @@ public class DatabaseInteractor {
 		db = FirebaseFirestore.getInstance();
 		theUser = new User();
 	}
+
 
 	public void saveUser(User u){
 		db.collection("TestData")

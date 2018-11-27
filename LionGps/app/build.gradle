@@ -21,7 +21,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    testOptions {
+        /* added to avoid issues with mock dependencies caused by mockito -
+         see: http://tools.android.com/tech-docs/unit-testing-support#TOC-Method-...-not-mocked.-
+         comment by Christopher Thomas */
+        unitTests.returnDefaultValues = true
+    }
     productFlavors {
+
     }
 }
 
