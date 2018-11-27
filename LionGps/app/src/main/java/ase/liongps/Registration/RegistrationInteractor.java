@@ -9,7 +9,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 
 
@@ -39,6 +38,7 @@ public class RegistrationInteractor {
 				}
 				else {
 					//this will automatically occur if the username already exists
+					//TODO add failure handler here that will display toast in view
 				}
 
 			}
@@ -64,11 +64,11 @@ public class RegistrationInteractor {
 		boolean hasSymbol = false;
 		List<Character> symbols;
 
-		Character[] x = {
+		Character[] specialChars = {
 				'+', '-', '&', '|', '!', '(',')', '{', '}', '[', ']', '^',
 				'~', '*', '?', ':','@'};
 
-		symbols = Arrays.asList(x);
+		symbols = Arrays.asList(specialChars);
 
 
 		for(int i = 0; i<pw.length(); i++ ){

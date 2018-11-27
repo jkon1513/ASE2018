@@ -12,6 +12,10 @@ public class Constants {
     public static final String VALID_EMAIL =
             "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
 
+    //error codes
+    public static final int EMAIL_NOT_FOUND = 404;
+    public static final int INVALID_PASSWORD = 405;
+
 }
 
 

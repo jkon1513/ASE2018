@@ -16,13 +16,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
 import ase.liongps.R;
-import ase.liongps.Registration.RegistrationActivity;
 
 import static ase.liongps.utils.Constants.ERROR_DIALOG_REQUEST;
 import static ase.liongps.utils.Constants.PERMISSIONS_REQUEST_ENABLE_GPS;
@@ -51,6 +51,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
     Button login;
     EditText email;
     EditText password;
+    TextView register;
 
 
     @Override
@@ -62,6 +63,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
         email = (EditText) findViewById(R.id.li_email);
         password = (EditText) findViewById(R.id.li_password);
         login = (Button) findViewById(R.id.loginButton);
+        register = (TextView) findViewById(R.id.registerLink);
     }
 
     @Override
@@ -84,8 +86,13 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
         presenter.onDestroy();
     }
 
-    /* this might need to be replaced once login is implemented. for now it loads the
-            map activity once the launch button is clicked. */
+    public void signIn(View view){
+        String user = email.getText().toString();
+        String pw = password.getText().toString();
+        presenter.authenticate(user,pw);
+    }
+
+
     @Override
     public void loadMap() {
         Intent map = new Intent(this, ase.liongps.MapOverlay.MapOverlayActivity.class);
@@ -93,36 +100,29 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
         startActivity(map);
     }
 
-    // once permissions all pass this makes the launch button clickable
+
     public void allowAccessToMap() {
+        register.setClickable(true);
         login.setClickable(true);
         Log.d(TAG, "allowAccessToMap: launch button now clickable");
     }
 
-
     @Override
-    public void showProgressBar() {
-
+    public void showPasswordFailure() {
+        Toast.makeText(this, "The password you entered is incorrect",
+                Toast.LENGTH_SHORT).show();
     }
 
     @Override
-    public void hideProgressBsr() {
-
-    }
-
-    @Override
-    public void showSignin() {
-
+    public void showEmailFailure() {
+        Toast.makeText(this, "The email you entered is incorrect",
+                Toast.LENGTH_SHORT).show();
     }
 
     public void launchRegistration(View view){
         Intent registration = new Intent(this, ase.liongps.Registration.RegistrationActivity.class);
         startActivityForResult(registration,REGISTRATION_REQUEST);
     }
-
-
-
-
 
 
 

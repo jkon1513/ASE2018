@@ -9,15 +9,15 @@ public interface LoginContract {
         void loadMap();
         void allowAccessToMap();
         boolean hasPrerequisites();
-        void showProgressBar();
-        void hideProgressBsr();
-        void showSignin();
+        void showPasswordFailure();
+        void showEmailFailure();
+
     }
 
     interface Presenter {
 
          void onDestroy();
-        // void Authenticate();
+         void authenticate(String username, String password);
     }
 
 }
