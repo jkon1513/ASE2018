@@ -4,6 +4,7 @@ package ase.liongps.MapOverlay;
 import com.google.android.gms.maps.model.LatLng;
 import java.util.List;
 import ase.liongps.utils.Building;
+import ase.liongps.utils.User;
 
 public class MapOverlayPresenter implements MapOverlayContract.Presenter{
     SearchInteractor searchModel;
@@ -33,7 +34,7 @@ public class MapOverlayPresenter implements MapOverlayContract.Presenter{
 
     @Override
     public void initUser(String username) {
-        dbModel.loadUserData(username);
+            dbModel.loadUserData(username);
     }
 
     @Override
