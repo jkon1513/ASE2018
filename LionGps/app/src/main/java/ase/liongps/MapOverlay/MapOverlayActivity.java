@@ -1,5 +1,6 @@
 package ase.liongps.MapOverlay;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -32,11 +33,13 @@ public class MapOverlayActivity extends AppCompatActivity
 
     private MapOverlayContract.Presenter presenter;
     private ArrayAdapter adapter;
+    private Intent incoming;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_overlay);
+        incoming =  getIntent();
         presenter = new MapOverlayPresenter(this);
 
         //searchBar
@@ -51,19 +54,7 @@ public class MapOverlayActivity extends AppCompatActivity
         //user panel
         leftPanel = (ListView) findViewById(R.id.left_drawer);
 
-        /*
-            when authentication is added to login activity we will instantiate an intent
-            with the username of the authenticated user as a param and pass that username to the
-            presenter. for now we will use a test constant to assure data flow is being handled
-            correctly: it will eventually look as follows:
-
-            String theUser = getIntent().getStringExtra("username");
-            presenter.initUser(theUser);
-         */
-        presenter.initUser("Hill-Billy-Bob");
-
-
-
+        presenter.initUser(incoming.getStringExtra("username"));
     }
 
     // Map Logic -------------------------------------------------------------------

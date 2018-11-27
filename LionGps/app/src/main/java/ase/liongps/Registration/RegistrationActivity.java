@@ -1,5 +1,6 @@
 package ase.liongps.Registration;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -33,7 +34,15 @@ public class RegistrationActivity extends AppCompatActivity implements Registrat
 
 	@Override
 	public void onSuccessSignUp() {
+		String un = email.getText().toString();
+		String pw = password.getText().toString();
+
 		Toast.makeText(this,"Sign up was a Success!!", Toast.LENGTH_SHORT).show();
+		Intent returnData = new Intent();
+		returnData.putExtra("username", un);
+		returnData.putExtra("password", pw);
+		setResult(RESULT_OK,returnData);
+		finish();
 	}
 
 	@Override

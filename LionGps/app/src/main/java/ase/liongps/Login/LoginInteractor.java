@@ -1,7 +1,19 @@
 package ase.liongps.Login;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import ase.liongps.utils.User;
+
 public class LoginInteractor {
 
-    //TODO will put authentication checks in here
+    FirebaseFirestore db;
+    FirebaseAuth auth;
+
+    public LoginInteractor(){
+
+	}
+
+
 
 }

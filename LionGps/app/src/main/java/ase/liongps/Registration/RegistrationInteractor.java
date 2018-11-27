@@ -6,28 +6,36 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
+
+
+import ase.liongps.utils.User;
 
 import static ase.liongps.utils.Constants.VALID_EMAIL;
 
 public class RegistrationInteractor {
 
 	private FirebaseAuth auth;
+	private FirebaseFirestore db;
+	private User theUser;
 
 	public RegistrationInteractor() {
-		auth = FirebaseAuth.getInstance();
+		this.auth = FirebaseAuth.getInstance();
+		this.db = FirebaseFirestore.getInstance();
+		this.theUser = new User();
 	}
 
-	public void registerUser(String email, String password){
+	public void registerUser(final String email, final String password){
 		auth.createUserWithEmailAndPassword(email, password)
 				.addOnCompleteListener(new OnCompleteListener<AuthResult>() {
 			@Override
 			public void onComplete(@NonNull Task<AuthResult> task) {
 				if(task.isSuccessful()){
-					//call presenter.onSuccess to let user know it was saved
+					saveNewUser(email, password);
 				}
 				else {
 					//this will automatically occur if the username already exists
@@ -35,6 +43,14 @@ public class RegistrationInteractor {
 
 			}
 		});
+	}
+
+	public void saveNewUser(String username, String password) {
+		theUser.setName(username);
+		theUser.setPw(password);
+		theUser.initSearches();
+		db.collection("TestData")
+				.document(username).set(theUser); // add onFailure listener
 	}
 
 	public boolean isValidEmail(String username) {

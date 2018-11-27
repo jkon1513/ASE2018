@@ -87,8 +87,9 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
     /* this might need to be replaced once login is implemented. for now it loads the
             map activity once the launch button is clicked. */
     @Override
-    public void loadMap(View widget) {
+    public void loadMap() {
         Intent map = new Intent(this, ase.liongps.MapOverlay.MapOverlayActivity.class);
+        map.putExtra("username", email.getText().toString());
         startActivity(map);
     }
 
@@ -213,13 +214,6 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
                 }
                 break;
             }
-
-            case REGISTRATION_REQUEST: {
-                //get the username;
-                break;
-            }
-
-
         }
     }
 
@@ -237,6 +231,15 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
                 else{
                     getLocationPermission();
                 }
+                break;
+            }
+
+            case REGISTRATION_REQUEST: {
+                String un = data.getStringExtra("username");
+                String pw = data.getStringExtra("password");
+                email.setText(un);
+                password.setText(pw);
+                loadMap();
             }
         }
 
