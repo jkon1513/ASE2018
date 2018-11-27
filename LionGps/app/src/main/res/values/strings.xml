@@ -9,4 +9,7 @@
     <string name="password_failure">Your password must have at least 6 characters,
         contain at least 1 uppercase letter, 1 digit, and 1 special symbol
     </string>
+    <string name="permissions_fail">Your location services are required for LionGps
+        and are currently not enabled. Please re-enable them to continue using the app
+    </string>
 </resources>

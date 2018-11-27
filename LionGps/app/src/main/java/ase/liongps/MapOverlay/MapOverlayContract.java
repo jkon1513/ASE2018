@@ -1,6 +1,7 @@
 package ase.liongps.MapOverlay;
 
 
+import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.maps.model.LatLng;
 import java.util.List;
 
@@ -15,6 +16,9 @@ public interface MapOverlayContract {
         void showRecentSearches();
         void centerCamera(LatLng geoLocation, float zoom);
         void placeMarker(LatLng geoLocation, String markerName);
+        void onPermissionDenied();
+        void onGeoLocationFailure();
+        FusedLocationProviderClient getMyLocator();
     }
 
     interface Presenter {
@@ -24,6 +28,7 @@ public interface MapOverlayContract {
         void handleSearch(String query);
         List getRecentSearches();
         void getRouteData(Building dest);
+        void getMyLocation();
         LatLng getLocationData(String name);
     }
 

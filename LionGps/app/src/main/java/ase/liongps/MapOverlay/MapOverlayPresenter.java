@@ -1,12 +1,10 @@
 package ase.liongps.MapOverlay;
 
-
 import com.google.android.gms.maps.model.LatLng;
 import java.util.List;
 import ase.liongps.utils.Building;
-import ase.liongps.utils.User;
 
-public class MapOverlayPresenter implements MapOverlayContract.Presenter{
+public class MapOverlayPresenter implements MapOverlayContract.Presenter, GeoLocationInteractor.GeoDataListener{
     SearchInteractor searchModel;
     GeoLocationInteractor geoModel;
     DatabaseInteractor dbModel;
@@ -23,13 +21,13 @@ public class MapOverlayPresenter implements MapOverlayContract.Presenter{
     public void initMap() {
         //place map markers
         //TODO: make unique markers for building locations
-        for(String bldngName: searchModel.getValidBuildings()){
-
-            view.placeMarker(getLocationData(bldngName), bldngName);
-        }
+//        for(String bldngName: searchModel.getValidBuildings()){
+//
+//            view.placeMarker(getLocationData(bldngName), bldngName);
+//        }
 
         //center the camera on start
-        view.centerCamera(getLocationData("butler library"), 18.0f);
+       getMyLocation();
     }
 
     @Override
@@ -47,7 +45,7 @@ public class MapOverlayPresenter implements MapOverlayContract.Presenter{
         if (searchModel.isValidSearch(query)) {
             dbModel.updateHistory(query);
             Building result = searchModel.getBuilding(query);
-            view.showRoute(geoModel.getLocation(result));
+            view.showRoute(geoModel.getBlngLocation(result));
         } else {
             view.onSearchError();
         }
@@ -64,8 +62,28 @@ public class MapOverlayPresenter implements MapOverlayContract.Presenter{
     }
 
     @Override
+    public void getMyLocation() {
+        geoModel.getCurrentPosition(view.getMyLocator(), this);
+    }
+
+    @Override
     public LatLng getLocationData(String name) {
         Building dest = searchModel.getBuilding(name);
-        return geoModel.getLocation(dest);
+        return geoModel.getBlngLocation(dest);
+    }
+
+    @Override
+    public void myLocationSuccess(LatLng position) {
+        view.centerCamera(position, 18.0f);
+    }
+
+    @Override
+    public void onFailure() {
+
+    }
+
+    @Override
+    public void permissionsRevoked() {
+        view.onPermissionDenied();
     }
 }
