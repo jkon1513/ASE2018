@@ -47,6 +47,8 @@ dependencies {
 
     //google directions
     implementation 'com.google.android.gms:play-services-location:16.0.0'
+    implementation 'com.google.maps:google-maps-services:0.9.0'
+    implementation 'org.slf4j:slf4j-simple:1.7.25'
 
     //firestore
     implementation 'com.google.firebase:firebase-core:16.0.5'
