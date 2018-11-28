@@ -21,13 +21,6 @@ public class MapOverlayPresenter implements MapOverlayContract.Presenter, GeoLoc
 
     @Override
     public void initMap() {
-        //place map markers
-        //TODO: make unique markers for building locations
-//        for(String bldngName: searchModel.getValidBuildings()){
-//
-//            view.placeMarker(getLocationData(bldngName), bldngName);
-//        }
-
         //center the camera on my location
         geoModel.getCurrentPosition(view.getMyLocator(), this);
     }
@@ -47,6 +40,7 @@ public class MapOverlayPresenter implements MapOverlayContract.Presenter, GeoLoc
         if (searchModel.isValidSearch(query)) {
             dbModel.updateHistory(query);
             Building result = searchModel.getBuilding(query);
+            view.placeMarker(getLocationData(query), query);
             geoModel.calculateDirections(geoModel.getMyLocation(),geoModel.getBlngLocation(result), this);
         } else {
             view.onSearchError();
