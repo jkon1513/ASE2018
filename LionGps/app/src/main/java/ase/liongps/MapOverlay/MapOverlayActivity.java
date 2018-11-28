@@ -21,9 +21,13 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.maps.GeoApiContext;
+
+import java.util.ArrayList;
 
 import ase.liongps.R;
 
@@ -42,6 +46,7 @@ public class MapOverlayActivity extends AppCompatActivity
     private MapOverlayContract.Presenter presenter;
     private ArrayAdapter adapter;
     private Intent incoming;
+    private GeoApiContext geoContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,13 +97,10 @@ public class MapOverlayActivity extends AppCompatActivity
         map.addMarker(new MarkerOptions().position(geoLocation).title(markerName));
     }
 
-    /*
-    Routing is not implemented yet. for now this will take a geo-location and center the camera
-    ontop of it
-    */
+
     @Override
-    public void showRoute(LatLng geoLocation) {
-        map.moveCamera(CameraUpdateFactory.newLatLng(geoLocation));
+    public void showRoute(ArrayList <LatLng> path) {
+        Polyline route = map.addPolyline(new PolylineOptions().addAll(path));
     }
 
     @Override
@@ -133,6 +135,7 @@ public class MapOverlayActivity extends AppCompatActivity
                         || event.getAction() == event.ACTION_DOWN
                         || event.getAction() == event.KEYCODE_ENTER) {
 
+                    map.clear(); // think about better way to handle clearing poly line
                     presenter.handleSearch(searchBar.getText().toString());
                 }
 

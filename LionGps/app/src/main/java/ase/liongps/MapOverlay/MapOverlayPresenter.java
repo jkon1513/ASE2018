@@ -1,6 +1,8 @@
 package ase.liongps.MapOverlay;
 
 import com.google.android.gms.maps.model.LatLng;
+
+import java.util.ArrayList;
 import java.util.List;
 import ase.liongps.utils.Building;
 
@@ -26,8 +28,8 @@ public class MapOverlayPresenter implements MapOverlayContract.Presenter, GeoLoc
 //            view.placeMarker(getLocationData(bldngName), bldngName);
 //        }
 
-        //center the camera on start
-       getMyLocation();
+        //center the camera on my location
+        geoModel.getCurrentPosition(view.getMyLocator(), this);
     }
 
     @Override
@@ -45,7 +47,7 @@ public class MapOverlayPresenter implements MapOverlayContract.Presenter, GeoLoc
         if (searchModel.isValidSearch(query)) {
             dbModel.updateHistory(query);
             Building result = searchModel.getBuilding(query);
-            view.showRoute(geoModel.getBlngLocation(result));
+            geoModel.calculateDirections(geoModel.getMyLocation(),geoModel.getBlngLocation(result), this);
         } else {
             view.onSearchError();
         }
@@ -61,10 +63,6 @@ public class MapOverlayPresenter implements MapOverlayContract.Presenter, GeoLoc
         //TODO once routes api in place
     }
 
-    @Override
-    public void getMyLocation() {
-        geoModel.getCurrentPosition(view.getMyLocator(), this);
-    }
 
     @Override
     public LatLng getLocationData(String name) {
@@ -73,7 +71,12 @@ public class MapOverlayPresenter implements MapOverlayContract.Presenter, GeoLoc
     }
 
     @Override
-    public void myLocationSuccess(LatLng position) {
+    public void onMyLocationSuccess(LatLng position) {
+
+    }
+
+    @Override
+    public void initLocationSuccess(LatLng position) {
         view.centerCamera(position, 18.0f);
     }
 
@@ -85,5 +88,10 @@ public class MapOverlayPresenter implements MapOverlayContract.Presenter, GeoLoc
     @Override
     public void permissionsRevoked() {
         view.onPermissionDenied();
+    }
+
+    @Override
+    public void onDirectionsSuccess(ArrayList<LatLng> route) {
+        view.showRoute(route);
     }
 }

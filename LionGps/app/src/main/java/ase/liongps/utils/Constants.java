@@ -16,6 +16,9 @@ public class Constants {
     public static final int EMAIL_NOT_FOUND = 404;
     public static final int INVALID_PASSWORD = 405;
 
+    //keys
+    public static final String API_KEY = "AIzaSyC7REgJiPAQ6apYBUF_inLSFJJ_poMi7aE";
+
 }
 
 
