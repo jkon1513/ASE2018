@@ -15,7 +15,7 @@ public interface MapOverlayContract {
         void onSearchError();
         void showRoute(ArrayList<LatLng> path);
         void launchProfilePage();
-        void showRecentSearches();
+        void showRecentSearches(String search);
         void centerCamera(LatLng geoLocation, float zoom);
         void placeMarker(LatLng geoLocation, String markerName);
         void onPermissionDenied();
@@ -28,7 +28,7 @@ public interface MapOverlayContract {
         void initSearch();
         void initUser(String username); //will look into moving this into login contract instead
         void handleSearch(String query);
-        List getRecentSearches();
+        void getRecentSearches();
         void getRouteData(Building dest);
         LatLng getLocationData(String name);
     }

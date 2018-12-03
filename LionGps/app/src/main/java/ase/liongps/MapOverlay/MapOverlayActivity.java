@@ -66,6 +66,9 @@ public class MapOverlayActivity extends AppCompatActivity
 
         //user panel
         leftPanel = (ListView) findViewById(R.id.left_drawer);
+        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
+        leftPanel.setAdapter(adapter);
+
 
         presenter.initUser(incoming.getStringExtra("username"));
         myLocator = LocationServices.getFusedLocationProviderClient(this);
@@ -156,8 +159,9 @@ public class MapOverlayActivity extends AppCompatActivity
     }
 
     @Override
-    public void showRecentSearches() {
-        //TODO: implement
+    public void showRecentSearches(String search) {
+        adapter.add(search);
     }
+
 
 }
