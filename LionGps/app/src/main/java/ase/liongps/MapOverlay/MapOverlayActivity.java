@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -152,10 +153,16 @@ public class MapOverlayActivity extends AppCompatActivity
         Toast.makeText(this, "that building is not in our records just yet", Toast.LENGTH_LONG).show();
     }
 
+    public void viewProfile(View view){
+        launchProfilePage();
+    }
+
 
     @Override
     public void launchProfilePage() {
-        //TODO: implement
+        Intent profile = new Intent(this, ase.liongps.ProfilePage.ProfilePageActivity.class);
+        profile.putExtra("username" ,incoming.getStringExtra("username"));
+        startActivity(profile);
     }
 
     @Override

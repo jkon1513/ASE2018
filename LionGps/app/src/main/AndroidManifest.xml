@@ -50,7 +50,8 @@
             android:required="false" />
 
         <activity android:name=".MapOverlay.MapOverlayActivity" />
-        <activity android:name=".Registration.RegistrationActivity"></activity>
+        <activity android:name=".Registration.RegistrationActivity" />
+        <activity android:name=".ProfilePage.ProfilePageActivity"></activity>
     </application>
 
 </manifest>

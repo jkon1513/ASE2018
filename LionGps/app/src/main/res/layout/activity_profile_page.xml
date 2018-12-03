@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfilePage.ProfilePageActivity"
+    android:orientation="vertical"
+    android:id="@+id/profile_layout">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/username_display"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/new_class"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="class name"
+            android:inputType="text"
+            android:singleLine="true"
+            android:layout_margin="10dp"
+            android:paddingBottom="15dp"
+            android:visibility="gone"
+            android:id="@+id/course_name"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="location"
+            android:inputType="text"
+            android:singleLine="true"
+            android:layout_margin="10dp"
+            android:paddingBottom="15dp"
+            android:visibility="gone"
+            android:id="@+id/course_location"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="save"
+            android:visibility="gone"
+            android:onClick="saveClass"
+            android:id="@+id/save_course"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Add Class"
+        android:onClick="addNewClass"
+        android:id="@+id/add_course"/>
+
+</LinearLayout>
