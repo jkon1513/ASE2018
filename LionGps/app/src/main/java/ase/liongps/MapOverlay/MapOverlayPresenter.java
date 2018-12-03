@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import ase.liongps.utils.Building;
 
-public class MapOverlayPresenter implements MapOverlayContract.Presenter, GeoLocationInteractor.GeoDataListener{
+public class MapOverlayPresenter implements MapOverlayContract.Presenter, GeoLocationInteractor.GeoDataListener,
+DatabaseInteractor.dbListener{
     SearchInteractor searchModel;
     GeoLocationInteractor geoModel;
     DatabaseInteractor dbModel;
@@ -27,7 +28,7 @@ public class MapOverlayPresenter implements MapOverlayContract.Presenter, GeoLoc
 
     @Override
     public void initUser(String username) {
-            dbModel.loadUserData(username);
+            dbModel.loadUserData(username, this);
     }
 
     @Override
@@ -39,6 +40,7 @@ public class MapOverlayPresenter implements MapOverlayContract.Presenter, GeoLoc
     public void handleSearch(String query) {
         if (searchModel.isValidSearch(query)) {
             dbModel.updateHistory(query);
+            view.showRecentSearches(query);
             Building result = searchModel.getBuilding(query);
             view.placeMarker(getLocationData(query), query);
             geoModel.calculateDirections(geoModel.getMyLocation(),geoModel.getBlngLocation(result), this);
@@ -48,8 +50,11 @@ public class MapOverlayPresenter implements MapOverlayContract.Presenter, GeoLoc
     }
 
     @Override
-    public List getRecentSearches() {
-        return null;
+    public void getRecentSearches() {
+        List<String> searches = dbModel.getUser().getSearches();
+        for(String search : searches){
+            view.showRecentSearches(search);
+        }
     }
 
     @Override
@@ -87,5 +92,10 @@ public class MapOverlayPresenter implements MapOverlayContract.Presenter, GeoLoc
     @Override
     public void onDirectionsSuccess(ArrayList<LatLng> route) {
         view.showRoute(route);
+    }
+
+    @Override
+    public void onUserLoadSuccess() {
+        getRecentSearches();
     }
 }

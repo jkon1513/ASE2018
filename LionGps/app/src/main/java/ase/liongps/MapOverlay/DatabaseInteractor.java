@@ -59,7 +59,7 @@ public class DatabaseInteractor {
 	}
 
 
-	public void loadUserData(final String username){
+	public void loadUserData(final String username, final dbListener listener){
 			if(db == null) {initFireBase();}
 
 			// will replace TestData with a "Users" collection
@@ -68,14 +68,8 @@ public class DatabaseInteractor {
 			userData.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
 				@Override
 				public void onSuccess(DocumentSnapshot documentSnapshot) {
-					User loaded = documentSnapshot.toObject(User.class);
-					theUser = loaded;
-				}
-			}).addOnFailureListener(new OnFailureListener() {
-				@Override
-				public void onFailure(@NonNull Exception e) {
-					System.out.println(e);
-
+					theUser = documentSnapshot.toObject(User.class);
+					listener.onUserLoadSuccess();
 				}
 			});
 	}
@@ -83,6 +77,10 @@ public class DatabaseInteractor {
 	public void updateHistory(String query) {
 		theUser.updateHistory(query);
 		saveUser(theUser);
+	}
+
+	public interface dbListener {
+		void onUserLoadSuccess();
 	}
 
 }
