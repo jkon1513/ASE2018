@@ -28,6 +28,11 @@ public class RegistrationInteractor {
 		this.theUser = new User();
 	}
 
+	//for testing purposes until we can figure out how to mock firebase
+	public RegistrationInteractor(String s){
+		this.theUser = new User();
+	}
+
 	public void registerUser(final String email, final String password){
 		auth.createUserWithEmailAndPassword(email, password)
 				.addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -66,7 +71,7 @@ public class RegistrationInteractor {
 
 		Character[] specialChars = {
 				'+', '-', '&', '|', '!', '(',')', '{', '}', '[', ']', '^',
-				'~', '*', '?', ':','@'};
+				'~', '*', '?', ':','@','%','$','#'};
 
 		symbols = Arrays.asList(specialChars);
 

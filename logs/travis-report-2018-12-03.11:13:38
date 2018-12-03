@@ -1,6 +1,4 @@
-Could not find google-services.json while looking in [src/nullnull/debug, src/debug/nullnull, src/nullnull, src/debug, src/nullnullDebug]
 registerResGeneratingTask is deprecated, use registerGeneratedResFolders(FileCollection)
-Could not find google-services.json while looking in [src/nullnull/release, src/release/nullnull, src/nullnull, src/release, src/nullnullRelease]
 registerResGeneratingTask is deprecated, use registerGeneratedResFolders(FileCollection)
 :app:checkDebugClasspath UP-TO-DATE
 :app:preBuild UP-TO-DATE
@@ -58,5 +56,5 @@ Parsing json file: /Users/jason/Desktop/ASE/ASE2018/LionGps/app/google-services.
 :app:testReleaseUnitTest UP-TO-DATE
 :app:test UP-TO-DATE
 
-BUILD SUCCESSFUL in 1s
+BUILD SUCCESSFUL in 4s
 37 actionable tasks: 2 executed, 35 up-to-date
