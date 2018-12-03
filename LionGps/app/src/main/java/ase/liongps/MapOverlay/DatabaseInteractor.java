@@ -24,14 +24,20 @@ public class DatabaseInteractor {
 
 
 	public DatabaseInteractor() {
-		db = FirebaseFirestore.getInstance();
 		theUser = new User();
+	}
+
+	public void initFireBase() {
+		db = FirebaseFirestore.getInstance();
 	}
 
 
 	public void saveUser(User u){
-		db.collection("TestData")
-		.document(u.getName()).set(u)
+		if(db == null) { initFireBase();}
+
+		userData = db.collection("TestData").document(u.getName());
+
+		userData.set(u)
 				.addOnSuccessListener(new OnSuccessListener<Void>() {
 					@Override
 					public void onSuccess(Void aVoid) {
@@ -48,12 +54,14 @@ public class DatabaseInteractor {
 
 	}
 
-	public User getUser(String username) {
+	public User getUser() {
 		return theUser;
 	}
 
 
 	public void loadUserData(final String username){
+			if(db == null) {initFireBase();}
+
 			// will replace TestData with a "Users" collection
 			userData = db.collection("TestData").document(username);
 

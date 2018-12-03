@@ -1,82 +1,114 @@
 package ase.liongps.test;
 
-import android.provider.ContactsContract;
-import android.util.Log;
-
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
+
+import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.stubbing.Answer;
 
-import java.util.List;
 
 import ase.liongps.MapOverlay.DatabaseInteractor;
 import ase.liongps.utils.User;
 
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.doAnswer;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.ArgumentMatchers.isA;
+import static org.mockito.Mockito.doNothing;
+
 
 @RunWith(MockitoJUnitRunner.class)
 public class DatabaseInteractorTests {
 
-    private User testUser = new User("Gandalf", "The Gray");
+    
+    @Mock private DatabaseInteractor db = new DatabaseInteractor();
+    @Captor private ArgumentCaptor<User> userCaptor;
 
-    @Mock
-    private DatabaseInteractor dbInteractTest;
+    @Test
+    public void testSaveUser() {
+        // we don't want to make a network connection
+        doNothing().when(db).saveUser(userCaptor.capture());
 
 
-    @Before
-    public void setup() {
-        testUser.updateHistory("Mordor");
+        User newUser = new User("jkon", "password");
+        db.saveUser(newUser);
+        Mockito.verify(db).saveUser(newUser);
+        User capturedArg = userCaptor.getValue();
+
+        Assert.assertEquals("username of passed user did not match expected",
+                newUser.getName(), capturedArg.getName());
+
+        Assert.assertEquals("the expected user pw does not match actual pw",
+                newUser.getPw(), capturedArg.getPw());
+
+
+
+        newUser = new User("hulk hogan", "brother");
+        db.saveUser(newUser);
+        Mockito.verify(db).saveUser(newUser);
+        capturedArg = userCaptor.getValue();
+
+
+        Assert.assertEquals("username of passed user did not match expected",
+                newUser.getName(), capturedArg.getName());
+
+        Assert.assertEquals("the expected user pw does not match actual pw",
+                newUser.getPw(), capturedArg.getPw());
+
     }
 
     @Test
-    public void checkUser() {
+	public void loadUserTest(){
+    	final User savedState = new User();
+    	final User theUser = new User();
 
-        // test behavior of method without returning testUser
-        dbInteractTest.getUser("Gandalf");
-        // test there are no side effects to getUser method
-        verify(dbInteractTest).getUser("Gandalf");
+    	Mockito.doAnswer(new Answer<Void>() {
+			@Override
+			public Void answer(InvocationOnMock invocation) throws Throwable {
+				User arg = invocation.getArgument(0);
+				savedState.setName(arg.getName());
+				savedState.setPw(arg.getPw());
+				return null;
+			}
+		}).when(db).saveUser(isA(User.class));
+
+		Mockito.doAnswer(new Answer<Void>() {
+			@Override
+			public Void answer(InvocationOnMock invocation) throws Throwable {
+				if(invocation.getArgument(0) == savedState.getName()) {
+					theUser.setName(savedState.getName());
+					theUser.setPw(savedState.getPw());
+					return null;
+				}
+
+				return null;
+			}
+		}).when(db).loadUserData(isA(String.class));
+
+		Mockito.doAnswer(new Answer<User>() {
+			@Override
+			public User answer(InvocationOnMock invocation) throws Throwable {
+				return theUser;
+			}
+		}).when(db).getUser();
 
 
-        // use mockito to simulate return of User
-        when(dbInteractTest.getUser("Gandalf")).thenReturn(testUser);
+		User naruto = new User ("Naruto Izumaki", "rasengan");
+		db.saveUser(naruto);
+		db.loadUserData("Naruto Izumaki");
+		User loaded = db.getUser();
 
+		Assert.assertEquals("loaded username does not match the username that was saved",
+				naruto.getName(), loaded.getName());
 
-        // test if user is retrieved
-        Assert.assertNotNull(dbInteractTest.getUser("Gandalf"));
-        // test that testUser is the same user provided to Database Interactor via constructor
-        Assert.assertEquals(testUser, dbInteractTest.getUser("Gandalf"));
-
-        // check if retrieved user has search entries in list
-        User test = dbInteractTest.getUser("Gandalf");
-        if (test.getSearches().isEmpty()) {
-            Assert.fail("Empty testList in DatabaseInteractorTests.java!");
-        } else {
-            List testlist = test.getSearches();
-            Assert.assertEquals("Mordor", testlist.get(0));
-        }
+		Assert.assertEquals("loaded pw does not match the pw that was saved",
+				naruto.getPw(), loaded.getPw());
 
 
 
-
-
-
-
-    }
+	}
 }
