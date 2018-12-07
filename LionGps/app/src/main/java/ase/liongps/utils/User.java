@@ -21,11 +21,16 @@ public class User {
     public void updateHistory(String search){
         int maxEntries = 10;
 
-        if(searches.size() < maxEntries){
-            searches.addLast(search);
+        if(searches.contains(search)) {
+            searches.remove(search);
+            searches.addFirst(search);
+        }
+
+        else if(searches.size() < maxEntries){
+            searches.addFirst(search);
         } else {
-            searches.removeFirst();
-            searches.addLast(search);
+            searches.removeLast();
+            searches.addFirst(search);
         }
     }
 

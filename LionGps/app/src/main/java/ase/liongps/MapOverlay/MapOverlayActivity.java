@@ -45,7 +45,7 @@ public class MapOverlayActivity extends AppCompatActivity
     private FusedLocationProviderClient myLocator;
 
     private MapOverlayContract.Presenter presenter;
-    private ArrayAdapter adapter;
+    private ArrayAdapter <String> adapter;
     private Intent incoming;
     private GeoApiContext geoContext;
 
@@ -167,8 +167,16 @@ public class MapOverlayActivity extends AppCompatActivity
 
     @Override
     public void showRecentSearches(String search) {
-        adapter.add(search);
-    }
+        boolean inHistory = (adapter.getPosition(search) >= 0);
 
+        if (inHistory) {
+            adapter.remove(search);
+            adapter.insert(search, 0);
+        }
+
+        else {
+            adapter.insert(search, 0);
+        }
+    }
 
 }
