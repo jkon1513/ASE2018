@@ -3,6 +3,7 @@ package ase.liongps.Registration;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -28,8 +29,19 @@ public class RegistrationActivity extends AppCompatActivity implements Registrat
 
 	@Override
 	public void signUp(View view){
-		Log.w("signUP:","made it to signUp");
-		presenter.createNewUser(email.getText().toString(), password.getText().toString());
+		if(TextUtils.isEmpty(email.getText())) {
+			email.setError("email is a required field");
+		}
+
+		else if (TextUtils.isEmpty(password.getText())) {
+			password.setError("Password is a required field");
+		}
+
+		else {
+			String em = email.getText().toString();
+			String pw = password.getText().toString();
+			presenter.createNewUser(em, pw);
+		}
 	}
 
 	@Override

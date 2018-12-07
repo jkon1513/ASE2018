@@ -140,7 +140,7 @@ public class MapOverlayActivity extends AppCompatActivity
                         || event.getAction() == event.KEYCODE_ENTER) {
 
                     map.clear(); // think about better way to handle clearing poly line
-                    presenter.handleSearch(searchBar.getText().toString());
+                    presenter.handleSearch(searchBar.getText().toString().trim());
                 }
 
                 return false;

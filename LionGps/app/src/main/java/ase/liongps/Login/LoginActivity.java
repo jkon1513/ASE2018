@@ -12,6 +12,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -87,9 +88,20 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
     }
 
     public void signIn(View view){
-        String user = email.getText().toString();
-        String pw = password.getText().toString();
-        presenter.authenticate(user,pw);
+        if(TextUtils.isEmpty(email.getText())) {
+            email.setError("email is a required field");
+        }
+
+        else if (TextUtils.isEmpty(password.getText())) {
+            password.setError("Password is a required field");
+        }
+
+        else {
+
+            String user = email.getText().toString();
+            String pw = password.getText().toString();
+            presenter.authenticate(user, pw);
+        }
     }
 
 
@@ -104,18 +116,17 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
     public void allowAccessToMap() {
         register.setClickable(true);
         login.setClickable(true);
-        Log.d(TAG, "allowAccessToMap: launch button now clickable");
     }
 
     @Override
     public void showPasswordFailure() {
-        Toast.makeText(this, "The password you entered is incorrect",
+        Toast.makeText(this, "The password you entered is incorrect, please try again",
                 Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void showEmailFailure() {
-        Toast.makeText(this, "The email you entered is incorrect",
+        Toast.makeText(this, "The email you entered is incorrect, please try again",
                 Toast.LENGTH_SHORT).show();
     }
 
