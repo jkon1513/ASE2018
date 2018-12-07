@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -59,7 +58,7 @@ public class RegistrationActivity extends AppCompatActivity implements Registrat
 
 	@Override
 	public void onFailSignUp() {
-		Toast.makeText(this, "That email already has an account associated with it",
+		Toast.makeText(this, "The email you entered is invalid, or already has an account associated with it. Please try again",
 				Toast.LENGTH_SHORT).show();
 	}
 

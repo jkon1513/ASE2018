@@ -1,6 +1,6 @@
 package ase.liongps.Registration;
 
-public class RegistrationPresenter implements RegistrationContract.Presenter {
+public class RegistrationPresenter implements RegistrationContract.Presenter, RegistrationInteractor.RegistrationListener {
 	RegistrationContract.View view;
 	RegistrationInteractor model;
 
@@ -14,9 +14,17 @@ public class RegistrationPresenter implements RegistrationContract.Presenter {
 		if(!model.isValidEmail(email)){ view.onFailSignUp(); }
 		else if(!model.isValidPassword(pw)) {view.onPasswordFail();}
 		else {
-			model.registerUser(email, pw);
-			view.onSuccessSignUp();
+			model.registerUser(email, pw, this);
 		}
 	}
 
+	@Override
+	public void onSuccess() {
+		view.onSuccessSignUp();
+	}
+
+	@Override
+	public void onFailure() {
+        view.onFailSignUp();
+	}
 }
