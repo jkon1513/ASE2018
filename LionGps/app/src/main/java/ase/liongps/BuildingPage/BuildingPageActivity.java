@@ -15,13 +15,16 @@ public class BuildingPageActivity extends AppCompatActivity implements BuildingP
 	private ImageView pic;
 	private TextView description;
 	private Button nav;
+	private BuildingPagePresenter presenter;
 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_building_page);
+
 		Intent incoming = getIntent();
+		presenter = new BuildingPagePresenter(this);
 
 		name = findViewById(R.id.name);
 		pic = findViewById(R.id.photo);
@@ -30,23 +33,24 @@ public class BuildingPageActivity extends AppCompatActivity implements BuildingP
 
 		//presenter.setBuilding(incoming.getStringExtra("building_name"));
 		showBuildingDescription("login_placeholder");
+		showBuildingImage("butler library");
 	}
 
 	@Override
 	public void showBuildingImage(String bldName){
-		int id = getResources().getIdentifier(bldName, "drawable", getPackageName());
+		String file = bldName.replace(" ", "");
+		int id = getResources().getIdentifier(file, "drawable", getPackageName());
 		pic.setImageResource(id);
 	}
 
 	@Override
 	public void showBuildingDescription(String bldName) {
 		int id = getResources().getIdentifier(bldName, "string", getPackageName());
-		String desc_text = getResources().getString(id);
-		description.setText(desc_text);
+		description.setText(id);
 	}
 
 	@Override
 	public void showBuildingName(String bldName) {
-
+		name.setText(bldName);
 	}
 }

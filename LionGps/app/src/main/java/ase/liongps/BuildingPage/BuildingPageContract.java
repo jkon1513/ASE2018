@@ -9,6 +9,6 @@ public interface BuildingPageContract {
 	}
 
 	interface thePresenter {
-		void loadBuilding();
+		void loadBuilding(String bldName);
 	}
 }
