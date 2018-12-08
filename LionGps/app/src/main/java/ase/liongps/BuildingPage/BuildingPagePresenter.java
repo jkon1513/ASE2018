@@ -11,8 +11,10 @@ public class BuildingPagePresenter implements BuildingPageContract.thePresenter{
 
 	@Override
 	public void loadBuilding(String bldname) {
+		String resource = bldname.replace(" ", "");
+
 		view.showBuildingName(bldname);
-		view.showBuildingDescription(bldname);
-		view.showBuildingImage(bldname);
+		view.showBuildingDescription(resource);
+		view.showBuildingImage(resource);
 	}
 }

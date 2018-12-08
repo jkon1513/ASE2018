@@ -12,9 +12,9 @@
 
     <!-- descriptions -->
 
-    <String name="claremont">80 Claremont is a 5-story building on the southwest corner of Union Theological Seminary's quadrangle on 120th Street between Broadway and Claremont Avenue. The building was constructed in the Gothic style. Columbia took possession of the building through a 99 year lease in 2005 following $4 million in renovations as part of a short-term expansion plan that also includes the lease of Knox Hall.
+    <string name="claremont">80 Claremont is a 5-story building on the southwest corner of Union Theological Seminary\'s quadrangle on 120th Street between Broadway and Claremont Avenue. The building was constructed in the Gothic style. Columbia took possession of the building through a 99 year lease in 2005 following $4 million in renovations as part of a short-term expansion plan that also includes the lease of Knox Hall.
         80 Claremont is home to the Religion Department and Science and Technology Ventures. Religion gained 70 percent more space than it had in Kent Hall, while EALAC and MEALAC expanded into the vacated space in Kent.
-    </String>
+    </string>
     <string name="alfredlernerhall">Alfred Lerner Hall is the student center. It was built from 1996-1999, replacing Ferris Booth Hall, and is named for donor Alfred Lerner CC\'55.
         Lerner is notorious for its infuriating system of space-wasting and inefficient upward-spiralling ramps. The stairs in the exit stairwells are actually the quickest way to navigate Lerner. Lerner houses
         Ferris Booth dining hall, Blue Java cafe, the office of student life and a piano lounge
@@ -24,29 +24,29 @@
     <string name="barnadrdhall">Barnard Hall is one of the oldest buildings on the Barnard Campus, named after the namesake of the College and Columbia President Frederick Barnard.
         It houses a fitness center and Streng dance studio</string>
     <string name="broadwayhall">Broadway Hall is a dorm built in 2000 and Designed by Robert A. M. Stern, CC \'60. It houses a stargazers lounge which is at times used for classes </string>
-    <string name="butlerlibrary">Butler Library is the main undergraduate & graduate research library.
-        It ranks as among the most notable and iconic structures at Columbia. Competition for open study spaces can be fierce at Butler during midterms & finals.
+    <string name="butlerlibrary">Butler Library is the main undergraduate and graduate research library.
+        It ranks as among the most notable and iconic structures at Columbia. Competition for open study spaces can be fierce at Butler during midterms and finals.
         It houses BlueJava and a CUIT computer lab</string>
-    <string name="carmanhall">Carman Hall was built in 1959 and is a dorm for Columbia Students. Has a reputation as a “party dorm” of sorts.</string>
-    <string name="casahispanica">Casa Hispanica is beaux-arts townhouse that houses the the Spanish, Portuguese, and Catalan language center</string>
+    <string name="carmanhall">Carman Hall was built in 1959 and is a dorm for Columbia Students. Has a reputation as a party dorm of sorts.</string>
+    <string name="casahispanica">Casa Hispanica is beaux-arts townhouse that houses the Spanish, Portuguese, and Catalan language center</string>
     <string name="chandlerlaboratories">Chandler Laboratories, otherwise known as Chandler Hall, houses research labs and a handful of classrooms.</string>
     <string name="computersciencebuilding">The CS Building houses the CS Department of Columbia University and is itself located inside Mudd Engineering building.
         Parts of the CS department are not accessible to non-CS students beyond normal working hours. </string>
     <string name="deutscheshaus">Deutsches Haus is a building devoted to the german language and the first foreign language hall established at an american university.
         Affiliated with the department of Germanic languages</string>
     <string name="dianacenter">The Diana Center is a building on Barnard College’s campus and the student center of the college.
-        It was completed in 2010 and has some of the most striking & futuristic architecture at Columbia. </string>
+        It was completed in 2010 and has some of the most striking and futuristic architecture at Columbia. </string>
     <string name="dodgehall">Dodge Hall is the home of the School of the Arts, the Department of Music, and the Kathyrn Bache Miller Theatre. Has a Blue Java Cafe in the lobby.</string>
     <string name="dodgephysicalfitnesscenter">Columbia’s gym. Also known as the Marcellus Hartley Dodge Physical Fitness Center, Dodge shares its name with Dodge Hall, which has inspired decades of confusion among undergraduates.
         Has extensive amenities but has a reputation for being crowded during peak hours.
     </string>
-    <string name="earlhall">Earl Hall is home for the religious services & organizations of Columbia (Office of the University Chaplain).</string>
+    <string name="earlhall">Earl Hall is home for the religious services and organizations of Columbia (Office of the University Chaplain).</string>
     <string name="eastcampus">East Campus is a dorm, reputed for its parties. If your club has a holiday gathering it will likely happen here. </string>
     <string name="engineeringterrace">Engineering Terrace is an extension to Mudd that was built behind Fairchild since there was all that extra space, anyway.
         The "building" houses faculty offices and little more. It is also used as a passageway to the Computer Science Building.</string>
     <string name="facultyhouse">Faculty House is a 38,000-square-foot facility that hosts a wide variety of functions, including receptions, social events, meetings, conferences, and seminars. It houses the Ivy Lounge and a full coffee bar</string>
     <string name="fairchildlifesciencesbuilding">Fairchild Center is a building that house’s biology labs and offices on Columbia’s campus.</string>
-    <string name="fayerweather">Fayerweather is a building that houses the History & Sociology departments. Fayerweather was notably occupied by students during the protests of 1968.</string>
+    <string name="fayerweather">Fayerweather is a building that houses the History and Sociology departments. Fayerweather was notably occupied by students during the protests of 1968.</string>
     <string name="hamiltonhall">One of the most iconic structures of Columbia’s Morningside Heights campus, Hamilton Hall houses the Office of the Core and many iconic and require Core classes, including lit hum and UW. Also houses the classics department.
         It also houses the cheapest coffee on campus, 25 cent coffee on the 4th floor, at the German Department. Also stairs that will break your resolve and shatter your dignity into tiny pieces. </string>
     <string name="hartleyhall">Hartley Hall was the first dorm built on Columbia’s Morningside Heights Campus. It remains a dorm, having been renovated during the 1980s.</string>
@@ -57,7 +57,7 @@
         Horace Mann School was founded by President Butler, as an experimental teaching lab of Teacher’s College. Today the hall is a part of Teacher’s College, and is no longer associated with Horace Mann School.
     </string>
     <string name="internationalaffairsbuilding">International Affairs Building (also known colloquially as SIPA) is the home of the School of International and Public Affairs. </string>
-    <string name="internationalhouse">International House (aka I-House) is a private residence  for graduate students & scholars. It has over 700 residents and is a prominent fixture of NYC’s academic and intellectual landscape.
+    <string name="internationalhouse">International House (aka I-House) is a private residence  for graduate students and scholars. It has over 700 residents and is a prominent fixture of NYC’s academic and intellectual landscape.
         Scholars come from schools all over NYC, including Columbia. </string>
     <string name="jermoegreenehall">erome Green is the primary building of Columbia Law School. Opinion is divided on whether it is plain ugly, or ugly in a way defended vociferously by architecture students.</string>
     <string name="johnjayhall">John Jay Hall is a first year residence hall. It is named after founding father and alumnus John Jay. It houses John Jay cafeteria and JJs dining hall</string>
@@ -73,7 +73,7 @@
     <string name="mathematicsbuilding">Mathematics predictably houses the Mathematics department. </string>
     <string name="milbankhall">The oldest structure on Barnard’s Campus. Looks a bit like a haunted home in Dicken’s novel. Covered in Ivy. It houses the French, Italian, Slavic languages, German, Sociology, and Psychology departments. Also the Toddler Center.</string>
     <string name="milsteinhall">A building on Barnards campus</string>
-    <string name="northwestcornerbuilding">Also known as NoCo, this building serves as an interdisciplinary center for Columbia Science departments. It houses The Levien Gym, Joe Coffee, and the Science & Engineering</string>
+    <string name="northwestcornerbuilding">Also known as NoCo, this building serves as an interdisciplinary center for Columbia Science departments. It houses The Levien Gym, Joe Coffee, and the Science and Engineering</string>
     <string name="philosophyhall">Home of the Philosophy department, English Department, the French Department, Student Services, and Work Study.</string>
     <string name="prentishall">On 125th, Prentis Hall houses the Computer Music Center and other arts facilities.</string>
     <string name="pulitzerhall">An extension of the Journalism Building</string>
@@ -87,7 +87,7 @@
     <string name="uniontheologicalseminary">A graduate school of theology affiliated with Columbia.</string>
     <string name="urishall">Home of the Business School of Columbia University (CBS). Depressingly ugly, but at least it has an awesome library straight out of the 1970s (Watson) and a solid Deli.</string>
     <string name="wallach">An undergraduate dorm, once known as Livingston Hall.</string>
-    <string name="watsonhall">Home of Information Technology & School of the Arts.</string>
+    <string name="watsonhall">Home of Information Technology and School of the Arts.</string>
     <string name="williamandjunewarrenhall">Part of the Law School.</string>
     <string name="williamcwarrenhall">Part of the Law School.</string>
 </resources>

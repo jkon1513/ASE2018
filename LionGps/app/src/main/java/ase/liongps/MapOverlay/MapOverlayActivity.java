@@ -3,6 +3,7 @@ package ase.liongps.MapOverlay;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,6 +32,8 @@ import com.google.maps.GeoApiContext;
 import java.util.ArrayList;
 
 import ase.liongps.R;
+
+import static ase.liongps.utils.Constants.NAVIGATION_CHOICE;
 
 
 public class MapOverlayActivity extends AppCompatActivity
@@ -153,10 +156,17 @@ public class MapOverlayActivity extends AppCompatActivity
         Toast.makeText(this, "that building is not in our records just yet", Toast.LENGTH_LONG).show();
     }
 
+
+    @Override
+    public void showRecentSearches(String search) {
+        adapter.add(search);
+    }
+
+    // intents and listeners
+
     public void viewProfile(View view){
         launchProfilePage();
     }
-
 
     @Override
     public void launchProfilePage() {
@@ -166,9 +176,19 @@ public class MapOverlayActivity extends AppCompatActivity
     }
 
     @Override
-    public void showRecentSearches(String search) {
-        adapter.add(search);
+    public void launchBuildingPage(String bldName) {
+        Intent bldPage = new Intent(this, ase.liongps.BuildingPage.BuildingPageActivity.class);
+        bldPage.putExtra("building", bldName);
+        startActivityForResult(bldPage, NAVIGATION_CHOICE);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
+        if(requestCode == NAVIGATION_CHOICE && resultCode == RESULT_OK){
+            String destination = data.getStringExtra("destination");
+            presenter.getRouteData(destination);
+        }
+    }
 }

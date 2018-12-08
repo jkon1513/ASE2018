@@ -21,6 +21,7 @@ public interface MapOverlayContract {
         void onPermissionDenied();
         void onGeoLocationFailure();
         FusedLocationProviderClient getMyLocator();
+        void launchBuildingPage(String buildingName);
     }
 
     interface Presenter {
@@ -29,7 +30,7 @@ public interface MapOverlayContract {
         void initUser(String username); //will look into moving this into login contract instead
         void handleSearch(String query);
         void getRecentSearches();
-        void getRouteData(Building dest);
+        void getRouteData(String destination);
         LatLng getLocationData(String name);
     }
 
