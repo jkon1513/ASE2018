@@ -33,17 +33,18 @@ public class RegistrationInteractor {
 		this.theUser = new User();
 	}
 
-	public void registerUser(final String email, final String password){
+	public void registerUser(final String email, final String password, final RegistrationListener listener){
 		auth.createUserWithEmailAndPassword(email, password)
 				.addOnCompleteListener(new OnCompleteListener<AuthResult>() {
 			@Override
 			public void onComplete(@NonNull Task<AuthResult> task) {
 				if(task.isSuccessful()){
 					saveNewUser(email, password);
+					listener.onSuccess();
 				}
-				else {
-					//this will automatically occur if the username already exists
-					//TODO add failure handler here that will display toast in view
+
+				else { // handle each exception here at some point
+					listener.onFailure();
 				}
 
 			}
@@ -86,4 +87,10 @@ public class RegistrationInteractor {
 
 		return (validLength && hasUppercase && hasSymbol);
 	}
+
+	public interface RegistrationListener {
+		void onSuccess();
+		void onFailure();
+	}
 }
+

@@ -3,7 +3,6 @@ package ase.liongps.MapOverlay;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -48,7 +47,7 @@ public class MapOverlayActivity extends AppCompatActivity
     private FusedLocationProviderClient myLocator;
 
     private MapOverlayContract.Presenter presenter;
-    private ArrayAdapter adapter;
+    private ArrayAdapter <String> adapter;
     private Intent incoming;
     private GeoApiContext geoContext;
 
@@ -156,14 +155,6 @@ public class MapOverlayActivity extends AppCompatActivity
         Toast.makeText(this, "that building is not in our records just yet", Toast.LENGTH_LONG).show();
     }
 
-
-    @Override
-    public void showRecentSearches(String search) {
-        adapter.add(search);
-    }
-
-    // intents and listeners
-
     public void viewProfile(View view){
         launchProfilePage();
     }
@@ -176,11 +167,23 @@ public class MapOverlayActivity extends AppCompatActivity
     }
 
     @Override
-    public void launchBuildingPage(String bldName) {
-        Intent bldPage = new Intent(this, ase.liongps.BuildingPage.BuildingPageActivity.class);
-        bldPage.putExtra("building", bldName);
-        startActivityForResult(bldPage, NAVIGATION_CHOICE);
+    public void showRecentSearches(String search) {
+        boolean inHistory = (adapter.getPosition(search) >= 0);
+
+        if (inHistory) {
+            adapter.remove(search);
+            adapter.insert(search, 0);
+        }
+        else {
+            adapter.insert(search, 0);
+        }
     }
+
+	public void launchBuildingPage(String bldName) {
+		Intent bldPage = new Intent(this, ase.liongps.BuildingPage.BuildingPageActivity.class);
+		bldPage.putExtra("building", bldName);
+		startActivityForResult(bldPage, NAVIGATION_CHOICE);
+	}
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

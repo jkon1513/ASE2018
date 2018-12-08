@@ -58,7 +58,7 @@ public class RegistrationActivity extends AppCompatActivity implements Registrat
 
 	@Override
 	public void onFailSignUp() {
-		Toast.makeText(this, "That email already has an account associated with it",
+		Toast.makeText(this, "The email you entered is invalid, or already has an account associated with it. Please try again",
 				Toast.LENGTH_SHORT).show();
 	}
 
