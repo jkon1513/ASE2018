@@ -6,6 +6,7 @@ public class Constants {
     public static final int PERMISSIONS_REQUEST_FINE_LOCATION = 7022;
     public static final int PERMISSIONS_REQUEST_ENABLE_GPS = 7023;
     public static final int REGISTRATION_REQUEST = 7024;
+    public static final int NAVIGATION_CHOICE = 7025;
 
 
     //Regular Expressions

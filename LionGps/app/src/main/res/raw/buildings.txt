@@ -1,4 +1,4 @@
-80 claremont	claremont	40.811110	-73.962727	cla
+claremont	claremont	40.811110	-73.962727	cla
 alfred lerner hall	lerner	40.806972	-73.963919	ler
 altschul hall	alrschul	40.810063	-73.963340	alt
 avery hall	avery	40.808293	-73.960972	avh
@@ -47,8 +47,8 @@ riverside church	riverside church	40.811881	-73.963115	rsc
 schapiro center for engineering and physical science research	cepsr	40.809640	-73.960817	scep
 schermerhorn hall	schermerhorn	40.808629	-73.960435	sch
 school of social work	social work	40.810262	-73.958363	ssw
-seeley w. mudd building	mudd	40.809553	-73.960247	mud
-st. paul's chapel	st. paul's	40.807846	-73.960976
+seeley w mudd building	mudd	40.809553	-73.960247	mud
+st paul's chapel	st. paul's	40.807846	-73.960976
 the cheryl and philip milstein center for teaching and learning	milstein	40.809691	-73.963627	mlc
 thompson hall	thompson	40.810326	-73.961506	th
 union theological seminary	union	40.811356	-73.961751	uts
@@ -56,4 +56,4 @@ uris hall	uris	40.808970	-73.961356	uri
 wallach	wallach	40.806033	-73.961892
 watson hall	watson	40.807611	-73.965569	wat
 william and june warren hall	william and june	40.806282	-73.961059	wjw
-william c. warren hall	warren	40.806291	-73.960074
+william c warren hall	warren	40.806291	-73.960074

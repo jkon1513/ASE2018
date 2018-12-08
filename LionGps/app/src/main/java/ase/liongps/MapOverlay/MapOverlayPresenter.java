@@ -39,11 +39,12 @@ DatabaseInteractor.dbListener{
     @Override
     public void handleSearch(String query) {
         if (searchModel.isValidSearch(query)) {
-            dbModel.updateHistory(query);
-            view.showRecentSearches(query);
-            Building result = searchModel.getBuilding(query);
-            view.placeMarker(getLocationData(query), query);
-            geoModel.calculateDirections(geoModel.getMyLocation(),geoModel.getBlngLocation(result), this);
+            Building target = searchModel.getBuilding(query);
+
+            dbModel.updateHistory(target.getName());
+            view.showRecentSearches(target.getName());
+            view.launchBuildingPage(target.getName());
+
         } else {
             view.onSearchError();
         }
@@ -58,8 +59,10 @@ DatabaseInteractor.dbListener{
     }
 
     @Override
-    public void getRouteData(Building dest) {
-        //TODO once routes api in place
+    public void getRouteData(String destination) {
+        Building target = searchModel.getBuilding(destination);
+        view.placeMarker(getLocationData(destination), destination);
+        geoModel.calculateDirections(geoModel.getMyLocation(),geoModel.getBlngLocation(target), this);
     }
 
 
