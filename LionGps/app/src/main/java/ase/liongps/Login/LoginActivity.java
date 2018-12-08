@@ -246,11 +246,15 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
             }
 
             case REGISTRATION_REQUEST: {
-                String un = data.getStringExtra("username");
-                String pw = data.getStringExtra("password");
-                email.setText(un);
-                password.setText(pw);
-                loadMap();
+                if(resultCode == RESULT_OK) {
+                    String un = data.getStringExtra("username");
+                    String pw = data.getStringExtra("password");
+                    email.setText(un);
+                    password.setText(pw);
+                    loadMap();
+                }
+
+                break;
             }
         }
 
