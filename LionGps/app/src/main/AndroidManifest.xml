@@ -49,7 +49,8 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-        <activity android:name=".MapOverlay.MapOverlayActivity" />
+        <activity android:name=".MapOverlay.MapOverlayActivity"
+                  android:configChanges="orientation|screenSize"/>
         <activity android:name=".Registration.RegistrationActivity" />
         <activity android:name=".ProfilePage.ProfilePageActivity"></activity>
     </application>
