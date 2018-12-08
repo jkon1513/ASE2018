@@ -51,7 +51,8 @@
 
         <activity android:name=".MapOverlay.MapOverlayActivity" />
         <activity android:name=".Registration.RegistrationActivity" />
-        <activity android:name=".ProfilePage.ProfilePageActivity"></activity>
+        <activity android:name=".ProfilePage.ProfilePageActivity" />
+        <activity android:name=".BuildingPage.BuildingPageActivity"></activity>
     </application>
 
 </manifest>
