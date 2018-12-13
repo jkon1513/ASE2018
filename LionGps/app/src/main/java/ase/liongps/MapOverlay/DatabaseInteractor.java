@@ -15,7 +15,6 @@ import ase.liongps.utils.User;
 
 //TODO: possible we will need to add check for existing username here for new registrations
 //TODO: look into whether saves need to occur on each search or if local version can be cached
-//TODO: handle case of search already existing in history (or perhaps in user class)
 
 public class DatabaseInteractor {
 	private static User theUser;
