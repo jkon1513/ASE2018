@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Add Class"
-        android:onClick="addNewClass"
+        android:onClick="addClassListener"
         android:id="@+id/add_course"/>
 
 </LinearLayout>
