@@ -13,8 +13,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.List;
-
 import ase.liongps.R;
 
 public class ProfilePageActivity extends AppCompatActivity implements ProfilePageContract.theView {
@@ -46,14 +44,19 @@ public class ProfilePageActivity extends AppCompatActivity implements ProfilePag
 		saveButton = (Button) classEntry.findViewById(R.id.save_course);
 
 		incoming = getIntent();
-		showUsername(incoming.getStringExtra("username"));
-		//presenter.initSchedule(username);
-
 		classes = getPreferences(MODE_PRIVATE);
+
 		presenter = new ProfilePagePresenter(this);
+		presenter.initSchedule(incoming.getStringExtra("username"));
 	}
 
-	private void showUsername(String user){
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		presenter.saveSchedule(incoming.getStringExtra("username"));
+	}
+
+	public void showUsername(String user){
 		username.setText(user + "'s profile page");
 	}
 
@@ -92,7 +95,7 @@ public class ProfilePageActivity extends AppCompatActivity implements ProfilePag
 
 		else {
 
-			presenter.saveToSchedule(courseField.getText().toString(), buildingfield.getText().toString());
+			presenter.addToSchedule(courseField.getText().toString(), buildingfield.getText().toString());
 		}
 	}
 
@@ -114,12 +117,13 @@ public class ProfilePageActivity extends AppCompatActivity implements ProfilePag
 		Toast.makeText(this,"Something went wrong adding your class", Toast.LENGTH_SHORT).show();
 	}
 
-	public void saveScheduleState(){
-
-
+	public void saveScheduleState(String username){
+		SharedPreferences.Editor schedule = classes.edit();
+		schedule.putStringSet(username , presenter.getScheduleData());
+		schedule.apply();
 	}
 
-	public void loadSchedule() {
-
+	public void loadScheduleState(String username) {
+        presenter.loadIntoSchedule(classes.getStringSet(username , null));
 	}
 }
