@@ -37,7 +37,7 @@ low memorial library	low library	40.808167	-73.961839
 macy hall	macy	40.810561	-73.960405	mcy
 mathematics building	mathematics	40.809150	-73.962675	mat
 milbank hall	milbank	40.810583	-73.962689	mil
-morris a. schapiro hall	schapiro hall	40.807844	-73.965103	schp
+morris a schapiro hall	schapiro hall	40.807844	-73.965103	schp
 northwest corner building	noco	40.810114	-73.961963	nwc
 philosophy hall	philosophy	40.807508	-73.961080	phi
 prentis hall	prentis	40.816740	-73.959197	prn
