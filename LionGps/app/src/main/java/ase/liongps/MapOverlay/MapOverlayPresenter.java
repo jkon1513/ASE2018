@@ -34,6 +34,8 @@ DatabaseInteractor.dbListener{
     @Override
     public void initSearch(){
         searchModel.readBuildingData();
+        view.initAutoComplete(searchModel.getValidBuildings());
+        view.showSearchBar();
     }
 
     @Override

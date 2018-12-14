@@ -12,7 +12,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
+import android.widget.AutoCompleteTextView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,7 +40,7 @@ public class MapOverlayActivity extends AppCompatActivity
         implements OnMapReadyCallback, MapOverlayContract.View {
 
     //widgets
-    private EditText searchBar;
+    private AutoCompleteTextView searchBar;
     private ListView leftPanel;
 
     //map manipulation
@@ -48,7 +48,7 @@ public class MapOverlayActivity extends AppCompatActivity
     private FusedLocationProviderClient myLocator;
 
     private MapOverlayContract.Presenter presenter;
-    private ArrayAdapter <String> adapter;
+    private ArrayAdapter <String> historyAdapter, suggestAdapter;
     private Intent incoming;
     private GeoApiContext geoContext;
 
@@ -60,8 +60,8 @@ public class MapOverlayActivity extends AppCompatActivity
         presenter = new MapOverlayPresenter(this);
 
         //searchBar
-        searchBar = (EditText) findViewById(R.id.searchText);
-        showSearchBar();
+        searchBar = (AutoCompleteTextView) findViewById(R.id.searchText);
+        presenter.initSearch();
 
         //Map
         SupportMapFragment mapFragment = (SupportMapFragment)
@@ -70,8 +70,9 @@ public class MapOverlayActivity extends AppCompatActivity
 
         //user panel
         leftPanel = (ListView) findViewById(R.id.left_drawer);
-        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
-        leftPanel.setAdapter(adapter);
+        historyAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1);
+        leftPanel.setAdapter(historyAdapter);
 
 
         presenter.initUser(incoming.getStringExtra("username"));
@@ -131,8 +132,6 @@ public class MapOverlayActivity extends AppCompatActivity
     // Search logic --------------------------------------------------------------------
 
     public void showSearchBar() {
-        presenter.initSearch();
-
         //overides the enter button of keyboard to search and not create new lines
         searchBar.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -151,6 +150,13 @@ public class MapOverlayActivity extends AppCompatActivity
         });
     }
 
+    public void initAutoComplete(ArrayList<String> suggestions){
+        suggestAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,
+                suggestions);
+        searchBar.setThreshold(3);
+        searchBar.setAdapter(suggestAdapter);
+    }
+
     @Override
     public void onSearchError() {
         Toast.makeText(this, "that building is not in our records just yet", Toast.LENGTH_LONG).show();
@@ -158,17 +164,17 @@ public class MapOverlayActivity extends AppCompatActivity
 
 	@Override
 	public void showRecentSearches(String search) {
-		boolean inHistory = (adapter.getPosition(search) >= 0);
+		boolean inHistory = (historyAdapter.getPosition(search) >= 0);
 
 		if (inHistory) {
-			adapter.remove(search);
-			adapter.insert(search, 0);
+			historyAdapter.remove(search);
+			historyAdapter.insert(search, 0);
 		}
 		else {
-		    adapter.insert(search, 0);
+		    historyAdapter.insert(search, 0);
 
-		    if(adapter.getCount() > 10){
-		        adapter.remove(adapter.getItem(10));
+		    if(historyAdapter.getCount() > 10){
+		        historyAdapter.remove(historyAdapter.getItem(10));
             }
 		}
 	}
