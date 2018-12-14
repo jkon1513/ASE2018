@@ -165,7 +165,11 @@ public class MapOverlayActivity extends AppCompatActivity
 			adapter.insert(search, 0);
 		}
 		else {
-			adapter.insert(search, 0);
+		    adapter.insert(search, 0);
+
+		    if(adapter.getCount() > 10){
+		        adapter.remove(adapter.getItem(10));
+            }
 		}
 	}
 
