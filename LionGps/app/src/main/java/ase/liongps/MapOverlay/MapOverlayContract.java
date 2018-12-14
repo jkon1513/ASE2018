@@ -22,6 +22,7 @@ public interface MapOverlayContract {
         void onGeoLocationFailure();
         FusedLocationProviderClient getMyLocator();
         void launchBuildingPage(String buildingName);
+        void initAutoComplete(ArrayList<String> suggestions);
     }
 
     interface Presenter {
