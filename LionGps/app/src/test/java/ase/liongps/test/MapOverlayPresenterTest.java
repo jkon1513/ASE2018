@@ -21,14 +21,6 @@ public class MapOverlayPresenterTest {
             they are never initalized, NullPointerExceptions abound - this is handled by the annotation above this class
         */
 
-        Assert.assertEquals(null,mockMap.getRecentSearches());
-        Mockito.verifyNoMoreInteractions(mockMap);
-
-        // verify that method was invoked
-        Mockito.verify(mockMap).getRecentSearches();
-        // verify no side effects occur after get recent searches is invoked
-        Mockito.verifyNoMoreInteractions(mockMap);
-
         mockMap.initMap();
         Mockito.verify(mockMap).initMap();
         Mockito.verifyNoMoreInteractions(mockMap);

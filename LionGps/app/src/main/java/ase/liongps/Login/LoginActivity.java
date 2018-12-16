@@ -108,7 +108,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
     @Override
     public void loadMap() {
         Intent map = new Intent(this, ase.liongps.MapOverlay.MapOverlayActivity.class);
-        map.putExtra("username", email.getText().toString());
+        map.putExtra("username", email.getText().toString().toLowerCase());
         startActivity(map);
     }
 
