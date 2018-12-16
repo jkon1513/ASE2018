@@ -23,10 +23,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Main">
 
         <!-- login page set to entry point -->
-        <activity android:name=".Login.LoginActivity">
+        <activity android:name=".Login.LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -51,7 +52,8 @@
 
         <activity android:name=".MapOverlay.MapOverlayActivity"
                   android:configChanges="orientation|screenSize"/>
-        <activity android:name=".Registration.RegistrationActivity" />
+        <activity android:name=".Registration.RegistrationActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity android:name=".ProfilePage.ProfilePageActivity" />
         <activity android:name=".BuildingPage.BuildingPageActivity"></activity>
     </application>
