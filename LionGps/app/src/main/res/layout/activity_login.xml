@@ -6,13 +6,20 @@
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login.LoginActivity">
+    tools:context=".Login.LoginActivity"
+    android:background="@color/colorPrimaryDark">
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="logo goes here once made"
-        android:paddingTop="200sp"/>
+        android:text="@string/app_name"
+        android:textSize="50sp"
+        android:textColor="@color/colorAccent"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="240sp"
+        android:src="@drawable/lion"/>
 
 
     <EditText
@@ -21,7 +28,9 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
         android:hint="email:"
+        android:textColorHint="@color/colorAccent"
         android:inputType="textEmailAddress"
+        android:textColor="@color/colorAccent"
         android:paddingBottom="15dp" />
 
     <EditText
@@ -30,7 +39,9 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
         android:hint="password:"
+        android:textColorHint="@color/colorAccent"
         android:inputType="textPassword"
+        android:textColor="@color/colorAccent"
         android:paddingBottom="15dp" />
 
     <Button
@@ -42,7 +53,9 @@
         android:text="Login"
         android:textAllCaps="false"
         android:onClick="signIn"
-        android:clickable="false"/>
+        android:clickable="false"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorAccent"/>
 
     <TextView
         android:id="@+id/registerLink"
@@ -50,6 +63,7 @@
         android:layout_height="wrap_content"
         android:padding="15dp"
         android:text="Don't have account? Sign Up"
+        android:textColor="@color/colorAccent"
         android:textAlignment="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         android:onClick="launchRegistration"
