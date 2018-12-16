@@ -7,9 +7,7 @@ import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.HashSet;
-import java.util.Set;
 import java.util.Arrays;
-import java.util.Iterator;
 
 import ase.liongps.ProfilePage.ProfilePageInteractor;
 
@@ -18,7 +16,6 @@ public class ProfilePageInteractorTest {
 
     private static ProfilePageInteractor profileInteractor;
     private static HashSet<String> mockSchedule;
-    private static Set<String> mockScheduleSet;
     private static HashSet<String> nullSchedule;
 
     @BeforeClass
@@ -30,7 +27,7 @@ public class ProfilePageInteractorTest {
                 "History of Ribbon Dancing : Dodge Physical Fitness Center",
                 "History of Metal Music : Butler Library",
                 "Flea Market Economics : Uris Hall",
-                "Cold Fusion 1 : Pupin Laboratories",
+                "Cold Fusion Using Potatoes : Pupin Laboratories",
                 "Bailing Criminals : William and June Warren Hall"};
 
         mockSchedule = new HashSet<String>(Arrays.asList(scheduleEntries));
