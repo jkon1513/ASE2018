@@ -56,31 +56,33 @@
 <i>15</i>&nbsp;        void onSearchError();
 <i>16</i>&nbsp;        void showRoute(ArrayList&lt;LatLng&gt; path);
 <i>17</i>&nbsp;        void launchProfilePage();
-<i>18</i>&nbsp;        void showRecentSearches();
+<i>18</i>&nbsp;        void showRecentSearches(String search);
 <i>19</i>&nbsp;        void centerCamera(LatLng geoLocation, float zoom);
 <i>20</i>&nbsp;        void placeMarker(LatLng geoLocation, String markerName);
 <i>21</i>&nbsp;        void onPermissionDenied();
 <i>22</i>&nbsp;        void onGeoLocationFailure();
 <i>23</i>&nbsp;        FusedLocationProviderClient getMyLocator();
-<i>24</i>&nbsp;    }
-<i>25</i>&nbsp;
-<i>26</i>&nbsp;    interface Presenter {
-<i>27</i>&nbsp;        void initMap();
-<i>28</i>&nbsp;        void initSearch();
-<i>29</i>&nbsp;        void initUser(String username); //will look into moving this into login contract instead
-<i>30</i>&nbsp;        void handleSearch(String query);
-<i>31</i>&nbsp;        List getRecentSearches();
-<i>32</i>&nbsp;        void getRouteData(Building dest);
-<i>33</i>&nbsp;        LatLng getLocationData(String name);
-<i>34</i>&nbsp;    }
-<i>35</i>&nbsp;
-<i>36</i>&nbsp;}
+<i>24</i>&nbsp;        void launchBuildingPage(String buildingName);
+<i>25</i>&nbsp;        void initAutoComplete(ArrayList&lt;String&gt; suggestions);
+<i>26</i>&nbsp;    }
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;    interface Presenter {
+<i>29</i>&nbsp;        void initMap();
+<i>30</i>&nbsp;        void initSearch();
+<i>31</i>&nbsp;        void initUser(String username); //will look into moving this into login contract instead
+<i>32</i>&nbsp;        void handleSearch(String query);
+<i>33</i>&nbsp;        void getRecentSearches();
+<i>34</i>&nbsp;        void getRouteData(String destination);
+<i>35</i>&nbsp;        LatLng getLocationData(String name);
+<i>36</i>&nbsp;    }
+<i>37</i>&nbsp;
+<i>38</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2018-12-03 11:12</div>
+    <div style="float:right;">generated on 2018-12-16 13:12</div>
 </div>
 </body>
 </html>

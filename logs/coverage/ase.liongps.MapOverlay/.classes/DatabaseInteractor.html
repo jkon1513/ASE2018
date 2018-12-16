@@ -107,25 +107,6 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 2)
-  </span>
-</td>
-  </tr>
-  <tr>
-    <td class="name">DatabaseInteractor$4</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
-    (0/ 2)
-  </span>
-</td>
-<td class="coverageStat">
-  <span class="percent">
-    0%
-  </span>
-  <span class="absValue">
     (0/ 3)
   </span>
 </td>
@@ -158,7 +139,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 14)
+    (0/ 12)
   </span>
 </td>
 <td class="coverageStat">
@@ -166,7 +147,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 27)
+    (0/ 25)
   </span>
 </td>
 </tr>
@@ -193,21 +174,21 @@
 <i>15</i>&nbsp;
 <i>16</i>&nbsp;//TODO: possible we will need to add check for existing username here for new registrations
 <i>17</i>&nbsp;//TODO: look into whether saves need to occur on each search or if local version can be cached
-<i>18</i>&nbsp;//TODO: handle case of search already existing in history (or perhaps in user class)
-<i>19</i>&nbsp;
-<b class="nc"><i>20</i>&nbsp;public class DatabaseInteractor {</b>
-<i>21</i>&nbsp;	private static User theUser;
-<i>22</i>&nbsp;	private FirebaseFirestore db;
-<i>23</i>&nbsp;	private DocumentReference userData;
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;public class DatabaseInteractor {
+<b class="nc"><i>20</i>&nbsp;	private static User theUser;</b>
+<i>21</i>&nbsp;	private FirebaseFirestore db;
+<i>22</i>&nbsp;	private DocumentReference userData;
+<i>23</i>&nbsp;
 <i>24</i>&nbsp;
-<i>25</i>&nbsp;
-<b class="nc"><i>26</i>&nbsp;	public DatabaseInteractor() {</b>
-<b class="nc"><i>27</i>&nbsp;		theUser = new User();</b>
-<b class="nc"><i>28</i>&nbsp;	}</b>
-<b class="nc"><i>29</i>&nbsp;</b>
-<i>30</i>&nbsp;	public void initFireBase() {
-<i>31</i>&nbsp;		db = FirebaseFirestore.getInstance();
-<i>32</i>&nbsp;	}
+<i>25</i>&nbsp;	public DatabaseInteractor() {
+<b class="nc"><i>26</i>&nbsp;		theUser = new User();</b>
+<b class="nc"><i>27</i>&nbsp;	}</b>
+<b class="nc"><i>28</i>&nbsp;</b>
+<b class="nc"><i>29</i>&nbsp;	public void initFireBase() {</b>
+<i>30</i>&nbsp;		db = FirebaseFirestore.getInstance();
+<i>31</i>&nbsp;	}
+<i>32</i>&nbsp;
 <b class="nc"><i>33</i>&nbsp;</b>
 <b class="nc"><i>34</i>&nbsp;	public void saveUser(User u){</b>
 <b class="nc"><i>35</i>&nbsp;		if(db == null) { initFireBase();}</b>
@@ -236,7 +217,7 @@
 <b class="nc"><i>58</i>&nbsp;	}</b>
 <i>59</i>&nbsp;
 <b class="nc"><i>60</i>&nbsp;</b>
-<i>61</i>&nbsp;	public void loadUserData(final String username){
+<i>61</i>&nbsp;	public void loadUserData(final String username, final dbListener listener){
 <i>62</i>&nbsp;			if(db == null) {initFireBase();}
 <i>63</i>&nbsp;
 <i>64</i>&nbsp;			// will replace TestData with a &quot;Users&quot; collection
@@ -245,30 +226,28 @@
 <b class="nc"><i>67</i>&nbsp;			userData.get().addOnSuccessListener(new OnSuccessListener&lt;DocumentSnapshot&gt;() {</b>
 <i>68</i>&nbsp;				@Override
 <i>69</i>&nbsp;				public void onSuccess(DocumentSnapshot documentSnapshot) {
-<b class="nc"><i>70</i>&nbsp;					User loaded = documentSnapshot.toObject(User.class);</b>
-<b class="nc"><i>71</i>&nbsp;					theUser = loaded;</b>
+<b class="nc"><i>70</i>&nbsp;					theUser = documentSnapshot.toObject(User.class);</b>
+<b class="nc"><i>71</i>&nbsp;					listener.onUserLoadSuccess();</b>
 <i>72</i>&nbsp;				}
-<b class="nc"><i>73</i>&nbsp;			}).addOnFailureListener(new OnFailureListener() {</b>
-<i>74</i>&nbsp;				@Override
-<i>75</i>&nbsp;				public void onFailure(@NonNull Exception e) {
-<b class="nc"><i>76</i>&nbsp;					System.out.println(e);</b>
-<b class="nc"><i>77</i>&nbsp;</b>
-<b class="nc"><i>78</i>&nbsp;				}</b>
-<i>79</i>&nbsp;			});
-<i>80</i>&nbsp;	}
-<i>81</i>&nbsp;
-<i>82</i>&nbsp;	public void updateHistory(String query) {
-<i>83</i>&nbsp;		theUser.updateHistory(query);
-<i>84</i>&nbsp;		saveUser(theUser);
-<i>85</i>&nbsp;	}
-<i>86</i>&nbsp;
-<i>87</i>&nbsp;}
+<b class="nc"><i>73</i>&nbsp;			});</b>
+<i>74</i>&nbsp;	}
+<i>75</i>&nbsp;
+<b class="nc"><i>76</i>&nbsp;	public void updateHistory(String query) {</b>
+<b class="nc"><i>77</i>&nbsp;		theUser.updateHistory(query);</b>
+<b class="nc"><i>78</i>&nbsp;		saveUser(theUser);</b>
+<i>79</i>&nbsp;	}
+<i>80</i>&nbsp;
+<i>81</i>&nbsp;	public interface dbListener {
+<i>82</i>&nbsp;		void onUserLoadSuccess();
+<i>83</i>&nbsp;	}
+<i>84</i>&nbsp;
+<i>85</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2018-12-03 11:12</div>
+    <div style="float:right;">generated on 2018-12-16 13:12</div>
 </div>
 </body>
 </html>

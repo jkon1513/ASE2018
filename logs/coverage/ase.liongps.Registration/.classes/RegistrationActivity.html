@@ -61,7 +61,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 19)
+    (0/ 24)
   </span>
 </td>
 </tr>
@@ -77,7 +77,7 @@
 <i>3</i>&nbsp;import android.content.Intent;
 <i>4</i>&nbsp;import android.support.v7.app.AppCompatActivity;
 <i>5</i>&nbsp;import android.os.Bundle;
-<i>6</i>&nbsp;import android.util.Log;
+<i>6</i>&nbsp;import android.text.TextUtils;
 <i>7</i>&nbsp;import android.view.View;
 <i>8</i>&nbsp;import android.widget.EditText;
 <i>9</i>&nbsp;import android.widget.Toast;
@@ -102,42 +102,53 @@
 <i>28</i>&nbsp;
 <i>29</i>&nbsp;	@Override
 <i>30</i>&nbsp;	public void signUp(View view){
-<b class="nc"><i>31</i>&nbsp;		Log.w(&quot;signUP:&quot;,&quot;made it to signUp&quot;);</b>
-<b class="nc"><i>32</i>&nbsp;		presenter.createNewUser(email.getText().toString(), password.getText().toString());</b>
-<i>33</i>&nbsp;	}
+<b class="nc"><i>31</i>&nbsp;		if(TextUtils.isEmpty(email.getText())) {</b>
+<b class="nc"><i>32</i>&nbsp;			email.setError(&quot;email is a required field&quot;);</b>
+<i>33</i>&nbsp;		}
 <i>34</i>&nbsp;
-<i>35</i>&nbsp;	@Override
-<i>36</i>&nbsp;	public void onSuccessSignUp() {
-<b class="nc"><i>37</i>&nbsp;		String un = email.getText().toString();</b>
-<b class="nc"><i>38</i>&nbsp;		String pw = password.getText().toString();</b>
-<i>39</i>&nbsp;
-<b class="nc"><i>40</i>&nbsp;		Toast.makeText(this,&quot;Sign up was a Success!!&quot;, Toast.LENGTH_SHORT).show();</b>
-<b class="nc"><i>41</i>&nbsp;		Intent returnData = new Intent();</b>
-<b class="nc"><i>42</i>&nbsp;		returnData.putExtra(&quot;username&quot;, un);</b>
-<b class="nc"><i>43</i>&nbsp;		returnData.putExtra(&quot;password&quot;, pw);</b>
-<b class="nc"><i>44</i>&nbsp;		setResult(RESULT_OK,returnData);</b>
-<b class="nc"><i>45</i>&nbsp;		finish();</b>
-<i>46</i>&nbsp;	}
-<i>47</i>&nbsp;
-<i>48</i>&nbsp;	@Override
-<i>49</i>&nbsp;	public void onFailSignUp() {
-<b class="nc"><i>50</i>&nbsp;		Toast.makeText(this, &quot;That email already has an account associated with it&quot;,</b>
-<b class="nc"><i>51</i>&nbsp;				Toast.LENGTH_SHORT).show();</b>
-<i>52</i>&nbsp;	}
-<i>53</i>&nbsp;
-<i>54</i>&nbsp;	@Override
-<i>55</i>&nbsp;	public void onPasswordFail() {
-<b class="nc"><i>56</i>&nbsp;		Toast.makeText(this, R.string.password_failure, Toast.LENGTH_SHORT).show();</b>
+<b class="nc"><i>35</i>&nbsp;		else if (TextUtils.isEmpty(password.getText())) {</b>
+<b class="nc"><i>36</i>&nbsp;			password.setError(&quot;Password is a required field&quot;);</b>
+<i>37</i>&nbsp;		}
+<i>38</i>&nbsp;
+<i>39</i>&nbsp;		else {
+<b class="nc"><i>40</i>&nbsp;			String em = email.getText().toString();</b>
+<b class="nc"><i>41</i>&nbsp;			String pw = password.getText().toString();</b>
+<b class="nc"><i>42</i>&nbsp;			presenter.createNewUser(em, pw);</b>
+<i>43</i>&nbsp;		}
+<i>44</i>&nbsp;	}
+<i>45</i>&nbsp;
+<i>46</i>&nbsp;	@Override
+<i>47</i>&nbsp;	public void onSuccessSignUp() {
+<b class="nc"><i>48</i>&nbsp;		String un = email.getText().toString();</b>
+<b class="nc"><i>49</i>&nbsp;		String pw = password.getText().toString();</b>
+<i>50</i>&nbsp;
+<b class="nc"><i>51</i>&nbsp;		Toast.makeText(this,&quot;Sign up was a Success!!&quot;, Toast.LENGTH_SHORT).show();</b>
+<b class="nc"><i>52</i>&nbsp;		Intent returnData = new Intent();</b>
+<b class="nc"><i>53</i>&nbsp;		returnData.putExtra(&quot;username&quot;, un);</b>
+<b class="nc"><i>54</i>&nbsp;		returnData.putExtra(&quot;password&quot;, pw);</b>
+<b class="nc"><i>55</i>&nbsp;		setResult(RESULT_OK,returnData);</b>
+<b class="nc"><i>56</i>&nbsp;		finish();</b>
 <i>57</i>&nbsp;	}
 <i>58</i>&nbsp;
-<i>59</i>&nbsp;
-<i>60</i>&nbsp;}
+<i>59</i>&nbsp;	@Override
+<i>60</i>&nbsp;	public void onFailSignUp() {
+<b class="nc"><i>61</i>&nbsp;		Toast.makeText(this, &quot;The email you entered is invalid, or already has an account associated with it. Please try again&quot;,</b>
+<b class="nc"><i>62</i>&nbsp;				Toast.LENGTH_SHORT).show();</b>
+<i>63</i>&nbsp;	}
+<i>64</i>&nbsp;
+<i>65</i>&nbsp;	@Override
+<i>66</i>&nbsp;	public void onPasswordFail() {
+<b class="nc"><i>67</i>&nbsp;		Toast.makeText(this, R.string.password_failure, Toast.LENGTH_SHORT).show();</b>
+<i>68</i>&nbsp;	}
+<i>69</i>&nbsp;
+<i>70</i>&nbsp;
+<i>71</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2018-12-03 11:12</div>
+    <div style="float:right;">generated on 2018-12-16 13:12</div>
 </div>
 </body>
 </html>

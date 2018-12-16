@@ -53,7 +53,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 2)
+    (0/ 4)
   </span>
 </td>
 <td class="coverageStat">
@@ -61,7 +61,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 7)
+    (0/ 8)
   </span>
 </td>
 </tr>
@@ -74,7 +74,7 @@
 
 <div class="sourceCode"><i>1</i>&nbsp;package ase.liongps.Registration;
 <i>2</i>&nbsp;
-<i>3</i>&nbsp;public class RegistrationPresenter implements RegistrationContract.Presenter {
+<i>3</i>&nbsp;public class RegistrationPresenter implements RegistrationContract.Presenter, RegistrationInteractor.RegistrationListener {
 <i>4</i>&nbsp;	RegistrationContract.View view;
 <i>5</i>&nbsp;	RegistrationInteractor model;
 <i>6</i>&nbsp;
@@ -88,18 +88,26 @@
 <b class="nc"><i>14</i>&nbsp;		if(!model.isValidEmail(email)){ view.onFailSignUp(); }</b>
 <b class="nc"><i>15</i>&nbsp;		else if(!model.isValidPassword(pw)) {view.onPasswordFail();}</b>
 <i>16</i>&nbsp;		else {
-<b class="nc"><i>17</i>&nbsp;			model.registerUser(email, pw);</b>
-<b class="nc"><i>18</i>&nbsp;			view.onSuccessSignUp();</b>
-<i>19</i>&nbsp;		}
-<i>20</i>&nbsp;	}
-<i>21</i>&nbsp;
-<i>22</i>&nbsp;}
+<b class="nc"><i>17</i>&nbsp;			model.registerUser(email, pw, this);</b>
+<i>18</i>&nbsp;		}
+<i>19</i>&nbsp;	}
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;	@Override
+<i>22</i>&nbsp;	public void onSuccess() {
+<b class="nc"><i>23</i>&nbsp;		view.onSuccessSignUp();</b>
+<i>24</i>&nbsp;	}
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;	@Override
+<i>27</i>&nbsp;	public void onFailure() {
+<b class="nc"><i>28</i>&nbsp;        view.onFailSignUp();</b>
+<i>29</i>&nbsp;	}
+<i>30</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2018-12-03 11:12</div>
+    <div style="float:right;">generated on 2018-12-16 13:12</div>
 </div>
 </body>
 </html>

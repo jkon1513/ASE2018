@@ -1,0 +1,212 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ProfilePageActivity</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">ase.liongps.ProfilePage</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ProfilePageActivity (ase.liongps.ProfilePage)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ProfilePageActivity</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 43)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package ase.liongps.ProfilePage;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import android.content.Intent;
+<i>4</i>&nbsp;import android.content.SharedPreferences;
+<i>5</i>&nbsp;import android.graphics.Color;
+<i>6</i>&nbsp;import android.support.v7.app.AppCompatActivity;
+<i>7</i>&nbsp;import android.os.Bundle;
+<i>8</i>&nbsp;import android.text.TextUtils;
+<i>9</i>&nbsp;import android.view.View;
+<i>10</i>&nbsp;import android.widget.Button;
+<i>11</i>&nbsp;import android.widget.EditText;
+<i>12</i>&nbsp;import android.widget.LinearLayout;
+<i>13</i>&nbsp;import android.widget.TextView;
+<i>14</i>&nbsp;import android.widget.Toast;
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;import ase.liongps.R;
+<i>17</i>&nbsp;
+<b class="nc"><i>18</i>&nbsp;public class ProfilePageActivity extends AppCompatActivity implements ProfilePageContract.theView {</b>
+<i>19</i>&nbsp;	private LinearLayout root;
+<i>20</i>&nbsp;	private LinearLayout classEntry;
+<i>21</i>&nbsp;	private TextView username;
+<i>22</i>&nbsp;	private EditText courseField;
+<i>23</i>&nbsp;	private EditText buildingfield;
+<i>24</i>&nbsp;	private Button addEntryButton;
+<i>25</i>&nbsp;	private Button saveButton;
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;	SharedPreferences classes;
+<i>28</i>&nbsp;	ProfilePageContract.thePresenter presenter;
+<i>29</i>&nbsp;	Intent incoming;
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;	@Override
+<i>33</i>&nbsp;	protected void onCreate(Bundle savedInstanceState) {
+<b class="nc"><i>34</i>&nbsp;		super.onCreate(savedInstanceState);</b>
+<b class="nc"><i>35</i>&nbsp;		setContentView(R.layout.activity_profile_page);</b>
+<i>36</i>&nbsp;
+<b class="nc"><i>37</i>&nbsp;		root = findViewById(R.id.profile_layout);</b>
+<b class="nc"><i>38</i>&nbsp;		username = (TextView) findViewById(R.id.username_display);</b>
+<b class="nc"><i>39</i>&nbsp;		addEntryButton = (Button) findViewById(R.id.add_course);</b>
+<i>40</i>&nbsp;
+<b class="nc"><i>41</i>&nbsp;		classEntry = (LinearLayout) findViewById(R.id.new_class);</b>
+<b class="nc"><i>42</i>&nbsp;		courseField = (EditText) classEntry.findViewById(R.id.course_name);</b>
+<b class="nc"><i>43</i>&nbsp;		buildingfield = (EditText) classEntry.findViewById(R.id.course_location);</b>
+<b class="nc"><i>44</i>&nbsp;		saveButton = (Button) classEntry.findViewById(R.id.save_course);</b>
+<i>45</i>&nbsp;
+<b class="nc"><i>46</i>&nbsp;		incoming = getIntent();</b>
+<b class="nc"><i>47</i>&nbsp;		classes = getPreferences(MODE_PRIVATE);</b>
+<i>48</i>&nbsp;
+<b class="nc"><i>49</i>&nbsp;		presenter = new ProfilePagePresenter(this);</b>
+<b class="nc"><i>50</i>&nbsp;		presenter.initSchedule(incoming.getStringExtra(&quot;username&quot;));</b>
+<i>51</i>&nbsp;	}
+<i>52</i>&nbsp;
+<i>53</i>&nbsp;	@Override
+<i>54</i>&nbsp;	protected void onDestroy() {
+<b class="nc"><i>55</i>&nbsp;		super.onDestroy();</b>
+<b class="nc"><i>56</i>&nbsp;		presenter.saveSchedule(incoming.getStringExtra(&quot;username&quot;));</b>
+<i>57</i>&nbsp;	}
+<i>58</i>&nbsp;
+<i>59</i>&nbsp;	public void showUsername(String user){
+<b class="nc"><i>60</i>&nbsp;		username.setText(user + &quot;&#39;s profile page&quot;);</b>
+<i>61</i>&nbsp;	}
+<i>62</i>&nbsp;
+<i>63</i>&nbsp;	public void addClassListener(View view){
+<b class="nc"><i>64</i>&nbsp;		presenter.initNewClass();</b>
+<i>65</i>&nbsp;	}
+<i>66</i>&nbsp;
+<i>67</i>&nbsp;	//Todo: convert to dialog or ui inflater
+<i>68</i>&nbsp;	@Override
+<i>69</i>&nbsp;	public void showAddClassUI() {
+<b class="nc"><i>70</i>&nbsp;		courseField.getText().clear();</b>
+<b class="nc"><i>71</i>&nbsp;		buildingfield.getText().clear();</b>
+<i>72</i>&nbsp;
+<b class="nc"><i>73</i>&nbsp;		addEntryButton.setVisibility(View.GONE);</b>
+<b class="nc"><i>74</i>&nbsp;		courseField.setVisibility(View.VISIBLE);</b>
+<b class="nc"><i>75</i>&nbsp;		buildingfield.setVisibility(View.VISIBLE);</b>
+<b class="nc"><i>76</i>&nbsp;		saveButton.setVisibility(View.VISIBLE);</b>
+<i>77</i>&nbsp;	}
+<i>78</i>&nbsp;
+<i>79</i>&nbsp;	@Override
+<i>80</i>&nbsp;	public void hideAddClassUI() {
+<b class="nc"><i>81</i>&nbsp;		courseField.setVisibility(View.GONE);</b>
+<b class="nc"><i>82</i>&nbsp;		buildingfield.setVisibility(View.GONE);</b>
+<b class="nc"><i>83</i>&nbsp;		saveButton.setVisibility(View.GONE);</b>
+<b class="nc"><i>84</i>&nbsp;		addEntryButton.setVisibility(View.VISIBLE);</b>
+<i>85</i>&nbsp;	}
+<i>86</i>&nbsp;
+<i>87</i>&nbsp;	public void saveClass(View view){
+<b class="nc"><i>88</i>&nbsp;		if(TextUtils.isEmpty(courseField.getText())) {</b>
+<b class="nc"><i>89</i>&nbsp;			courseField.setError(&quot; Class name is a required field&quot;);</b>
+<i>90</i>&nbsp;		}
+<i>91</i>&nbsp;
+<b class="nc"><i>92</i>&nbsp;		else if (TextUtils.isEmpty(buildingfield.getText())) {</b>
+<b class="nc"><i>93</i>&nbsp;			buildingfield.setError(&quot;Location is a required field&quot;);</b>
+<i>94</i>&nbsp;		}
+<i>95</i>&nbsp;
+<i>96</i>&nbsp;		else {
+<i>97</i>&nbsp;
+<b class="nc"><i>98</i>&nbsp;			presenter.addToSchedule(courseField.getText().toString(), buildingfield.getText().toString());</b>
+<i>99</i>&nbsp;		}
+<i>100</i>&nbsp;	}
+<i>101</i>&nbsp;
+<i>102</i>&nbsp;	public void showNewClass(String entry){
+<b class="nc"><i>103</i>&nbsp;		TextView course = new TextView(this);</b>
+<b class="nc"><i>104</i>&nbsp;		course.setText(entry);</b>
+<b class="nc"><i>105</i>&nbsp;		course.setTextColor(Color.parseColor(&quot;#000000&quot;));</b>
+<i>106</i>&nbsp;
+<b class="nc"><i>107</i>&nbsp;		root.addView(course);</b>
+<i>108</i>&nbsp;	}
+<i>109</i>&nbsp;
+<i>110</i>&nbsp;	@Override
+<i>111</i>&nbsp;	public void showSuccess() {
+<b class="nc"><i>112</i>&nbsp;		Toast.makeText(this,&quot;Your class was added!!&quot;, Toast.LENGTH_SHORT).show();</b>
+<i>113</i>&nbsp;	}
+<i>114</i>&nbsp;
+<i>115</i>&nbsp;	@Override
+<i>116</i>&nbsp;	public void showFailure() {
+<b class="nc"><i>117</i>&nbsp;		Toast.makeText(this,&quot;Something went wrong adding your class&quot;, Toast.LENGTH_SHORT).show();</b>
+<i>118</i>&nbsp;	}
+<i>119</i>&nbsp;
+<i>120</i>&nbsp;	public void saveScheduleState(String username){
+<b class="nc"><i>121</i>&nbsp;		SharedPreferences.Editor schedule = classes.edit();</b>
+<b class="nc"><i>122</i>&nbsp;		schedule.putStringSet(username , presenter.getScheduleData());</b>
+<b class="nc"><i>123</i>&nbsp;		schedule.apply();</b>
+<i>124</i>&nbsp;	}
+<i>125</i>&nbsp;
+<i>126</i>&nbsp;	public void loadScheduleState(String username) {
+<b class="nc"><i>127</i>&nbsp;        presenter.loadIntoSchedule(classes.getStringSet(username , null));</b>
+<i>128</i>&nbsp;	}
+<i>129</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-12-16 13:12</div>
+</div>
+</body>
+</html>

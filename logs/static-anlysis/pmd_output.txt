@@ -1,59 +1,83 @@
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Login/LoginActivity.java:48:	Avoid using redundant field initializer for 'locationPermissionGranted'
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Login/LoginActivity.java:49:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Login/LoginActivity.java:51:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/BuildingPage/BuildingPageActivity.java:14:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/BuildingPage/BuildingPageActivity.java:15:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/BuildingPage/BuildingPageActivity.java:16:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/BuildingPage/BuildingPageActivity.java:18:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/BuildingPage/BuildingPageActivity.java:19:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/BuildingPage/BuildingPagePresenter.java:5:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Login/LoginActivity.java:49:	Avoid using redundant field initializer for 'locationPermissionGranted'
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Login/LoginActivity.java:50:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Login/LoginActivity.java:52:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Login/LoginActivity.java:53:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Login/LoginActivity.java:54:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Login/LoginActivity.java:209:	A switch with less than three branches is inefficient, use a if statement instead.
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Login/LoginActivity.java:226:	A switch statement does not contain a break
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Login/LoginActivity.java:226:	A switch with less than three branches is inefficient, use a if statement instead.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Login/LoginActivity.java:55:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Login/LoginActivity.java:111:	When doing a String.toLowerCase()/toUpperCase() call, use a Locale
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Login/LoginActivity.java:220:	A switch with less than three branches is inefficient, use a if statement instead.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Login/LoginActivity.java:237:	A switch with less than three branches is inefficient, use a if statement instead.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Login/LoginInteractor.java:17:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Login/LoginPresenter.java:9:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Login/LoginPresenter.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Login/LoginPresenter.java:19:	Assigning an Object to null is a code smell.  Consider refactoring.
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/DatabaseInteractor.java:21:	Possible unsafe assignment to a non-final static field in a constructor.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/DatabaseInteractor.java:20:	Possible unsafe assignment to a non-final static field in a constructor.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/DatabaseInteractor.java:21:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/DatabaseInteractor.java:22:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/DatabaseInteractor.java:23:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/GeoLocationInteractor.java:30:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/GeoLocationInteractor.java:31:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/GeoLocationInteractor.java:32:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/GeoLocationInteractor.java:33:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/GeoLocationInteractor.java:97:	Found 'UR'-anomaly for variable 'geopoint' (lines '97'-'108').
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/GeoLocationInteractor.java:97:	Found 'UR'-anomaly for variable 'geopoint' (lines '97'-'108').
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/MapOverlayActivity.java:39:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/MapOverlayActivity.java:40:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/MapOverlayActivity.java:43:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/MapOverlayActivity.java:44:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/MapOverlayActivity.java:46:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/MapOverlayActivity.java:47:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/MapOverlayActivity.java:48:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/MapOverlayActivity.java:103:	Found 'DU'-anomaly for variable 'route' (lines '103'-'104').
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/MapOverlayPresenter.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/MapOverlayActivity.java:50:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/MapOverlayActivity.java:51:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/MapOverlayActivity.java:51:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/MapOverlayActivity.java:52:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/MapOverlayActivity.java:111:	Found 'DU'-anomaly for variable 'route' (lines '111'-'112').
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/MapOverlayActivity.java:176:	Avoid using Literals in Conditional Statements
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/MapOverlayPresenter.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/MapOverlayPresenter.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/MapOverlayPresenter.java:13:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/MapOverlayPresenter.java:14:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/MapOverlayPresenter.java:56:	Found 'UR'-anomaly for variable 'search' (lines '56'-'59').
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/SearchInteractor.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/SearchInteractor.java:51:	When doing a String.toLowerCase()/toUpperCase() call, use a Locale
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/MapOverlay/SearchInteractor.java:71:	In J2EE, getClassLoader() might not work as expected.  Use Thread.currentThread().getContextClassLoader() instead.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/ProfilePage/ProfilePageActivity.java:19:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/ProfilePage/ProfilePageActivity.java:20:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/ProfilePage/ProfilePageActivity.java:21:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/ProfilePage/ProfilePageActivity.java:22:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/ProfilePage/ProfilePageActivity.java:23:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/ProfilePage/ProfilePageActivity.java:24:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/ProfilePage/ProfilePageActivity.java:25:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/ProfilePage/ProfilePageActivity.java:27:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/ProfilePage/ProfilePageActivity.java:28:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/ProfilePage/ProfilePageActivity.java:29:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/ProfilePage/ProfilePageInteractor.java:7:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/ProfilePage/ProfilePagePresenter.java:6:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/ProfilePage/ProfilePagePresenter.java:7:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/ProfilePage/ProfilePagePresenter.java:43:	Found 'UR'-anomaly for variable 'course' (lines '43'-'47').
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationActivity.java:15:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationActivity.java:16:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationActivity.java:17:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:21:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:22:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:23:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:44:	Avoid empty if statements
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:67:	Found 'DU'-anomaly for variable 'validLength' (lines '67'-'88').
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:68:	Found 'DD'-anomaly for variable 'hasUppercase' (lines '68'-'83').
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:68:	Found 'DU'-anomaly for variable 'hasUppercase' (lines '68'-'88').
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:69:	Found 'DD'-anomaly for variable 'hasSymbol' (lines '69'-'84').
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:69:	Found 'DU'-anomaly for variable 'hasSymbol' (lines '69'-'88').
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:76:	Found 'DU'-anomaly for variable 'symbols' (lines '76'-'88').
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:83:	Found 'DD'-anomaly for variable 'hasUppercase' (lines '83'-'83').
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:83:	Found 'DU'-anomaly for variable 'hasUppercase' (lines '83'-'88').
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:84:	Found 'DD'-anomaly for variable 'hasSymbol' (lines '84'-'84').
-/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:84:	Found 'DU'-anomaly for variable 'hasSymbol' (lines '84'-'88').
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:68:	Found 'DU'-anomaly for variable 'validLength' (lines '68'-'89').
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:69:	Found 'DD'-anomaly for variable 'hasUppercase' (lines '69'-'84').
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:69:	Found 'DU'-anomaly for variable 'hasUppercase' (lines '69'-'89').
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:70:	Found 'DD'-anomaly for variable 'hasSymbol' (lines '70'-'85').
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:70:	Found 'DU'-anomaly for variable 'hasSymbol' (lines '70'-'89').
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:77:	Found 'DU'-anomaly for variable 'symbols' (lines '77'-'89').
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:84:	Found 'DD'-anomaly for variable 'hasUppercase' (lines '84'-'84').
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:84:	Found 'DU'-anomaly for variable 'hasUppercase' (lines '84'-'89').
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:85:	Found 'DD'-anomaly for variable 'hasSymbol' (lines '85'-'85').
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationInteractor.java:85:	Found 'DU'-anomaly for variable 'hasSymbol' (lines '85'-'89').
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationPresenter.java:4:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/Registration/RegistrationPresenter.java:5:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/utils/Building.java:7:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/utils/Building.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/utils/Building.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 /Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/utils/Building.java:13:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/jason/Desktop/ASE/ASE2018/LionGps/app/src/main/java/ase/liongps/utils/User.java:22:	Found 'DU'-anomaly for variable 'maxEntries' (lines '22'-'35').

@@ -30,9 +30,10 @@ public class UserTest {
         u.updateHistory("The Shire");
         Assert.assertEquals(2, u.getSearches().size());
 
-        // check if retrieved list has correct element at index 1 (2nd element)
+        // check if retrieved list has correct element at index 0 (1st but most recent element)
+        //note the update history method adds to the FRONT of the list for proper display in UI
         LinkedList<String> testList = u.getSearches();
-        Assert.assertEquals("The Shire", testList.get(1));
+        Assert.assertEquals("The Shire", testList.get(0));
 
         u.setName("Frodo");
         u.setPw("Sam");
