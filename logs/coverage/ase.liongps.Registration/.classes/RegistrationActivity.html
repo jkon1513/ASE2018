@@ -1,0 +1,154 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: RegistrationActivity</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">ase.liongps.Registration</a> ]
+</div>
+
+<h1>Coverage Summary for Class: RegistrationActivity (ase.liongps.Registration)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">RegistrationActivity</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 24)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package ase.liongps.Registration;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import android.content.Intent;
+<i>4</i>&nbsp;import android.support.v7.app.AppCompatActivity;
+<i>5</i>&nbsp;import android.os.Bundle;
+<i>6</i>&nbsp;import android.text.TextUtils;
+<i>7</i>&nbsp;import android.view.View;
+<i>8</i>&nbsp;import android.widget.EditText;
+<i>9</i>&nbsp;import android.widget.Toast;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;import ase.liongps.R;
+<i>12</i>&nbsp;
+<b class="nc"><i>13</i>&nbsp;public class RegistrationActivity extends AppCompatActivity implements RegistrationContract.View {</b>
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;	private EditText email;
+<i>16</i>&nbsp;	private EditText password;
+<i>17</i>&nbsp;	private RegistrationContract.Presenter presenter;
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;	@Override
+<i>20</i>&nbsp;	protected void onCreate(Bundle savedInstanceState) {
+<b class="nc"><i>21</i>&nbsp;		super.onCreate(savedInstanceState);</b>
+<b class="nc"><i>22</i>&nbsp;		setContentView(R.layout.activity_registration);</b>
+<b class="nc"><i>23</i>&nbsp;		presenter = new RegistrationPresenter(this);</b>
+<i>24</i>&nbsp;
+<b class="nc"><i>25</i>&nbsp;		email = findViewById(R.id.reg_email);</b>
+<b class="nc"><i>26</i>&nbsp;		password = findViewById(R.id.reg_pw);</b>
+<i>27</i>&nbsp;	}
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;	@Override
+<i>30</i>&nbsp;	public void signUp(View view){
+<b class="nc"><i>31</i>&nbsp;		if(TextUtils.isEmpty(email.getText())) {</b>
+<b class="nc"><i>32</i>&nbsp;			email.setError(&quot;email is a required field&quot;);</b>
+<i>33</i>&nbsp;		}
+<i>34</i>&nbsp;
+<b class="nc"><i>35</i>&nbsp;		else if (TextUtils.isEmpty(password.getText())) {</b>
+<b class="nc"><i>36</i>&nbsp;			password.setError(&quot;Password is a required field&quot;);</b>
+<i>37</i>&nbsp;		}
+<i>38</i>&nbsp;
+<i>39</i>&nbsp;		else {
+<b class="nc"><i>40</i>&nbsp;			String em = email.getText().toString();</b>
+<b class="nc"><i>41</i>&nbsp;			String pw = password.getText().toString();</b>
+<b class="nc"><i>42</i>&nbsp;			presenter.createNewUser(em, pw);</b>
+<i>43</i>&nbsp;		}
+<i>44</i>&nbsp;	}
+<i>45</i>&nbsp;
+<i>46</i>&nbsp;	@Override
+<i>47</i>&nbsp;	public void onSuccessSignUp() {
+<b class="nc"><i>48</i>&nbsp;		String un = email.getText().toString();</b>
+<b class="nc"><i>49</i>&nbsp;		String pw = password.getText().toString();</b>
+<i>50</i>&nbsp;
+<b class="nc"><i>51</i>&nbsp;		Toast.makeText(this,&quot;Sign up was a Success!!&quot;, Toast.LENGTH_SHORT).show();</b>
+<b class="nc"><i>52</i>&nbsp;		Intent returnData = new Intent();</b>
+<b class="nc"><i>53</i>&nbsp;		returnData.putExtra(&quot;username&quot;, un);</b>
+<b class="nc"><i>54</i>&nbsp;		returnData.putExtra(&quot;password&quot;, pw);</b>
+<b class="nc"><i>55</i>&nbsp;		setResult(RESULT_OK,returnData);</b>
+<b class="nc"><i>56</i>&nbsp;		finish();</b>
+<i>57</i>&nbsp;	}
+<i>58</i>&nbsp;
+<i>59</i>&nbsp;	@Override
+<i>60</i>&nbsp;	public void onFailSignUp() {
+<b class="nc"><i>61</i>&nbsp;		Toast.makeText(this, &quot;The email you entered is invalid, or already has an account associated with it. Please try again&quot;,</b>
+<b class="nc"><i>62</i>&nbsp;				Toast.LENGTH_SHORT).show();</b>
+<i>63</i>&nbsp;	}
+<i>64</i>&nbsp;
+<i>65</i>&nbsp;	@Override
+<i>66</i>&nbsp;	public void onPasswordFail() {
+<b class="nc"><i>67</i>&nbsp;		Toast.makeText(this, R.string.password_failure, Toast.LENGTH_SHORT).show();</b>
+<i>68</i>&nbsp;	}
+<i>69</i>&nbsp;
+<i>70</i>&nbsp;
+<i>71</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-12-16 13:12</div>
+</div>
+</body>
+</html>

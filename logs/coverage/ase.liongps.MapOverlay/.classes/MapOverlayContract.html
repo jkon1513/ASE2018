@@ -1,0 +1,88 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: MapOverlayContract</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">ase.liongps.MapOverlay</a> ]
+</div>
+
+<h1>Coverage Summary for Class: MapOverlayContract (ase.liongps.MapOverlay)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+</tr>
+  <tr>
+    <td class="name">MapOverlayContract$Presenter</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package ase.liongps.MapOverlay;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;
+<i>4</i>&nbsp;import com.google.android.gms.location.FusedLocationProviderClient;
+<i>5</i>&nbsp;import com.google.android.gms.maps.model.LatLng;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;import java.util.ArrayList;
+<i>8</i>&nbsp;import java.util.List;
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;import ase.liongps.utils.Building;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;public interface MapOverlayContract {
+<i>13</i>&nbsp;    interface View {
+<i>14</i>&nbsp;        void showSearchBar();
+<i>15</i>&nbsp;        void onSearchError();
+<i>16</i>&nbsp;        void showRoute(ArrayList&lt;LatLng&gt; path);
+<i>17</i>&nbsp;        void launchProfilePage();
+<i>18</i>&nbsp;        void showRecentSearches(String search);
+<i>19</i>&nbsp;        void centerCamera(LatLng geoLocation, float zoom);
+<i>20</i>&nbsp;        void placeMarker(LatLng geoLocation, String markerName);
+<i>21</i>&nbsp;        void onPermissionDenied();
+<i>22</i>&nbsp;        void onGeoLocationFailure();
+<i>23</i>&nbsp;        FusedLocationProviderClient getMyLocator();
+<i>24</i>&nbsp;        void launchBuildingPage(String buildingName);
+<i>25</i>&nbsp;        void initAutoComplete(ArrayList&lt;String&gt; suggestions);
+<i>26</i>&nbsp;    }
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;    interface Presenter {
+<i>29</i>&nbsp;        void initMap();
+<i>30</i>&nbsp;        void initSearch();
+<i>31</i>&nbsp;        void initUser(String username); //will look into moving this into login contract instead
+<i>32</i>&nbsp;        void handleSearch(String query);
+<i>33</i>&nbsp;        void getRecentSearches();
+<i>34</i>&nbsp;        void getRouteData(String destination);
+<i>35</i>&nbsp;        LatLng getLocationData(String name);
+<i>36</i>&nbsp;    }
+<i>37</i>&nbsp;
+<i>38</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-12-16 13:12</div>
+</div>
+</body>
+</html>

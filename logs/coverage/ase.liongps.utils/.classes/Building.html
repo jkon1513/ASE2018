@@ -1,0 +1,153 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Building</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">ase.liongps.utils</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Building (ase.liongps.utils)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Building</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    58.3%
+  </span>
+  <span class="absValue">
+    (7/ 12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    56.5%
+  </span>
+  <span class="absValue">
+    (13/ 23)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package ase.liongps.utils;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.util.ArrayList;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;public class Building {
+<i>7</i>&nbsp;    private String name;
+<i>8</i>&nbsp;    private String bldngCode;
+<i>9</i>&nbsp;    private String shortHand;
+<i>10</i>&nbsp;    private double lat;
+<i>11</i>&nbsp;    private double lng;
+<i>12</i>&nbsp;    private String description;
+<i>13</i>&nbsp;    private ArrayList&lt;String&gt; ammenitites;
+<i>14</i>&nbsp;
+<b class="fc"><i>15</i>&nbsp;    public Building(String name, double latitude, double longitude) {</b>
+<b class="fc"><i>16</i>&nbsp;        this.lat = latitude;</b>
+<b class="fc"><i>17</i>&nbsp;        this.lng = longitude;</b>
+<b class="fc"><i>18</i>&nbsp;        this.name = name;</b>
+<b class="fc"><i>19</i>&nbsp;    }</b>
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;    public void setDescription(String description) {
+<b class="nc"><i>22</i>&nbsp;        this.description = description;</b>
+<b class="nc"><i>23</i>&nbsp;    }</b>
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;    public void setAmmenitity(String ammenity) {
+<b class="nc"><i>26</i>&nbsp;        if(ammenitites == null) {</b>
+<b class="nc"><i>27</i>&nbsp;            ammenitites = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>28</i>&nbsp;            ammenitites.add(ammenity);</b>
+<i>29</i>&nbsp;        } else {
+<b class="nc"><i>30</i>&nbsp;            ammenitites.add(ammenity);</b>
+<i>31</i>&nbsp;        }
+<b class="nc"><i>32</i>&nbsp;    }</b>
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;    public double getLat() {
+<b class="fc"><i>35</i>&nbsp;        return lat;</b>
+<i>36</i>&nbsp;    }
+<i>37</i>&nbsp;
+<i>38</i>&nbsp;    public double getLng() {
+<b class="fc"><i>39</i>&nbsp;        return lng;</b>
+<i>40</i>&nbsp;    }
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;    public String getDescription() {
+<b class="nc"><i>43</i>&nbsp;        return description;</b>
+<i>44</i>&nbsp;    }
+<i>45</i>&nbsp;
+<i>46</i>&nbsp;    public String getName() {
+<b class="nc"><i>47</i>&nbsp;        return name;</b>
+<i>48</i>&nbsp;    }
+<i>49</i>&nbsp;
+<i>50</i>&nbsp;    public String getBldngCode() {
+<b class="fc"><i>51</i>&nbsp;        return bldngCode;</b>
+<i>52</i>&nbsp;    }
+<i>53</i>&nbsp;
+<i>54</i>&nbsp;    public String getShortHand() {
+<b class="fc"><i>55</i>&nbsp;        return shortHand;</b>
+<i>56</i>&nbsp;    }
+<i>57</i>&nbsp;
+<i>58</i>&nbsp;    public ArrayList&lt;String&gt; getAmmenitites() {
+<b class="nc"><i>59</i>&nbsp;        return ammenitites;</b>
+<i>60</i>&nbsp;    }
+<i>61</i>&nbsp;
+<i>62</i>&nbsp;
+<i>63</i>&nbsp;    public void setBldngCode(String bldngCode) {
+<b class="fc"><i>64</i>&nbsp;        this.bldngCode = bldngCode;</b>
+<b class="fc"><i>65</i>&nbsp;    }</b>
+<i>66</i>&nbsp;
+<i>67</i>&nbsp;    public void setShortHand(String shortHand) {
+<b class="fc"><i>68</i>&nbsp;        this.shortHand = shortHand;</b>
+<b class="fc"><i>69</i>&nbsp;    }</b>
+<i>70</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-12-16 13:12</div>
+</div>
+</body>
+</html>

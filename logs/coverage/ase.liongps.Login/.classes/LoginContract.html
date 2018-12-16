@@ -1,0 +1,73 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: LoginContract</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">ase.liongps.Login</a> ]
+</div>
+
+<h1>Coverage Summary for Class: LoginContract (ase.liongps.Login)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+</tr>
+  <tr>
+    <td class="name">LoginContract$Presenter</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package ase.liongps.Login;
+<i>2</i>&nbsp;//contract between the model, view and presenter for login activity (main_activity as of now)
+<i>3</i>&nbsp;
+<i>4</i>&nbsp;public interface LoginContract {
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;   // we will update this contract when we add authentication
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;    interface View {
+<i>9</i>&nbsp;        void loadMap();
+<i>10</i>&nbsp;        void allowAccessToMap();
+<i>11</i>&nbsp;        boolean hasPrerequisites();
+<i>12</i>&nbsp;        void showPasswordFailure();
+<i>13</i>&nbsp;        void showEmailFailure();
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    }
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;    interface Presenter {
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;         void onDestroy();
+<i>20</i>&nbsp;         void authenticate(String username, String password);
+<i>21</i>&nbsp;    }
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-12-16 13:12</div>
+</div>
+</body>
+</html>
