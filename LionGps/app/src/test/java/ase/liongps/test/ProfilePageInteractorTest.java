@@ -3,6 +3,8 @@ package ase.liongps.test;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.BeforeClass;
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,13 +13,13 @@ import java.util.Iterator;
 
 import ase.liongps.ProfilePage.ProfilePageInteractor;
 
+@RunWith(MockitoJUnitRunner.class)
 public class ProfilePageInteractorTest {
 
     private static ProfilePageInteractor profileInteractor;
     private static HashSet<String> mockSchedule;
     private static Set<String> mockScheduleSet;
     private static HashSet<String> nullSchedule;
-    //private static Iterator mockScheduleIterator;
 
     @BeforeClass
     public static void setup() {
