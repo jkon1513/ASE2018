@@ -15,9 +15,14 @@ import org.mockito.stubbing.Answer;
 
 
 import ase.liongps.MapOverlay.DatabaseInteractor;
+import ase.liongps.MapOverlay.MapOverlayPresenter;
+import ase.liongps.MapOverlay.SearchInteractor;
 import ase.liongps.utils.User;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.isA;
+import static org.mockito.ArgumentMatchers.isNull;
+import static org.mockito.ArgumentMatchers.nullable;
 import static org.mockito.Mockito.doNothing;
 
 
@@ -87,7 +92,7 @@ public class DatabaseInteractorTests {
 
 				return null;
 			}
-		}).when(db).loadUserData(isA(String.class));
+		}).when(db).loadUserData(isA(String.class), nullable(DatabaseInteractor.dbListener.class));
 
 		Mockito.doAnswer(new Answer<User>() {
 			@Override
@@ -99,7 +104,7 @@ public class DatabaseInteractorTests {
 
 		User naruto = new User ("Naruto Izumaki", "rasengan");
 		db.saveUser(naruto);
-		db.loadUserData("Naruto Izumaki");
+		db.loadUserData("Naruto Izumaki", null);
 		User loaded = db.getUser();
 
 		Assert.assertEquals("loaded username does not match the username that was saved",

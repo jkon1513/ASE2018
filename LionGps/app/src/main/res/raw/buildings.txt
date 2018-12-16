@@ -1,6 +1,6 @@
 claremont	claremont	40.811110	-73.962727	cla
 alfred lerner hall	lerner	40.806972	-73.963919	ler
-altschul hall	alrschul	40.810063	-73.963340	alt
+altschul hall	altschul	40.810063	-73.963340	alt
 avery hall	avery	40.808293	-73.960972	avh
 barnard hall	barnard	40.809214	-73.963948	bar
 broadway hall	broadway	40.806395	-73.964328	bwy
@@ -43,7 +43,6 @@ philosophy hall	philosophy	40.807508	-73.961080	phi
 prentis hall	prentis	40.816740	-73.959197	prn
 pulitzer hall	pulitzer	40.807575	-73.963425
 pupin physics laboratories	pupin	40.810069	-73.961420	pup
-riverside church	riverside church	40.811881	-73.963115	rsc
 schapiro center for engineering and physical science research	cepsr	40.809640	-73.960817	scep
 schermerhorn hall	schermerhorn	40.808629	-73.960435	sch
 school of social work	social work	40.810262	-73.958363	ssw
